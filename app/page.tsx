@@ -52,7 +52,7 @@ import { PORTFOLIO_ITEMS } from '@/lib/portfolio-data'
 const FAQS = [
   {
     q: 'Berapa lama proses pembuatan satu unit Rombong Kontainer?',
-    a: 'Rata-rata waktu pengerjaan berkisar antara 7 hingga 14 hari kerja, tergantung ukuran dan aksesoris kelistrikan/interior yang Anda pilih.'
+    a: 'Rata-rata waktu pengerjaan berkisar antara 7 hingga 14 hari kerja (sesuai antrian urutan order), tergantung ukuran dan aksesoris kelistrikan/interior yang Anda pilih.'
   },
   {
     q: 'Apakah survei lokasi dan konsultasi benar-benar gratis?',
@@ -127,7 +127,7 @@ export default function Home() {
           <div className="flex items-center gap-2">
             <span className="inline-flex items-center justify-center w-2 h-2 rounded-full bg-amber-400 animate-pulse mr-1"></span>
             <span className="font-semibold text-stone-100">Buka Batch Baru Pembuatan Rombong Kontainer &amp; Kanopi</span>
-            <span className="hidden md:inline text-stone-400">— Pengerjaan Cepat 7-14 Hari Kerja <strong className="text-amber-400 font-normal">(sesuai antrian Order)</strong></span>
+            <span className="hidden md:inline text-stone-400">— Pengerjaan Cepat 7-14 Hari Kerja <strong className="text-amber-400 font-normal">(sesuai antrian urutan order)</strong></span>
           </div>
           <div className="flex items-center gap-4 text-stone-300">
             <span className="hidden sm:inline font-medium">Kami Pengalaman Lebih dari 7 Tahun, <strong className="text-amber-400">Sejak 2017</strong></span>
@@ -159,7 +159,7 @@ export default function Home() {
                   </div>
                   <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-amber-50 border border-amber-200/80 shadow-sm text-xs font-bold text-amber-900">
                     <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
-                    <span>Buka Batch Baru • Pengerjaan Cepat 7-14 Hari Kerja</span>
+                    <span>Buka Batch Baru • Pengerjaan Cepat 7-14 Hari Kerja (sesuai antrian urutan order)</span>
                   </div>
                 </div>
 
@@ -540,7 +540,7 @@ export default function Home() {
               {[
                 { no: '01', title: 'Konsultasi & Survei', desc: 'Diskusikan model impian Anda. Tim kami survei gratis ke lokasi Anda.' },
                 { no: '02', title: 'RAB & Desain Pasti', desc: 'Penawaran harga tertulis jelas tanpa biaya tambahan di kemudian hari.' },
-                { no: '03', title: 'Fabrikasi Presisi', desc: 'Pemotongan & pengelasan baja SNI oleh tenaga ahli bersertifikat.' },
+                { no: '03', title: 'Fabrikasi Presisi', desc: 'Pemotongan & pengelasan baja SNI cepat 7-14 hari kerja (sesuai antrian urutan order).' },
                 { no: '04', title: 'Finishing & Cat Anti-Karat', desc: 'Pengecatan duco/powder coat rapi & uji kebocoran air sebelum kirim.' },
                 { no: '05', title: 'Kirim & Garansi', desc: 'Pengiriman aman ke lokasi Anda dilengkapi garansi pengerjaan resmi.' },
               ].map((step) => (

@@ -63,7 +63,7 @@ export default function Footer() {
           <ul className="space-y-2.5">
             <li className="flex items-start gap-2">
               <span className="material-symbols-outlined text-amber-400 text-sm mt-0.5">location_on</span>
-              <span>Jl. Raya Surabaya-Gresik No. 123, Jawa Timur 60000</span>
+              <span>Jl. Rejosari Gg. Musholla Baru, RT. 01 Benowo, Pakal, Surabaya Barat</span>
             </li>
             <li className="flex items-center gap-2">
               <span className="material-symbols-outlined text-amber-400 text-sm">call</span>
@@ -71,7 +71,7 @@ export default function Footer() {
             </li>
             <li className="flex items-center gap-2">
               <span className="material-symbols-outlined text-amber-400 text-sm">mail</span>
-              <span>info@jmworkshop.com</span>
+              <a href="mailto:admin@rombongkontainersurabaya.web.id" className="hover:text-white">admin@rombongkontainersurabaya.web.id</a>
             </li>
             <li className="flex items-center gap-2">
               <span className="material-symbols-outlined text-amber-400 text-sm">schedule</span>
