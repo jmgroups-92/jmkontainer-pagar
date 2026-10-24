@@ -1,17 +1,24 @@
 <!DOCTYPE html>
-<html class="light" lang="id">
+<html class="scroll-smooth antialiased selection:bg-amber-500 selection:text-white" lang="id">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <!-- ═══ PRIMARY SEO ═══ -->
-  <title>JM Workshop Surabaya | Spesialis Rombong Kontainer, Kanopi Alderon &amp; Pagar Minimalis</title>
-  <meta name="description" content="Bengkel las spesialis di Surabaya sejak 2017. Kami membuat Rombong Kontainer UMKM, Kanopi Alderon UPVC, dan Pagar Minimalis Modern berkualitas premium. Melayani Surabaya, Sidoarjo, Gresik, Mojokerto &amp; Lamongan. Konsultasi Gratis!">
-  <meta name="keywords" content="rombong kontainer surabaya, kanopi alderon surabaya, pagar minimalis surabaya, bengkel las surabaya, container booth umkm, kanopi upvc surabaya, pagar besi minimalis, workshop las profesional surabaya, jasa fabrikasi logam surabaya">
+  <title>JM Workshop Surabaya | Spesialis Rombong Kontainer UMKM, Kanopi Alderon & Pagar Minimalis</title>
+  <meta name="description" content="Bengkel las & fabrikasi kontainer presisi di Surabaya sejak 2017. Spesialis Booth Kontainer UMKM, Kanopi Alderon UPVC, dan Pagar Minimalis Modern. 500+ proyek selesai, garansi struktur, survei gratis se-Gerbangkertosusila.">
+  <meta name="keywords" content="rombong kontainer surabaya, booth kontainer umkm, kontainer booth murah surabaya, kanopi alderon surabaya, kanopi upvc murah, pagar minimalis surabaya, bengkel las surabaya, jasa fabrikasi besi surabaya">
   <meta name="author" content="JM Workshop Surabaya">
-  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
-  <link rel="canonical" href="https://www.jmworkshop.com/">
-  <link rel="alternate" hreflang="id" href="https://www.jmworkshop.com/">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <link rel="canonical" href="https://rombongkontainersurabaya.web.id/">
+
+  <!-- ═══ OPEN GRAPH / SOCIAL ═══ -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://rombongkontainersurabaya.web.id/">
+  <meta property="og:title" content="JM Workshop Surabaya | Rombong Kontainer & Fabrikasi Presisi">
+  <meta property="og:description" content="Bengkel las spesialis kontainer & kanopi modern di Surabaya. Kualitas SNI, garansi pengerjaan, dan survei lokasi gratis!">
+  <meta property="og:image" content="/images/modern_premium_container_booth_rombong_kontainer_for_umkm_street_food_business.png">
+  <meta property="og:locale" content="id_ID">
 
   <!-- ═══ GEO / LOCAL SEO ═══ -->
   <meta name="geo.region" content="ID-JI">
@@ -19,41 +26,81 @@
   <meta name="geo.position" content="-7.2575;112.7521">
   <meta name="ICBM" content="-7.2575, 112.7521">
 
-  <!-- ═══ OPEN GRAPH ═══ -->
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://www.jmworkshop.com/">
-  <meta property="og:title" content="JM Workshop Surabaya | Spesialis Rombong Kontainer, Kanopi &amp; Pagar Minimalis">
-  <meta property="og:description" content="Bengkel las spesialis di Surabaya sejak 2017. Rombong Kontainer, Kanopi Alderon UPVC, Pagar Minimalis berkualitas premium. Konsultasi Gratis!">
-  <meta property="og:image" content="https://www.jmworkshop.com/images/modern_premium_container_booth_rombong_kontainer_for_umkm_street_food_business.png">
-  <meta property="og:image:width" content="1200">
-  <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="Rombong Kontainer Premium JM Workshop Surabaya">
-  <meta property="og:locale" content="id_ID">
-  <meta property="og:site_name" content="JM Workshop Surabaya">
+  <!-- ═══ TYPOGRAPHY & ICONS ═══ -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 
-  <!-- ═══ TWITTER CARD ═══ -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="JM Workshop Surabaya | Rombong Kontainer, Kanopi &amp; Pagar Minimalis">
-  <meta name="twitter:description" content="Bengkel las spesialis Surabaya sejak 2017. Konsultasi Gratis!">
-  <meta name="twitter:image" content="https://www.jmworkshop.com/images/modern_premium_container_booth_rombong_kontainer_for_umkm_street_food_business.png">
+  <!-- ═══ TAILWIND CSS CDN ═══ -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+            mono: ['"Space Grotesk"', 'monospace'],
+          },
+          colors: {
+            brand: {
+              50: '#fff7ed',
+              100: '#ffedd5',
+              400: '#fb923c',
+              500: '#f97316',
+              600: '#ea580c',
+              accent: '#FF5722',
+            },
+            surface: {
+              DEFAULT: '#FAFAF9',
+              card: '#FFFFFF',
+              dark: '#0C0A09',
+            }
+          },
+          boxShadow: {
+            'bento': '0 8px 30px rgba(0, 0, 0, 0.04)',
+            'bento-hover': '0 20px 40px rgba(0, 0, 0, 0.08)',
+            'glow-amber': '0 0 50px -10px rgba(249, 115, 22, 0.35)',
+          }
+        }
+      }
+    }
+  </script>
 
-  <!-- ═══ STRUCTURED DATA — LOCAL BUSINESS ═══ -->
+  <style>
+    /* Engineering Blueprint Grid Pattern */
+    .bg-grid-pattern {
+      background-size: 32px 32px;
+      background-image: 
+        linear-gradient(to right, rgba(0, 0, 0, 0.035) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(0, 0, 0, 0.035) 1px, transparent 1px);
+    }
+    .dark-grid-pattern {
+      background-size: 32px 32px;
+      background-image: 
+        linear-gradient(to right, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+    }
+    /* Smooth Transitions */
+    .filter-item {
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    /* Hide scrollbar for tabs on mobile */
+    .no-scrollbar::-webkit-scrollbar { display: none; }
+    .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+  </style>
+
+  <!-- ═══ STRUCTURED DATA SCHEMA ═══ -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
-    "@id": "https://www.jmworkshop.com/#business",
+    "@id": "https://rombongkontainersurabaya.web.id/#business",
     "name": "JM Workshop Surabaya",
-    "alternateName": "JM Workshop",
-    "description": "Bengkel las spesialis di Surabaya sejak 2017. Kami membuat Rombong Kontainer, Kanopi Alderon UPVC, dan Pagar Minimalis Modern berkualitas premium untuk UMKM dan hunian.",
-    "image": "https://www.jmworkshop.com/images/modern_premium_container_booth_rombong_kontainer_for_umkm_street_food_business.png",
-    "url": "https://www.jmworkshop.com",
-    "telephone": "+628123456789",
+    "image": "https://rombongkontainersurabaya.web.id/images/modern_premium_container_booth_rombong_kontainer_for_umkm_street_food_business.png",
+    "telephone": "+628155401679",
     "email": "info@jmworkshop.com",
-    "foundingDate": "2017",
     "priceRange": "$$",
-    "currenciesAccepted": "IDR",
-    "paymentAccepted": "Cash, Transfer Bank",
     "address": {
       "@type": "PostalAddress",
       "streetAddress": "Jl. Raya Surabaya-Gresik No. 123",
@@ -67,388 +114,1077 @@
       "latitude": -7.2575,
       "longitude": 112.7521
     },
-    "openingHoursSpecification": [
-      {
-        "@type": "OpeningHoursSpecification",
-        "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],
-        "opens": "08:00",
-        "closes": "17:00"
-      }
-    ],
-    "areaServed": [
-      {"@type": "City", "name": "Surabaya"},
-      {"@type": "City", "name": "Sidoarjo"},
-      {"@type": "City", "name": "Gresik"},
-      {"@type": "City", "name": "Mojokerto"},
-      {"@type": "City", "name": "Lamongan"}
-    ],
-    "hasOfferCatalog": {
-      "@type": "OfferCatalog",
-      "name": "Layanan JM Workshop",
-      "itemListElement": [
-        {
-          "@type": "Offer",
-          "itemOffered": {
-            "@type": "Service",
-            "name": "Container Booth / Rombong Kontainer Surabaya",
-            "description": "Rombong Kontainer modular yang fungsional, tahan cuaca, dan memberikan identitas kuat bagi brand UMKM."
-          }
-        },
-        {
-          "@type": "Offer",
-          "itemOffered": {
-            "@type": "Service",
-            "name": "Kanopi Alderon UPVC Surabaya",
-            "description": "Pemasangan atap UPVC Alderon dengan rangka kokoh. Solusi atap sejuk, kedap suara, dan tahan lama."
-          }
-        },
-        {
-          "@type": "Offer",
-          "itemOffered": {
-            "@type": "Service",
-            "name": "Pagar Minimalis Modern Surabaya",
-            "description": "Pagar besi dengan finishing premium yang mengutamakan keamanan tanpa mengesampingkan estetika."
-          }
-        }
-      ]
+    "openingHoursSpecification": {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],
+      "opens": "08:00",
+      "closes": "17:00"
     },
-    "sameAs": [
-      "https://www.instagram.com/jmworkshopsurabaya"
-    ],
+    "areaServed": ["Surabaya", "Sidoarjo", "Gresik", "Mojokerto", "Lamongan"],
     "aggregateRating": {
       "@type": "AggregateRating",
       "ratingValue": "4.9",
-      "reviewCount": "87"
+      "reviewCount": "128"
     }
   }
   </script>
-
-  <!-- ═══ FAQ SCHEMA ═══ -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "Berapa biaya pembuatan rombong kontainer di Surabaya?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Harga rombong kontainer bervariasi tergantung ukuran dan spesifikasi. Hubungi JM Workshop Surabaya untuk konsultasi dan penawaran gratis."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Apakah JM Workshop melayani pemasangan kanopi alderon di Sidoarjo?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Ya, JM Workshop Surabaya melayani pemasangan Kanopi Alderon UPVC di Surabaya, Sidoarjo, Gresik, Mojokerto, dan Lamongan."
-        }
-      }
-    ]
-  }
-  </script>
-
-  <!-- ═══ GA4 — ganti G-XXXXXXXXXX dengan Measurement ID Anda ═══ -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-XXXXXXXXXX', { send_page_view: true });
-  </script>
-
-  <link rel="stylesheet" href="/src/style.css" />
 </head>
 
-<body class="bg-surface-bright text-on-surface font-body-md selection:bg-industrial-yellow selection:text-primary">
+<body class="bg-surface text-zinc-900 font-sans antialiased overflow-x-hidden">
 
-  <!-- TopNavBar -->
-  <nav class="fixed top-0 w-full z-50 flex justify-between items-center px-margin-mobile md:px-margin-desktop py-4 max-w-full mx-auto bg-surface-container-lowest border-b border-outline-variant shadow-sm">
-    <div class="font-display text-headline-sm font-extrabold text-primary flex items-center gap-2">
-      <span class="w-8 h-8 bg-primary text-industrial-yellow flex items-center justify-center rounded">JM</span>
-      <span class="hidden sm:inline">Workshop Surabaya</span>
+  <!-- ═══════════════════════════════════════════════════
+       1. TOP ANNOUNCEMENT BANNER
+  ═══════════════════════════════════════════════════ -->
+  <div class="bg-zinc-950 text-white text-xs py-2 px-4 border-b border-zinc-800">
+    <div class="max-w-7xl mx-auto flex items-center justify-between">
+      <div class="flex items-center gap-2">
+        <span class="inline-flex items-center justify-center w-2 h-2 rounded-full bg-emerald-500 animate-ping mr-1"></span>
+        <span class="font-medium text-zinc-300">Slot Produksi Batch Baru Dibuka</span>
+        <span class="hidden md:inline text-zinc-500">— Estimasi Pengerjaan 7-14 Hari Kerja</span>
+      </div>
+      <div class="flex items-center gap-4 text-zinc-400">
+        <span class="hidden sm:inline">Survei Lokasi & Konsultasi Desain 3D: <strong class="text-white">Gratis 100%</strong></span>
+        <a href="https://wa.me/628155401679?text=Halo%20JM%20Workshop%2C%20saya%20mau%20ambil%20promo%20survei%20gratis" 
+           target="_blank" rel="noopener"
+           class="text-amber-400 hover:text-amber-300 font-semibold underline underline-offset-2">Klaim Promo &rarr;</a>
+      </div>
     </div>
-    <div class="hidden md:flex gap-md items-center">
-      <a class="text-on-surface-variant hover:text-primary transition-colors duration-200 font-label-md" href="#">Home</a>
-      <a class="text-on-surface-variant hover:text-primary transition-colors duration-200 font-label-md" href="#layanan">Layanan</a>
-      <a class="text-on-surface-variant hover:text-primary transition-colors duration-200 font-label-md" href="#produk">Produk Kami</a>
-      <a class="text-on-surface-variant hover:text-primary transition-colors duration-200 font-label-md" href="#kontak">Kontak</a>
-      <a id="btn-whatsapp-nav"
-        class="ml-4 px-md py-2 bg-action-green text-white font-label-md rounded-lg hover:brightness-95 active:scale-95 transition-all shadow-md"
-        href="https://wa.me/628123456789" rel="noopener" target="_blank">Konsultasi Gratis</a>
-    </div>
-    <button class="md:hidden p-2 text-primary" aria-label="Buka menu">
-      <span class="material-symbols-outlined">menu</span>
-    </button>
-  </nav>
+  </div>
 
-  <main class="pt-16">
-    <!-- ═══ HERO ═══ -->
-    <section class="relative h-[85vh] flex items-center overflow-hidden">
-      <img
-        alt="Rombong Kontainer Premium JM Workshop Surabaya — bengkel las spesialis UMKM"
-        class="absolute inset-0 w-full h-full object-cover"
-        src="/images/modern_premium_container_booth_rombong_kontainer_for_umkm_street_food_business.png"
-        fetchpriority="high"
-        width="1920" height="1080" />
-      <div class="absolute inset-0 hero-overlay"></div>
-      <div class="relative container mx-auto px-margin-mobile md:px-margin-desktop z-10 text-white max-w-4xl">
-        <span class="inline-block px-4 py-1 bg-industrial-yellow text-primary font-bold text-xs uppercase tracking-widest mb-md rounded-sm">Premium Fabrication · Surabaya</span>
-        <h1 class="font-display text-headline-lg-mobile md:text-display mb-md">
-          Konstruksi Besi Presisi<br>untuk Bisnis &amp; Hunian
+  <!-- ═══════════════════════════════════════════════════
+       2. FLOATING / STICKY NAVBAR (SLINGSHOT STYLE)
+  ═══════════════════════════════════════════════════ -->
+  <header class="sticky top-0 z-40 w-full px-4 sm:px-6 lg:px-8 pt-3">
+    <div class="max-w-7xl mx-auto">
+      <nav class="flex items-center justify-between px-5 py-3.5 bg-white/80 backdrop-blur-xl border border-zinc-200/80 rounded-2xl shadow-sm transition-all duration-300">
+        <!-- Brand Monogram & Label -->
+        <a href="#" class="flex items-center gap-3 group">
+          <div class="w-10 h-10 rounded-xl bg-zinc-950 flex items-center justify-center text-white font-mono font-bold text-sm tracking-wider group-hover:bg-brand-600 transition-colors shadow-inner">
+            JM
+          </div>
+          <div>
+            <div class="font-bold text-base tracking-tight text-zinc-950 flex items-center gap-1.5">
+              JM Workshop
+              <span class="w-1.5 h-1.5 rounded-full bg-brand-500"></span>
+            </div>
+            <p class="text-[11px] font-mono tracking-wider text-zinc-600 uppercase">Fabrikasi Presisi • Surabaya</p>
+          </div>
+        </a>
+
+        <!-- Desktop Navigation Links -->
+        <div class="hidden md:flex items-center gap-1 bg-zinc-100/70 p-1 rounded-xl border border-zinc-200/50">
+          <a href="#layanan" class="px-4 py-1.5 text-xs font-semibold text-zinc-600 hover:text-zinc-950 rounded-lg hover:bg-white transition-all">Layanan Bento</a>
+          <a href="#portofolio" class="px-4 py-1.5 text-xs font-semibold text-zinc-600 hover:text-zinc-950 rounded-lg hover:bg-white transition-all">Portofolio</a>
+          <a href="#workflow" class="px-4 py-1.5 text-xs font-semibold text-zinc-600 hover:text-zinc-950 rounded-lg hover:bg-white transition-all">Cara Kerja</a>
+          <a href="#estimasi" class="px-4 py-1.5 text-xs font-semibold text-zinc-600 hover:text-zinc-950 rounded-lg hover:bg-white transition-all">Kalkulator Biaya</a>
+          <a href="#faq" class="px-4 py-1.5 text-xs font-semibold text-zinc-600 hover:text-zinc-950 rounded-lg hover:bg-white transition-all">FAQ</a>
+        </div>
+
+        <!-- Action CTA Buttons -->
+        <div class="hidden sm:flex items-center gap-3">
+          <a href="tel:+628155401679" class="text-xs font-semibold text-zinc-600 hover:text-zinc-950 px-2 py-1 flex items-center gap-1">
+            <span class="material-symbols-outlined text-sm text-zinc-600">call</span>
+            +62 815-5401-6679
+          </a>
+          <a href="https://wa.me/628155401679?text=Halo%20JM%20Workshop%2C%20saya%20ingin%20konsultasi%20desain%20dan%20harga" 
+             target="_blank" rel="noopener"
+             class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-zinc-950 text-white hover:bg-brand-600 active:scale-95 text-xs font-semibold transition-all shadow-md shadow-zinc-950/10">
+            <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+            Konsultasi WhatsApp
+            <span class="material-symbols-outlined text-sm">arrow_outward</span>
+          </a>
+        </div>
+
+        <!-- Mobile Menu Toggle Button -->
+        <button id="mobile-menu-btn" class="md:hidden p-2 text-zinc-700 hover:text-zinc-950 rounded-xl hover:bg-zinc-100 transition-colors" aria-label="Toggle navigation">
+          <span class="material-symbols-outlined text-2xl">menu</span>
+        </button>
+      </nav>
+
+      <!-- Mobile Navigation Drawer -->
+      <div id="mobile-menu" class="hidden md:hidden mt-2 p-4 bg-white/95 backdrop-blur-xl border border-zinc-200/80 rounded-2xl shadow-xl flex flex-col gap-2">
+        <a href="#layanan" class="mobile-link px-3 py-2 text-sm font-semibold text-zinc-700 hover:bg-zinc-50 rounded-xl">Layanan Bento</a>
+        <a href="#portofolio" class="mobile-link px-3 py-2 text-sm font-semibold text-zinc-700 hover:bg-zinc-50 rounded-xl">Portofolio Proyek</a>
+        <a href="#workflow" class="mobile-link px-3 py-2 text-sm font-semibold text-zinc-700 hover:bg-zinc-50 rounded-xl">Alur Fabrikasi</a>
+        <a href="#estimasi" class="mobile-link px-3 py-2 text-sm font-semibold text-zinc-700 hover:bg-zinc-50 rounded-xl">Estimator Biaya</a>
+        <a href="#faq" class="mobile-link px-3 py-2 text-sm font-semibold text-zinc-700 hover:bg-zinc-50 rounded-xl">Tanya Jawab (FAQ)</a>
+        <div class="pt-3 border-t border-zinc-100 flex flex-col gap-2">
+          <a href="https://wa.me/628155401679?text=Halo%20JM%20Workshop%2C%20saya%20ingin%20konsultasi" 
+             target="_blank" rel="noopener"
+             class="w-full flex items-center justify-center gap-2 py-3 rounded-xl bg-brand-600 text-white font-semibold text-sm">
+            <span class="material-symbols-outlined text-base">chat</span>
+            Hubungi WhatsApp Sekarang
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ═══════════════════════════════════════════════════
+       3. HERO SECTION (HIGH CONVERTING & REFINED)
+  ═══════════════════════════════════════════════════ -->
+  <section class="relative pt-12 pb-20 md:pt-20 md:pb-32 overflow-hidden bg-grid-pattern">
+    <!-- Ambient Radial Light -->
+    <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[650px] h-[350px] bg-gradient-to-tr from-amber-400/15 via-orange-500/10 to-transparent blur-3xl pointer-events-none -z-10"></div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-4xl mx-auto text-center">
+        
+        <!-- Eyebrow Pill -->
+        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white border border-zinc-200/90 shadow-sm text-xs font-semibold text-zinc-700 mb-6 hover:border-amber-400 transition-colors">
+          <span class="flex h-2 w-2 relative">
+            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-400 opacity-75"></span>
+            <span class="relative inline-flex rounded-full h-2 w-2 bg-brand-500"></span>
+          </span>
+          <span class="font-mono text-zinc-600 tracking-wide">EST. 2017</span>
+          <span class="w-1 h-1 rounded-full bg-zinc-300"></span>
+          <span>Bengkel Fabrikasi Logam Presisi Surabaya</span>
+        </div>
+
+        <!-- Main H1 Headline -->
+        <h1 class="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-zinc-950 leading-[1.08] mb-6">
+          Rombong Kontainer UMKM <br class="hidden sm:inline" />
+          &amp; Fabrikasi Besi <span class="bg-gradient-to-r from-zinc-950 via-zinc-800 to-brand-600 bg-clip-text text-transparent">Presisi Tinggi.</span>
         </h1>
-        <p class="font-body-lg mb-xl text-surface-dim opacity-90 max-w-2xl">
-          Spesialis <strong>Rombong Kontainer</strong>, <strong>Kanopi Alderon</strong>, dan <strong>Pagar Minimalis Modern</strong> berkualitas tinggi di Surabaya. Material premium standar konstruksi, garansi ketahanan maksimal.
+
+        <!-- Subtitle -->
+        <p class="text-lg sm:text-xl text-zinc-600 max-w-2xl mx-auto leading-relaxed mb-10">
+          Transformasi ruang usaha dan hunian Anda dengan konstruksi modular berstandar SNI. Tahan cuaca ekstrem, finishing powder coat awet, dan garansi struktur hingga 15 tahun.
         </p>
-        <div class="flex flex-col sm:flex-row gap-md">
-          <a id="btn-whatsapp-hero"
-            class="px-xl py-lg bg-action-green text-white font-display text-headline-sm rounded-lg hover:shadow-xl hover:-translate-y-1 transition-all text-center flex items-center justify-center gap-2"
-            href="https://wa.me/628123456789?text=Halo%20JM%20Workshop%2C%20saya%20ingin%20konsultasi%20gratis"
-            rel="noopener" target="_blank">
-            Konsultasi Gratis Sekarang
-            <span class="material-symbols-outlined">arrow_forward</span>
+
+        <!-- Dual CTA Buttons -->
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-3.5 mb-14">
+          <a href="https://wa.me/628155401679?text=Halo%20JM%20Workshop%2C%20saya%20tertarik%20dengan%20Rombong%20Kontainer%20%2F%20Kanopi.%20Bisa%20minta%20info%20katalog%20dan%20harga%3F" 
+             target="_blank" rel="noopener"
+             class="w-full sm:w-auto inline-flex items-center justify-center gap-3 px-8 py-4 rounded-2xl bg-zinc-950 text-white hover:bg-brand-600 active:scale-98 font-bold text-base transition-all shadow-xl shadow-zinc-950/20 group">
+            <span>💬 Konsultasi &amp; Survei Gratis</span>
+            <span class="material-symbols-outlined text-lg group-hover:translate-x-0.5 transition-transform">arrow_forward</span>
           </a>
-          <a id="btn-lihat-kontak"
-            class="px-xl py-lg border-2 border-white text-white font-display text-headline-sm rounded-lg hover:bg-white hover:text-primary transition-all text-center"
-            href="#kontak">
-            Lihat Kontak
+          <a href="#portofolio" 
+             class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 rounded-2xl bg-white text-zinc-800 hover:bg-zinc-50 border border-zinc-200/90 font-semibold text-base transition-all shadow-sm">
+            <span>Lihat Galeri Proyek (500+)</span>
+          </a>
+        </div>
+
+        <!-- Social Proof Stats Strip -->
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 p-4 sm:p-6 bg-white/90 backdrop-blur-md rounded-2xl border border-zinc-200/80 shadow-bento max-w-4xl mx-auto">
+          <div class="text-center p-2 border-r border-zinc-100 last:border-none">
+            <div class="text-2xl sm:text-3xl font-extrabold text-zinc-950 font-mono">500+</div>
+            <div class="text-xs font-medium text-zinc-500 mt-0.5">Unit Proyek Terpasang</div>
+          </div>
+          <div class="text-center p-2 md:border-r border-zinc-100 last:border-none">
+            <div class="text-2xl sm:text-3xl font-extrabold text-zinc-950 font-mono">7+ Thn</div>
+            <div class="text-xs font-medium text-zinc-500 mt-0.5">Pengalaman Fabrikasi</div>
+          </div>
+          <div class="text-center p-2 border-r border-zinc-100 last:border-none">
+            <div class="text-2xl sm:text-3xl font-extrabold text-zinc-950 font-mono">100%</div>
+            <div class="text-xs font-medium text-zinc-500 mt-0.5">Material Baja SNI</div>
+          </div>
+          <div class="text-center p-2">
+            <div class="text-2xl sm:text-3xl font-extrabold text-brand-600 font-mono">4.9 ★</div>
+            <div class="text-xs font-medium text-zinc-500 mt-0.5">Rating Kepuasan Mitra</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════
+       4. BENTO GRID SERVICES (SLINGSHOT DESIGN SYSTEM)
+  ═══════════════════════════════════════════════════ -->
+  <section class="py-20 lg:py-28 bg-white border-t border-zinc-100" id="layanan">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Section Header -->
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
+        <div>
+          <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-md bg-amber-50 text-brand-600 text-xs font-mono font-bold tracking-wider uppercase mb-3">
+            Layanan Unggulan
+          </div>
+          <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-zinc-950">
+            Katalog Fabrikasi Khusus. <br class="hidden sm:inline"/>
+            Dirancang Kuat, Tampil Modern.
+          </h2>
+        </div>
+        <p class="text-zinc-600 max-w-md text-sm sm:text-base leading-relaxed">
+          Semua pengerjaan menggunakan teknik las presisi, pengelasan TIG/MIG rapi, pemotongan laser presisi, dan pelapisan anti-karat standar industri.
+        </p>
+      </div>
+
+      <!-- Bento Grid (3-4 Cards with hierarchy) -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+
+        <!-- Bento Card 1: Featured 2-Col Span (Rombong Kontainer) -->
+        <div class="lg:col-span-8 group relative bg-zinc-950 rounded-3xl p-8 sm:p-12 overflow-hidden flex flex-col justify-between text-white border border-zinc-800 shadow-xl transition-all duration-300 hover:border-zinc-700">
+          <!-- Background Image Overlay with Fade -->
+          <div class="absolute inset-0 opacity-40 group-hover:opacity-50 transition-opacity duration-500">
+            <img src="/images/modern_premium_container_booth_rombong_kontainer_for_umkm_street_food_business.png" 
+                 alt="Rombong Kontainer Surabaya JM Workshop" 
+                 class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700">
+          </div>
+          <div class="absolute inset-0 bg-gradient-to-t from-zinc-950 via-zinc-950/70 to-transparent"></div>
+
+          <!-- Top Badge -->
+          <div class="relative z-10 flex items-center justify-between mb-24">
+            <span class="px-3.5 py-1.5 rounded-full bg-brand-500 text-white font-mono text-xs font-bold tracking-wider uppercase">
+              ★ Produk Utama UMKM
+            </span>
+            <span class="text-xs font-mono text-zinc-400">01 / BOOTH KONTAINER</span>
+          </div>
+
+          <!-- Content Body -->
+          <div class="relative z-10">
+            <div class="flex flex-wrap gap-2 mb-3">
+              <span class="px-2.5 py-1 rounded-md bg-white/10 backdrop-blur-md text-[11px] font-mono text-zinc-300">Modular Siap Pakai</span>
+              <span class="px-2.5 py-1 rounded-md bg-white/10 backdrop-blur-md text-[11px] font-mono text-zinc-300">Instalasi Listrik Lengkap</span>
+              <span class="px-2.5 py-1 rounded-md bg-white/10 backdrop-blur-md text-[11px] font-mono text-zinc-300">Tahan Hujan &amp; Panas</span>
+            </div>
+            <h3 class="text-2xl sm:text-3xl font-extrabold text-white mb-3">
+              Rombong Kontainer &amp; Container Booth Bisnis
+            </h3>
+            <p class="text-zinc-300 text-sm sm:text-base max-w-xl mb-6 leading-relaxed">
+              Solusi gerobak dan booth usaha kekinian untuk cafe, street food, franchise f&amp;b, maupun pop-up store. Rangka kokoh hollow galvanis, dinding spandek/zincalume pilihan, dan sistem hidrolik jendela kanopi.
+            </p>
+            <div class="flex flex-wrap items-center gap-4">
+              <a href="https://wa.me/628155401679?text=Halo%20JM%20Workshop%2C%20saya%20ingin%20tanya%20detail%20Rombong%20Kontainer" 
+                 target="_blank" rel="noopener"
+                 class="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-white text-zinc-950 hover:bg-brand-500 hover:text-white font-bold text-xs uppercase tracking-wider transition-all">
+                <span>Tanya Harga Booth Kontainer</span>
+                <span class="material-symbols-outlined text-sm">arrow_outward</span>
+              </a>
+              <span class="text-xs font-mono text-zinc-400">Mulai dari Rp 4.5 Juta (Ukuran Custom)</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Bento Card 2: Kanopi Alderon UPVC (Col Span 4) -->
+        <div class="lg:col-span-4 group relative bg-surface rounded-3xl p-8 border border-zinc-200/90 shadow-bento hover:shadow-bento-hover transition-all duration-300 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-6">
+              <div class="w-12 h-12 rounded-2xl bg-zinc-950 text-amber-400 flex items-center justify-center shadow-sm">
+                <span class="material-symbols-outlined text-2xl">roofing</span>
+              </div>
+              <span class="text-xs font-mono text-zinc-400">02 / KANOPI</span>
+            </div>
+            <h3 class="text-xl font-extrabold text-zinc-950 mb-2">
+              Kanopi Alderon UPVC Double Layer
+            </h3>
+            <p class="text-zinc-600 text-sm leading-relaxed mb-6">
+              Struktur kanopi carport dan teras bebas bising saat hujan lebat dan sejuk menyerap panas matahari. Rangka besi hollow tebal bergaransi anti-bocor.
+            </p>
+          </div>
+
+          <div>
+            <div class="rounded-2xl overflow-hidden mb-5 h-44 relative border border-zinc-200">
+              <img src="/images/high_quality_alderon_canopy_installation_on_a_modern_house_white_and_black.png" 
+                   alt="Pemasangan Kanopi Alderon Surabaya" 
+                   class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+              <span class="absolute bottom-2 left-2 px-2 py-0.5 rounded bg-zinc-950/80 backdrop-blur-sm text-[10px] font-mono text-white">Garansi 10+ Thn</span>
+            </div>
+            <a href="https://wa.me/628155401679?text=Halo%20JM%20Workshop%2C%20mau%20hitung%20biaya%20pasang%20kanopi%20alderon" 
+               target="_blank" rel="noopener"
+               class="flex items-center justify-between w-full text-xs font-bold text-zinc-900 group-hover:text-brand-600 transition-colors pt-2 border-t border-zinc-100">
+              <span>Konsultasi Ukuran Carport</span>
+              <span class="material-symbols-outlined text-base">arrow_forward</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Bento Card 3: Pagar Minimalis Modern (Col Span 5) -->
+        <div class="lg:col-span-5 group relative bg-surface rounded-3xl p-8 border border-zinc-200/90 shadow-bento hover:shadow-bento-hover transition-all duration-300 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-6">
+              <div class="w-12 h-12 rounded-2xl bg-zinc-950 text-amber-400 flex items-center justify-center shadow-sm">
+                <span class="material-symbols-outlined text-2xl">fence</span>
+              </div>
+              <span class="text-xs font-mono text-zinc-400">03 / PAGAR &amp; PINTU</span>
+            </div>
+            <h3 class="text-xl font-extrabold text-zinc-950 mb-2">
+              Pagar Minimalis &amp; Laser-Cut Besi
+            </h3>
+            <p class="text-zinc-600 text-sm leading-relaxed mb-6">
+              Pagar hollow tebal, plat perforated, atau motif laser-cut modern. Dilapisi cat epoxy primer dan powder coat tahan karat cuaca tropis Surabaya.
+            </p>
+          </div>
+
+          <div>
+            <div class="rounded-2xl overflow-hidden mb-5 h-44 relative border border-zinc-200">
+              <img src="/images/modern_minimalist_house_gate_pagar_minimalis_black_powder_coated_iron_elegant.png" 
+                   alt="Pagar Minimalis Modern Surabaya" 
+                   class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+              <span class="absolute bottom-2 left-2 px-2 py-0.5 rounded bg-zinc-950/80 backdrop-blur-sm text-[10px] font-mono text-white">Powder Coated</span>
+            </div>
+            <a href="https://wa.me/628155401679?text=Halo%20JM%20Workshop%2C%20mau%20tanya%20desain%20pagar%20minimalis" 
+               target="_blank" rel="noopener"
+               class="flex items-center justify-between w-full text-xs font-bold text-zinc-900 group-hover:text-brand-600 transition-colors pt-2 border-t border-zinc-100">
+              <span>Pilih Desain &amp; Model Pagar</span>
+              <span class="material-symbols-outlined text-base">arrow_forward</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Bento Card 4: Fabrikasi Custom & Workshop Kapasitas (Col Span 7) -->
+        <div class="lg:col-span-7 group relative bg-zinc-900 text-white rounded-3xl p-8 sm:p-10 border border-zinc-800 shadow-xl overflow-hidden flex flex-col justify-between">
+          <div class="flex items-center justify-between mb-6">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-white/10 text-amber-400 text-xs font-mono">
+              <span class="material-symbols-outlined text-sm">precision_manufacturing</span>
+              Fasilitas Workshop Lengkap
+            </div>
+            <span class="text-xs font-mono text-zinc-400">04 / CUSTOM WELDING</span>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 items-center">
+            <div>
+              <h3 class="text-2xl font-extrabold text-white mb-2">
+                Fabrikasi Logam &amp; Konstruksi Khusus
+              </h3>
+              <p class="text-zinc-400 text-sm leading-relaxed mb-6">
+                Menerima pesanan tangga putar, mezzanine, railing balkon, pos sekuriti, dan rangka struktural komersial dengan gambar teknis presisi.
+              </p>
+              <ul class="space-y-2 text-xs text-zinc-300 font-medium mb-6">
+                <li class="flex items-center gap-2">
+                  <span class="material-symbols-outlined text-brand-500 text-sm">check_circle</span>
+                  Keahlian Tukang Las Bersertifikat
+                </li>
+                <li class="flex items-center gap-2">
+                  <span class="material-symbols-outlined text-brand-500 text-sm">check_circle</span>
+                  QC Ketat: Sambungan Halus &amp; Anti-Melengkung
+                </li>
+              </ul>
+              <a href="https://wa.me/628155401679?text=Halo%20JM%20Workshop%2C%20saya%20punya%20desain%20custom%20besi" 
+                 target="_blank" rel="noopener"
+                 class="inline-flex items-center gap-2 text-xs font-bold text-amber-400 hover:text-amber-300 transition-colors">
+                <span>Kirim Gambar / Blueprint Anda</span>
+                <span class="material-symbols-outlined text-sm">arrow_forward</span>
+              </a>
+            </div>
+            <div class="rounded-2xl overflow-hidden h-52 border border-zinc-700/60 shadow-lg">
+              <img src="/images/professional_welding_workshop_interior_skilled_craftsmen_working_on_custom.png" 
+                   alt="Interior Bengkel Las JM Workshop Surabaya" 
+                   class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════
+       5. FILTERABLE PORTFOLIO SHOWCASE (INTERACTIVE)
+  ═══════════════════════════════════════════════════ -->
+  <section class="py-20 lg:py-28 bg-surface border-t border-zinc-200/80" id="portofolio">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+      <!-- Header & Tab Controls -->
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
+        <div>
+          <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-md bg-zinc-200/80 text-zinc-800 text-xs font-mono font-bold tracking-wider uppercase mb-3">
+            Portofolio Riil
+          </div>
+          <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-zinc-950">
+            Dokumentasi Pengerjaan di Lapangan
+          </h2>
+          <p class="text-zinc-600 text-sm mt-2">Bukan gambar render 3D — semua foto merupakan hasil fabrikasi langsung di workshop dan lokasi mitra.</p>
+        </div>
+
+        <!-- Filter Tabs (Vanilla JS Controlled) -->
+        <div class="flex items-center gap-1.5 p-1.5 bg-zinc-200/60 rounded-2xl border border-zinc-200 no-scrollbar overflow-x-auto">
+          <button data-filter="all" class="portfolio-tab active-tab px-4 py-2 rounded-xl text-xs font-bold transition-all bg-white text-zinc-950 shadow-sm">
+            Semua
+          </button>
+          <button data-filter="kontainer" class="portfolio-tab px-4 py-2 rounded-xl text-xs font-bold transition-all text-zinc-600 hover:text-zinc-950">
+            Rombong Kontainer
+          </button>
+          <button data-filter="kanopi" class="portfolio-tab px-4 py-2 rounded-xl text-xs font-bold transition-all text-zinc-600 hover:text-zinc-950">
+            Kanopi Alderon
+          </button>
+          <button data-filter="pagar" class="portfolio-tab px-4 py-2 rounded-xl text-xs font-bold transition-all text-zinc-600 hover:text-zinc-950">
+            Pagar Minimalis
+          </button>
+        </div>
+      </div>
+
+      <!-- Gallery Grid -->
+      <div id="portfolio-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+        <!-- Item 1: Kontainer Cafe -->
+        <div class="filter-item kontainer group bg-white rounded-3xl p-4 border border-zinc-200/90 shadow-bento hover:shadow-bento-hover transition-all">
+          <div class="relative h-64 rounded-2xl overflow-hidden mb-4 bg-zinc-100">
+            <img src="/images/modern_premium_container_booth_rombong_kontainer_for_umkm_street_food_business.png" 
+                 alt="Booth Kontainer Cafe Matte Black Surabaya" 
+                 class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+            <span class="absolute top-3 left-3 px-2.5 py-1 rounded-full bg-zinc-950/80 backdrop-blur-md text-white font-mono text-[10px]">
+              Booth Kontainer
+            </span>
+          </div>
+          <div class="px-2">
+            <div class="flex items-center justify-between text-xs font-mono text-zinc-600 mb-1">
+              <span>Dimensi: 3.0 x 2.0 x 2.2 m</span>
+              <span class="text-brand-600 font-semibold">Surabaya Barat</span>
+            </div>
+            <h4 class="font-extrabold text-base text-zinc-950 mb-2">Matte Black Beverage Kiosk</h4>
+            <p class="text-xs text-zinc-600 line-clamp-2 mb-4">Sistem jendela kanopi hidrolik gas, interior meja stainless steel, kelistrikan LED spot siap colok.</p>
+            <a href="https://wa.me/628155401679?text=Halo%20JM%20Workshop%2C%20saya%20tertarik%20dengan%20proyek%20Matte%20Black%20Beverage%20Kiosk" 
+               target="_blank" rel="noopener"
+               class="inline-flex items-center gap-1.5 text-xs font-bold text-zinc-950 group-hover:text-brand-600 transition-colors">
+              <span>Tanya Spek Model Ini</span>
+              <span class="material-symbols-outlined text-sm">arrow_outward</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Item 2: Kanopi Alderon -->
+        <div class="filter-item kanopi group bg-white rounded-3xl p-4 border border-zinc-200/90 shadow-bento hover:shadow-bento-hover transition-all">
+          <div class="relative h-64 rounded-2xl overflow-hidden mb-4 bg-zinc-100">
+            <img src="/images/high_quality_alderon_canopy_installation_on_a_modern_house_white_and_black.png" 
+                 alt="Kanopi Alderon UPVC Carport Rumah Modern" 
+                 class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+            <span class="absolute top-3 left-3 px-2.5 py-1 rounded-full bg-zinc-950/80 backdrop-blur-md text-white font-mono text-[10px]">
+              Kanopi Carport
+            </span>
+          </div>
+          <div class="px-2">
+            <div class="flex items-center justify-between text-xs font-mono text-zinc-600 mb-1">
+              <span>Dimensi: 6.0 x 4.5 m</span>
+              <span class="text-brand-600 font-semibold">Pakuwon, Sidoarjo</span>
+            </div>
+            <h4 class="font-extrabold text-base text-zinc-950 mb-2">Kanopi Alderon Double Layer Rangka WF</h4>
+            <p class="text-xs text-zinc-600 line-clamp-2 mb-4">Meredam panas maksimal hingga 40%, tanpa suara berisik hujan, struktur besi galvanis anti-karat.</p>
+            <a href="https://wa.me/628155401679?text=Halo%20JM%20Workshop%2C%20saya%20tertarik%20dengan%20model%20Kanopi%20Alderon%20WF" 
+               target="_blank" rel="noopener"
+               class="inline-flex items-center gap-1.5 text-xs font-bold text-zinc-950 group-hover:text-brand-600 transition-colors">
+              <span>Estimasi Luasan Carport</span>
+              <span class="material-symbols-outlined text-sm">arrow_outward</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Item 3: Pagar Minimalis -->
+        <div class="filter-item pagar group bg-white rounded-3xl p-4 border border-zinc-200/90 shadow-bento hover:shadow-bento-hover transition-all">
+          <div class="relative h-64 rounded-2xl overflow-hidden mb-4 bg-zinc-100">
+            <img src="/images/modern_minimalist_house_gate_pagar_minimalis_black_powder_coated_iron_elegant.png" 
+                 alt="Pagar Besi Minimalis Powder Coating" 
+                 class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+            <span class="absolute top-3 left-3 px-2.5 py-1 rounded-full bg-zinc-950/80 backdrop-blur-md text-white font-mono text-[10px]">
+              Pagar Minimalis
+            </span>
+          </div>
+          <div class="px-2">
+            <div class="flex items-center justify-between text-xs font-mono text-zinc-600 mb-1">
+              <span>Tinggi: 1.8 m • Panjang: 4.2 m</span>
+              <span class="text-brand-600 font-semibold">Surabaya Timur</span>
+            </div>
+            <h4 class="font-extrabold text-base text-zinc-950 mb-2">Industrial Security Gate Powder Coat</h4>
+            <p class="text-xs text-zinc-600 line-clamp-2 mb-4">Rel bawah stainless steel super enteng didorong, finishing powder coat hitam doff anti gores.</p>
+            <a href="https://wa.me/628155401679?text=Halo%20JM%20Workshop%2C%20saya%20tertarik%20dengan%20Industrial%20Security%20Gate" 
+               target="_blank" rel="noopener"
+               class="inline-flex items-center gap-1.5 text-xs font-bold text-zinc-950 group-hover:text-brand-600 transition-colors">
+              <span>Konsultasi Model Pagar</span>
+              <span class="material-symbols-outlined text-sm">arrow_outward</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Item 4: Workshop Custom -->
+        <div class="filter-item kontainer group bg-white rounded-3xl p-4 border border-zinc-200/90 shadow-bento hover:shadow-bento-hover transition-all">
+          <div class="relative h-64 rounded-2xl overflow-hidden mb-4 bg-zinc-100">
+            <img src="/images/professional_welding_workshop_interior_skilled_craftsmen_working_on_custom.png" 
+                 alt="Proses Perakitan Rangka Booth Kontainer" 
+                 class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+            <span class="absolute top-3 left-3 px-2.5 py-1 rounded-full bg-zinc-950/80 backdrop-blur-md text-white font-mono text-[10px]">
+              Proses Fabrikasi
+            </span>
+          </div>
+          <div class="px-2">
+            <div class="flex items-center justify-between text-xs font-mono text-zinc-600 mb-1">
+              <span>Standar Toleransi Presisi</span>
+              <span class="text-brand-600 font-semibold">Workshop Gresik</span>
+            </div>
+            <h4 class="font-extrabold text-base text-zinc-950 mb-2">Perakitan Sasis &amp; Rangka Besi SNI</h4>
+            <p class="text-xs text-zinc-600 line-clamp-2 mb-4">Pengelasan full weld kokoh, pelapisan meni zinchromate anti-karat sebelum proses pengecatan warna.</p>
+            <a href="https://wa.me/628155401679?text=Halo%20JM%20Workshop%2C%20saya%20ingin%20tinjau%20langsung%20ke%20workshop" 
+               target="_blank" rel="noopener"
+               class="inline-flex items-center gap-1.5 text-xs font-bold text-zinc-950 group-hover:text-brand-600 transition-colors">
+              <span>Jadwalkan Kunjungan Bengkel</span>
+              <span class="material-symbols-outlined text-sm">arrow_outward</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Item 5: Booth Streetfood Warna Kuning/Custom -->
+        <div class="filter-item kontainer group bg-white rounded-3xl p-4 border border-zinc-200/90 shadow-bento hover:shadow-bento-hover transition-all">
+          <div class="relative h-64 rounded-2xl overflow-hidden mb-4 bg-zinc-900 flex items-center justify-center p-6 text-center text-white">
+            <div class="space-y-2">
+              <span class="material-symbols-outlined text-5xl text-brand-500">storefront</span>
+              <div class="font-bold text-base">Rombong Kontainer Franchise</div>
+              <div class="text-xs text-zinc-400">Order Massal 10+ Unit Tersedia</div>
+            </div>
+          </div>
+          <div class="px-2">
+            <div class="flex items-center justify-between text-xs font-mono text-zinc-600 mb-1">
+              <span>Skala Franchise UMKM</span>
+              <span class="text-brand-600 font-semibold">Gresik &amp; Sidoarjo</span>
+            </div>
+            <h4 class="font-extrabold text-base text-zinc-950 mb-2">Kemitraan Booth Multi-Outlet</h4>
+            <p class="text-xs text-zinc-600 line-clamp-2 mb-4">Spesialisasi pembuatan booth seragam untuk brand kemitraan kopi susu, ayam geprek, dan minuman boba.</p>
+            <a href="https://wa.me/628155401679?text=Halo%20JM%20Workshop%2C%20saya%20butuh%20penawaran%20booth%20kontainer%20untuk%20franchise" 
+               target="_blank" rel="noopener"
+               class="inline-flex items-center gap-1.5 text-xs font-bold text-zinc-950 group-hover:text-brand-600 transition-colors">
+              <span>Harga Khusus Franchise &rarr;</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Item 6: Instagram Direct Banner -->
+        <div class="filter-item all group bg-gradient-to-br from-zinc-900 to-zinc-950 rounded-3xl p-8 border border-zinc-800 text-white flex flex-col justify-between shadow-xl">
+          <div>
+            <div class="w-12 h-12 rounded-2xl bg-white/10 flex items-center justify-center text-amber-400 mb-6">
+              <span class="material-symbols-outlined text-2xl">photo_library</span>
+            </div>
+            <h4 class="text-2xl font-extrabold mb-3">Mau Lihat Lebih Banyak Hasil Jadi?</h4>
+            <p class="text-zinc-400 text-sm leading-relaxed mb-6">
+              Kami aktif mengunggah video reels proses pengerjaan, uji kekuatan, dan serah terima unit di Instagram resmi kami.
+            </p>
+          </div>
+          <a href="https://www.instagram.com/jayamaswood" 
+             target="_blank" rel="noopener"
+             class="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-gradient-to-r from-amber-500 to-brand-600 hover:from-amber-600 hover:to-brand-700 text-white font-bold text-xs uppercase tracking-wider transition-all">
+            <span>Follow @jayamaswood</span>
+            <span class="material-symbols-outlined text-base">open_in_new</span>
+          </a>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════
+       6. WORKFLOW / STEP-BY-STEP (PRECISION FABRICATION)
+  ═══════════════════════════════════════════════════ -->
+  <section class="py-20 lg:py-28 bg-white border-t border-zinc-100" id="workflow">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-2xl mx-auto mb-16">
+        <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-md bg-amber-50 text-brand-600 text-xs font-mono font-bold tracking-wider uppercase mb-3">
+          Alur Kerja Transparan
+        </div>
+        <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-zinc-950 mb-4">
+          5 Langkah Fabrikasi Tanpa Ribet
+        </h2>
+        <p class="text-zinc-600 text-sm sm:text-base">
+          Setiap proyek dikerjakan secara sistematis. Anda selalu mendapatkan update progres berkala via WhatsApp.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-5 gap-4">
+        
+        <!-- Step 1 -->
+        <div class="p-6 rounded-2xl bg-surface border border-zinc-200/80 hover:border-amber-400 transition-colors">
+          <div class="font-mono text-2xl font-extrabold text-brand-600 mb-3">01</div>
+          <h3 class="font-extrabold text-base text-zinc-950 mb-2">Konsultasi &amp; Survei</h3>
+          <p class="text-xs text-zinc-600 leading-relaxed">Diskusi kebutuhan, ukuran tempat, dan tim kami survei langsung ke lokasi Anda gratis.</p>
+        </div>
+
+        <!-- Step 2 -->
+        <div class="p-6 rounded-2xl bg-surface border border-zinc-200/80 hover:border-amber-400 transition-colors">
+          <div class="font-mono text-2xl font-extrabold text-brand-600 mb-3">02</div>
+          <h3 class="font-extrabold text-base text-zinc-950 mb-2">Desain &amp; RAB Pasti</h3>
+          <p class="text-xs text-zinc-600 leading-relaxed">Penyusunan desain layout &amp; penawaran harga tertulis transparan tanpa biaya siluman.</p>
+        </div>
+
+        <!-- Step 3 -->
+        <div class="p-6 rounded-2xl bg-surface border border-zinc-200/80 hover:border-amber-400 transition-colors">
+          <div class="font-mono text-2xl font-extrabold text-brand-600 mb-3">03</div>
+          <h3 class="font-extrabold text-base text-zinc-950 mb-2">Fabrikasi Logam Presisi</h3>
+          <p class="text-xs text-zinc-600 leading-relaxed">Pemotongan baja SNI, pengelasan kuat, dan perakitan struktur di bengkel utama kami.</p>
+        </div>
+
+        <!-- Step 4 -->
+        <div class="p-6 rounded-2xl bg-surface border border-zinc-200/80 hover:border-amber-400 transition-colors">
+          <div class="font-mono text-2xl font-extrabold text-brand-600 mb-3">04</div>
+          <h3 class="font-extrabold text-base text-zinc-950 mb-2">Finishing &amp; QC Ketat</h3>
+          <p class="text-xs text-zinc-600 leading-relaxed">Aplikasi cat epoxy anti-karat, uji kebocoran air pada atap, dan pengecekan kelistrikan.</p>
+        </div>
+
+        <!-- Step 5 -->
+        <div class="p-6 rounded-2xl bg-surface border border-zinc-200/80 hover:border-amber-400 transition-colors">
+          <div class="font-mono text-2xl font-extrabold text-brand-600 mb-3">05</div>
+          <h3 class="font-extrabold text-base text-zinc-950 mb-2">Kirim &amp; Serah Terima</h3>
+          <p class="text-xs text-zinc-600 leading-relaxed">Pengiriman aman menggunakan armada truk workshop, instalasi di lokasi, dan kartu garansi resmi.</p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════
+       7. INTERACTIVE QUOTE & WHATSAPP GENERATOR
+  ═══════════════════════════════════════════════════ -->
+  <section class="py-20 bg-zinc-950 text-white dark-grid-pattern relative overflow-hidden" id="estimasi">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="bg-zinc-900/90 backdrop-blur-xl border border-zinc-800 rounded-3xl p-8 sm:p-12 shadow-2xl">
+        <div class="text-center max-w-xl mx-auto mb-10">
+          <span class="px-3.5 py-1 rounded-full bg-brand-500/20 text-brand-400 text-xs font-mono font-bold tracking-wider uppercase mb-3 inline-block">
+            Kalkulator &amp; Konsultasi Instan
+          </span>
+          <h2 class="text-2xl sm:text-3xl font-extrabold text-white mb-2">
+            Hitung Estimasi &amp; Format Pesan Otomatis
+          </h2>
+          <p class="text-zinc-400 text-sm">
+            Pilih layanan dan spesifikasi Anda, sistem kami akan menyusun pesan rapi untuk langsung dikirim ke WhatsApp konsultan kami.
+          </p>
+        </div>
+
+        <form id="quote-form" class="space-y-6">
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+            <!-- Pilihan Layanan -->
+            <div>
+              <label class="block text-xs font-mono text-zinc-400 mb-2">1. PILIH LAYANAN</label>
+              <select id="calc-service" class="w-full bg-zinc-950 border border-zinc-800 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-brand-500">
+                <option value="Rombong Kontainer / Booth UMKM">Rombong Kontainer UMKM</option>
+                <option value="Kanopi Alderon UPVC">Kanopi Alderon UPVC</option>
+                <option value="Pagar Minimalis Modern">Pagar Minimalis Besi</option>
+                <option value="Konstruksi Mezzanine / Tangga">Konstruksi Custom Lainnya</option>
+              </select>
+            </div>
+
+            <!-- Ukuran / Dimensi -->
+            <div>
+              <label class="block text-xs font-mono text-zinc-400 mb-2">2. PERKIRAAN UKURAN (P x L)</label>
+              <input type="text" id="calc-dimension" placeholder="Contoh: 3x2 meter / 6x4 meter" 
+                     class="w-full bg-zinc-950 border border-zinc-800 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-brand-500">
+            </div>
+
+            <!-- Wilayah / Kota -->
+            <div>
+              <label class="block text-xs font-mono text-zinc-400 mb-2">3. WILAYAH LOKASI ANDA</label>
+              <select id="calc-city" class="w-full bg-zinc-950 border border-zinc-800 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-brand-500">
+                <option value="Surabaya">Surabaya</option>
+                <option value="Sidoarjo">Sidoarjo</option>
+                <option value="Gresik">Gresik</option>
+                <option value="Mojokerto">Mojokerto</option>
+                <option value="Lamongan">Lamongan</option>
+                <option value="Luar Kota (Jawa Timur)">Luar Kota Lainnya</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div>
+              <label class="block text-xs font-mono text-zinc-400 mb-2">NAMA ANDA / NAMA USAHA</label>
+              <input type="text" id="calc-name" placeholder="Nama Anda (Misal: Pak Hendra / Kopi Kenangan)" 
+                     class="w-full bg-zinc-950 border border-zinc-800 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-brand-500">
+            </div>
+            <div>
+              <label class="block text-xs font-mono text-zinc-400 mb-2">CATATAN KHUSUS (OPSIONAL)</label>
+              <input type="text" id="calc-notes" placeholder="Contoh: Butuh meja stainless & neon box" 
+                     class="w-full bg-zinc-950 border border-zinc-800 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-brand-500">
+            </div>
+          </div>
+
+          <div class="pt-4 flex flex-col sm:flex-row items-center justify-between gap-4 border-t border-zinc-800">
+            <div class="text-xs text-zinc-400 flex items-center gap-2">
+              <span class="material-symbols-outlined text-emerald-400 text-sm">lock</span>
+              Respon cepat langsung dari Kepala Bengkel JM Workshop
+            </div>
+            <button type="submit" 
+                    class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-xl bg-brand-500 hover:bg-brand-600 active:scale-95 text-white font-bold text-sm tracking-wide transition-all shadow-lg shadow-brand-500/25">
+              <span>Buka Chat WhatsApp &amp; Dapatkan Penawaran</span>
+              <span class="material-symbols-outlined text-base">send</span>
+            </button>
+          </div>
+        </form>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════
+       8. TESTIMONIALS (REAL MITRA SATISFACTION)
+  ═══════════════════════════════════════════════════ -->
+  <section class="py-20 lg:py-28 bg-white border-t border-zinc-100">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-2xl mx-auto mb-16">
+        <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-md bg-amber-50 text-brand-600 text-xs font-mono font-bold tracking-wider uppercase mb-3">
+          Ulasan Nyata
+        </div>
+        <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-zinc-950 mb-3">
+          Kepercayaan yang Dibangun dari Mutu
+        </h2>
+        <p class="text-zinc-600 text-sm">Kata mereka yang telah mempercayakan fabrikasi booth & kanopi kepada kami.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+
+        <!-- Card 1 -->
+        <div class="p-8 rounded-3xl bg-surface border border-zinc-200/90 shadow-bento flex flex-col justify-between">
+          <div>
+            <div class="flex text-amber-500 text-sm mb-4">★★★★★</div>
+            <p class="text-zinc-700 text-sm leading-relaxed mb-6 italic">
+              &ldquo;Pesan rombong kontainer 3x2m buat booth kopi di Manyar Surabaya. Hasil las rapi banget, cat hitam doff elegan, dan instalasi kelistrikannya aman. Pengunjung banyak yang puji tampilan booth kami.&rdquo;
+            </p>
+          </div>
+          <div class="flex items-center gap-3 pt-4 border-t border-zinc-200/60">
+            <div class="w-10 h-10 rounded-full bg-zinc-950 text-white font-mono font-bold text-xs flex items-center justify-center">
+              PB
+            </div>
+            <div>
+              <div class="font-bold text-sm text-zinc-950">Pak Budi Santoso</div>
+              <div class="text-xs text-zinc-500">Owner Coffee Shop Kopi Kulo Mitra • Surabaya</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="p-8 rounded-3xl bg-surface border border-zinc-200/90 shadow-bento flex flex-col justify-between">
+          <div>
+            <div class="flex text-amber-500 text-sm mb-4">★★★★★</div>
+            <p class="text-zinc-700 text-sm leading-relaxed mb-6 italic">
+              &ldquo;Pasang kanopi alderon di carport perumahan Waru Sidoarjo. Benar-benar tidak berisik saat hujan deras kemarin, dan teras jadi sejuk. Tukangnya tepat waktu dan sopan. Mantap!&rdquo;
+            </p>
+          </div>
+          <div class="flex items-center gap-3 pt-4 border-t border-zinc-200/60">
+            <div class="w-10 h-10 rounded-full bg-brand-600 text-white font-mono font-bold text-xs flex items-center justify-center">
+              SW
+            </div>
+            <div>
+              <div class="font-bold text-sm text-zinc-950">Ibu Sari Wulandari</div>
+              <div class="text-xs text-zinc-500">Residensial • Waru, Sidoarjo</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="p-8 rounded-3xl bg-surface border border-zinc-200/90 shadow-bento flex flex-col justify-between">
+          <div>
+            <div class="flex text-amber-500 text-sm mb-4">★★★★★</div>
+            <p class="text-zinc-700 text-sm leading-relaxed mb-6 italic">
+              &ldquo;Sudah beberapa kali sub-kontrak pengerjaan pagar laser cut dan tangga besi ke JM Workshop. Penawaran harga transparan, toleransi milimeter presisi, serah terima selalu on schedule.&rdquo;
+            </p>
+          </div>
+          <div class="flex items-center gap-3 pt-4 border-t border-zinc-200/60">
+            <div class="w-10 h-10 rounded-full bg-zinc-800 text-white font-mono font-bold text-xs flex items-center justify-center">
+              RH
+            </div>
+            <div>
+              <div class="font-bold text-sm text-zinc-950">Rudy Hermawan, S.T.</div>
+              <div class="text-xs text-zinc-500">Kontraktor Sipil &amp; Interior • Gresik</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════
+       9. FAQ ACCORDION (SEO RICH)
+  ═══════════════════════════════════════════════════ -->
+  <section class="py-20 bg-surface border-t border-zinc-200/80" id="faq">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center mb-14">
+        <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-md bg-zinc-200 text-zinc-800 text-xs font-mono font-bold tracking-wider uppercase mb-3">
+          Frequently Asked Questions
+        </div>
+        <h2 class="text-3xl font-extrabold tracking-tight text-zinc-950 mb-2">
+          Pertanyaan yang Sering Diajukan
+        </h2>
+        <p class="text-zinc-600 text-sm">Informasi lengkap seputar pemesanan, pengiriman, dan garansi.</p>
+      </div>
+
+      <div class="space-y-3" id="faq-accordion">
+        
+        <!-- FAQ 1 -->
+        <div class="faq-item border border-zinc-200 rounded-2xl bg-white overflow-hidden transition-all">
+          <button class="faq-toggle w-full px-6 py-5 text-left flex items-center justify-between font-bold text-zinc-950 text-sm sm:text-base">
+            <span>Berapa lama proses pembuatan satu unit Rombong Kontainer?</span>
+            <span class="material-symbols-outlined text-zinc-500 transition-transform">expand_more</span>
+          </button>
+          <div class="faq-content hidden px-6 pb-5 text-xs sm:text-sm text-zinc-600 leading-relaxed border-t border-zinc-100 pt-3">
+            Rata-rata waktu pengerjaan berkisar antara <strong>7 hingga 14 hari kerja</strong>, tergantung tingkat kerumitan dimensi, aksesoris rak interior, dan sistem kelistrikan yang Anda minta.
+          </div>
+        </div>
+
+        <!-- FAQ 2 -->
+        <div class="faq-item border border-zinc-200 rounded-2xl bg-white overflow-hidden transition-all">
+          <button class="faq-toggle w-full px-6 py-5 text-left flex items-center justify-between font-bold text-zinc-950 text-sm sm:text-base">
+            <span>Apakah ada biaya untuk survei lokasi dan konsultasi ukuran?</span>
+            <span class="material-symbols-outlined text-zinc-500 transition-transform">expand_more</span>
+          </button>
+          <div class="faq-content hidden px-6 pb-5 text-xs sm:text-sm text-zinc-600 leading-relaxed border-t border-zinc-100 pt-3">
+            <strong>Tidak ada biaya sama sekali (100% Gratis)</strong> untuk area Surabaya, Sidoarjo, dan Gresik. Tim kami akan datang membawa meteran presisi dan katalog material untuk mendiskusikan rancangan terbaik.
+          </div>
+        </div>
+
+        <!-- FAQ 3 -->
+        <div class="faq-item border border-zinc-200 rounded-2xl bg-white overflow-hidden transition-all">
+          <button class="faq-toggle w-full px-6 py-5 text-left flex items-center justify-between font-bold text-zinc-950 text-sm sm:text-base">
+            <span>Bagaimana jaminan dan garansi pengerjaan di JM Workshop?</span>
+            <span class="material-symbols-outlined text-zinc-500 transition-transform">expand_more</span>
+          </button>
+          <div class="faq-content hidden px-6 pb-5 text-xs sm:text-sm text-zinc-600 leading-relaxed border-t border-zinc-100 pt-3">
+            Setiap unit rombong kontainer, kanopi, maupun pagar dilengkapi garansi konstruksi. Jika terdapat kebocoran atap atau kendala struktur dalam masa garansi, teknisi kami akan segera datang melakukan perbaikan tanpa dipungut biaya.
+          </div>
+        </div>
+
+        <!-- FAQ 4 -->
+        <div class="faq-item border border-zinc-200 rounded-2xl bg-white overflow-hidden transition-all">
+          <button class="faq-toggle w-full px-6 py-5 text-left flex items-center justify-between font-bold text-zinc-950 text-sm sm:text-base">
+            <span>Apakah melayani pengiriman ke luar kota Surabaya?</span>
+            <span class="material-symbols-outlined text-zinc-500 transition-transform">expand_more</span>
+          </button>
+          <div class="faq-content hidden px-6 pb-5 text-xs sm:text-sm text-zinc-600 leading-relaxed border-t border-zinc-100 pt-3">
+            Ya! Selain melayani Surabaya, Sidoarjo, Gresik, Mojokerto, dan Lamongan, kami juga dapat mengirimkan unit kontainer modular siap pakai ke seluruh kota di Jawa Timur menggunakan ekspedisi truk towing atau flatbed.
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════
+       10. FINAL CALL TO ACTION (CTA SLINGSHOT STYLE)
+  ═══════════════════════════════════════════════════ -->
+  <section class="py-20 bg-zinc-950 text-white relative overflow-hidden">
+    <!-- Ambient glow circle -->
+    <div class="absolute -bottom-20 right-1/4 w-96 h-96 bg-brand-600/20 rounded-full blur-3xl pointer-events-none"></div>
+
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+      <div class="w-14 h-14 rounded-2xl bg-brand-500 text-white flex items-center justify-center mx-auto mb-6 shadow-glow-amber">
+        <span class="material-symbols-outlined text-3xl">handyman</span>
+      </div>
+      <h2 class="text-3xl sm:text-5xl font-extrabold tracking-tight mb-4">
+        Mulai Wujudkan Rombong Kontainer <br class="hidden sm:inline" />
+        &amp; Kanopi Impian Anda Hari Ini
+      </h2>
+      <p class="text-zinc-400 text-base sm:text-lg max-w-xl mx-auto mb-8">
+        Konsultasikan konsep bisnis Anda bersama spesialis kami. Dapatkan penawaran harga terbaik dan survei lokasi tanpa dipungut biaya.
+      </p>
+
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+        <a href="https://wa.me/628155401679?text=Halo%20JM%20Workshop%2C%20saya%20siap%20order%20dan%20ingin%20konsultasi" 
+           target="_blank" rel="noopener"
+           class="w-full sm:w-auto inline-flex items-center justify-center gap-3 px-8 py-4 rounded-2xl bg-brand-500 hover:bg-brand-600 active:scale-95 text-white font-extrabold text-base transition-all shadow-xl shadow-brand-500/30">
+          <span>Chat WhatsApp Sekarang</span>
+          <span class="material-symbols-outlined text-lg">arrow_outward</span>
+        </a>
+        <a href="tel:+628155401679" 
+           class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 rounded-2xl bg-zinc-900 hover:bg-zinc-800 border border-zinc-800 text-zinc-300 font-bold text-base transition-all">
+          <span class="material-symbols-outlined text-base">call</span>
+          <span>Telepon Langsung</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════
+       11. FOOTER
+  ═══════════════════════════════════════════════════ -->
+  <footer class="bg-black text-zinc-400 py-16 border-t border-zinc-900 text-xs">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-4 gap-10 mb-12">
+      
+      <!-- Brand & Description -->
+      <div class="space-y-4 md:col-span-1">
+        <div class="flex items-center gap-3">
+          <div class="w-8 h-8 rounded-lg bg-brand-600 flex items-center justify-center text-white font-mono font-bold text-xs">
+            JM
+          </div>
+          <span class="text-white font-bold text-sm tracking-tight">JM Workshop Surabaya</span>
+        </div>
+        <p class="leading-relaxed text-zinc-500">
+          Bengkel las dan fabrikasi presisi spesialis booth kontainer UMKM, kanopi alderon, dan pagar minimalis modern di Jawa Timur sejak 2017.
+        </p>
+        <div class="flex items-center gap-3 text-zinc-300">
+          <a href="https://www.instagram.com/jayamaswood" target="_blank" rel="noopener" class="w-8 h-8 rounded-lg bg-zinc-900 flex items-center justify-center hover:bg-brand-600 transition-colors" aria-label="Instagram">
+            <span class="material-symbols-outlined text-sm">photo_camera</span>
+          </a>
+          <a href="https://wa.me/628155401679" target="_blank" rel="noopener" class="w-8 h-8 rounded-lg bg-zinc-900 flex items-center justify-center hover:bg-brand-600 transition-colors" aria-label="WhatsApp">
+            <span class="material-symbols-outlined text-sm">chat</span>
           </a>
         </div>
       </div>
-    </section>
 
-    <!-- ═══ LAYANAN UNGGULAN ═══ -->
-    <section class="py-xl bg-surface" id="layanan">
-      <div class="container mx-auto px-margin-mobile md:px-margin-desktop">
-        <div class="text-center mb-xl">
-          <h2 class="font-display text-headline-lg-mobile md:text-headline-lg text-primary mb-xs">Layanan Unggulan</h2>
-          <div class="w-20 h-1.5 bg-industrial-yellow mx-auto mb-md"></div>
-          <p class="text-on-surface-variant max-w-2xl mx-auto">Solusi fabrikasi logam dengan teknik pengelasan presisi dan material berkualitas standar SNI di Surabaya.</p>
-        </div>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
-          <div class="bg-surface-container-lowest rounded-xl p-lg border border-outline-variant industrial-shadow hover:border-industrial-yellow transition-all group">
-            <div class="w-16 h-16 bg-surface-container-high rounded-xl flex items-center justify-center mb-md group-hover:bg-industrial-yellow transition-colors">
-              <span class="material-symbols-outlined text-primary text-4xl">storefront</span>
-            </div>
-            <h3 class="font-display text-headline-sm mb-xs">Container Booth / Rombong Kontainer</h3>
-            <p class="text-on-surface-variant font-body-md mb-md">Rombong Kontainer modular yang fungsional, tahan cuaca, dan memberikan identitas kuat bagi brand UMKM Anda di Surabaya.</p>
-            <div class="pt-md border-t border-outline-variant">
-              <span class="text-industrial-yellow font-label-md uppercase tracking-wider">Business Solution</span>
-            </div>
-          </div>
-          <div class="bg-surface-container-lowest rounded-xl p-lg border border-outline-variant industrial-shadow hover:border-industrial-yellow transition-all group">
-            <div class="w-16 h-16 bg-surface-container-high rounded-xl flex items-center justify-center mb-md group-hover:bg-industrial-yellow transition-colors">
-              <span class="material-symbols-outlined text-primary text-4xl">roofing</span>
-            </div>
-            <h3 class="font-display text-headline-sm mb-xs">Kanopi Alderon UPVC</h3>
-            <p class="text-on-surface-variant font-body-md mb-md">Pemasangan atap UPVC Alderon dengan rangka kokoh di Surabaya. Solusi atap sejuk, kedap suara, dan tahan lama hingga 15 tahun.</p>
-            <div class="pt-md border-t border-outline-variant">
-              <span class="text-industrial-yellow font-label-md uppercase tracking-wider">Residential</span>
-            </div>
-          </div>
-          <div class="bg-surface-container-lowest rounded-xl p-lg border border-outline-variant industrial-shadow hover:border-industrial-yellow transition-all group">
-            <div class="w-16 h-16 bg-surface-container-high rounded-xl flex items-center justify-center mb-md group-hover:bg-industrial-yellow transition-colors">
-              <span class="material-symbols-outlined text-primary text-4xl">fence</span>
-            </div>
-            <h3 class="font-display text-headline-sm mb-xs">Pagar Minimalis Modern</h3>
-            <p class="text-on-surface-variant font-body-md mb-md">Pagar besi dengan finishing powder coat premium yang mengutamakan keamanan tanpa mengesampingkan estetika industrial modern.</p>
-            <div class="pt-md border-t border-outline-variant">
-              <span class="text-industrial-yellow font-label-md uppercase tracking-wider">Security</span>
-            </div>
-          </div>
-        </div>
+      <!-- Layanan Links -->
+      <div>
+        <h4 class="text-white font-mono uppercase tracking-widest font-bold mb-4">Layanan Utama</h4>
+        <ul class="space-y-2.5">
+          <li><a href="#layanan" class="hover:text-white transition-colors">Rombong Kontainer Surabaya</a></li>
+          <li><a href="#layanan" class="hover:text-white transition-colors">Container Booth UMKM</a></li>
+          <li><a href="#layanan" class="hover:text-white transition-colors">Kanopi Alderon UPVC</a></li>
+          <li><a href="#layanan" class="hover:text-white transition-colors">Pagar Besi Minimalis</a></li>
+          <li><a href="#layanan" class="hover:text-white transition-colors">Tangga Putar &amp; Mezzanine</a></li>
+        </ul>
       </div>
-    </section>
 
-    <!-- ═══ PRODUK GALLERY ═══ -->
-    <section class="py-xl bg-matte-black text-white" id="produk">
-      <div class="container mx-auto px-margin-mobile md:px-margin-desktop">
-        <div class="flex flex-col md:flex-row justify-between items-end mb-xl gap-md">
-          <div class="max-w-2xl">
-            <h2 class="font-display text-headline-lg-mobile md:text-headline-lg text-industrial-yellow mb-xs">Produk Kami</h2>
-            <p class="text-surface-dim opacity-80">Portofolio pengerjaan terbaru yang mencerminkan dedikasi kami terhadap kualitas fabrikasi logam di Surabaya.</p>
-          </div>
-          <a id="btn-lihat-semua"
-            class="px-md py-2 border border-industrial-yellow text-industrial-yellow hover:bg-industrial-yellow hover:text-primary transition-colors font-label-md rounded"
-            href="https://wa.me/628123456789?text=Halo%2C%20saya%20ingin%20melihat%20portfolio%20lengkap%20JM%20Workshop"
-            rel="noopener" target="_blank">Lihat Semua Proyek</a>
-        </div>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-md">
-          <div class="group relative overflow-hidden rounded-xl h-[400px]">
-            <img
-              alt="Container Booth Premium Matte Black — Rombong Kontainer UMKM Surabaya"
-              class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-              src="/images/modern_premium_container_booth_rombong_kontainer_for_umkm_street_food_business.png"
-              loading="lazy" width="600" height="400" />
-            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-lg">
-              <span class="text-industrial-yellow font-bold text-sm mb-1">Rombong Kontainer</span>
-              <h4 class="text-white font-display text-headline-sm">Premium Matte Black Booth</h4>
-            </div>
-          </div>
-          <div class="group relative overflow-hidden rounded-xl h-[400px]">
-            <img
-              alt="Pagar Minimalis Modern — Pagar Besi Powder Coat Surabaya"
-              class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-              src="/images/modern_minimalist_house_gate_pagar_minimalis_black_powder_coated_iron_elegant.png"
-              loading="lazy" width="600" height="400" />
-            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-lg">
-              <span class="text-industrial-yellow font-bold text-sm mb-1">Pagar Minimalis</span>
-              <h4 class="text-white font-display text-headline-sm">Industrial Security Gate</h4>
-            </div>
-          </div>
-          <div class="group relative overflow-hidden rounded-xl h-[400px]">
-            <img
-              alt="Kanopi Alderon UPVC Modern — Instalasi Kanopi Rumah Surabaya"
-              class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-              src="/images/high_quality_alderon_canopy_installation_on_a_modern_house_white_and_black.png"
-              loading="lazy" width="600" height="400" />
-            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-lg">
-              <span class="text-industrial-yellow font-bold text-sm mb-1">Kanopi Alderon</span>
-              <h4 class="text-white font-display text-headline-sm">Modern UPVC Canopy</h4>
-            </div>
-          </div>
-        </div>
+      <!-- Area Layanan -->
+      <div>
+        <h4 class="text-white font-mono uppercase tracking-widest font-bold mb-4">Jangkauan Wilayah</h4>
+        <ul class="space-y-2.5">
+          <li class="flex items-center gap-2"><span>•</span> Surabaya (Pusat, Barat, Timur, Selatan, Utara)</li>
+          <li class="flex items-center gap-2"><span>•</span> Sidoarjo (Waru, Gedangan, Porong)</li>
+          <li class="flex items-center gap-2"><span>•</span> Gresik (Driyorejo, Kebomas, Manyar)</li>
+          <li class="flex items-center gap-2"><span>•</span> Mojokerto &amp; Lamongan</li>
+        </ul>
       </div>
-    </section>
 
-    <!-- ═══ TENTANG KAMI ═══ -->
-    <section class="py-xl bg-white blueprint-grid" id="tentang">
-      <div class="container mx-auto px-margin-mobile md:px-margin-desktop">
-        <div class="flex flex-col lg:flex-row items-center gap-xl">
-          <div class="w-full lg:w-1/2">
-            <div class="relative">
-              <img
-                alt="Workshop JM Surabaya — Bengkel Las Profesional Spesialis Fabrikasi Logam"
-                class="rounded-2xl shadow-2xl relative z-10"
-                src="/images/professional_welding_workshop_interior_skilled_craftsmen_working_on_custom.png"
-                loading="lazy" width="700" height="500" />
-              <div class="absolute -bottom-6 -right-6 w-48 h-48 bg-industrial-yellow -z-0 rounded-2xl hidden md:block"></div>
-            </div>
-          </div>
-          <div class="w-full lg:w-1/2">
-            <span class="text-industrial-yellow font-bold tracking-widest uppercase text-sm mb-4 block">Perjalanan Kami</span>
-            <h2 class="font-display text-headline-lg-mobile md:text-headline-lg text-primary mb-md leading-tight">Dedikasi Sejak 2017</h2>
-            <div class="space-y-md text-on-surface-variant font-body-lg">
-              <p>Berawal dari sebuah workshop kecil di Surabaya pada tahun 2017, JM Workshop lahir dengan visi untuk menghadirkan kualitas <strong>fabrikasi logam</strong> yang jujur dan presisi. Kami percaya bahwa setiap las dan sambungan adalah fondasi dari kepercayaan pelanggan.</p>
-              <p>Selama bertahun-tahun, kami terus tumbuh melalui komitmen terhadap inovasi teknis dan penggunaan material berkualitas tinggi. Fokus kami bukan sekadar menyelesaikan proyek, melainkan memberikan solusi konstruksi yang awet dan estetis.</p>
-              <p>Kini, JM Workshop telah menjadi mitra terpercaya bagi ratusan pemilik hunian dan pelaku UMKM di Jawa Timur, terus mendedikasikan diri pada standar keahlian yang profesional.</p>
-            </div>
-            <div class="mt-lg flex items-center gap-md">
-              <div class="text-center">
-                <div class="text-headline-md font-extrabold text-primary">500+</div>
-                <div class="text-sm font-label-md text-on-surface-variant">Proyek Selesai</div>
-              </div>
-              <div class="w-px h-12 bg-outline-variant"></div>
-              <div class="text-center">
-                <div class="text-headline-md font-extrabold text-primary">7+</div>
-                <div class="text-sm font-label-md text-on-surface-variant">Tahun Pengalaman</div>
-              </div>
-              <div class="w-px h-12 bg-outline-variant"></div>
-              <div class="text-center">
-                <div class="text-headline-md font-extrabold text-primary">5</div>
-                <div class="text-sm font-label-md text-on-surface-variant">Kota Layanan</div>
-              </div>
-            </div>
-          </div>
-        </div>
+      <!-- Contact Info -->
+      <div>
+        <h4 class="text-white font-mono uppercase tracking-widest font-bold mb-4">Kontak &amp; Workshop</h4>
+        <ul class="space-y-2.5">
+          <li class="flex items-start gap-2">
+            <span class="material-symbols-outlined text-amber-500 text-sm mt-0.5">location_on</span>
+            <span>Jl. Raya Surabaya-Gresik No. 123, Jawa Timur 60000</span>
+          </li>
+          <li class="flex items-center gap-2">
+            <span class="material-symbols-outlined text-amber-500 text-sm">call</span>
+            <a href="tel:+628155401679" class="hover:text-white">+62 815-5401-6679</a>
+          </li>
+          <li class="flex items-center gap-2">
+            <span class="material-symbols-outlined text-amber-500 text-sm">mail</span>
+            <span>info@jmworkshop.com</span>
+          </li>
+          <li class="flex items-center gap-2">
+            <span class="material-symbols-outlined text-amber-500 text-sm">schedule</span>
+            <span>Senin - Sabtu: 08:00 - 17:00 WIB</span>
+          </li>
+        </ul>
       </div>
-    </section>
 
-    <!-- ═══ AREA LAYANAN ═══ -->
-    <section class="py-lg bg-surface-container-low border-y border-outline-variant" aria-label="Cakupan Wilayah Layanan">
-      <div class="container mx-auto px-margin-mobile md:px-margin-desktop text-center">
-        <h3 class="font-display text-headline-sm mb-md text-primary">Cakupan Wilayah Layanan:</h3>
-        <div class="flex flex-wrap justify-center gap-sm">
-          <span class="px-md py-xs bg-white border border-outline-variant rounded-full font-label-md text-primary hover:border-industrial-yellow transition-colors cursor-default">Surabaya</span>
-          <span class="px-md py-xs bg-white border border-outline-variant rounded-full font-label-md text-primary hover:border-industrial-yellow transition-colors cursor-default">Sidoarjo</span>
-          <span class="px-md py-xs bg-white border border-outline-variant rounded-full font-label-md text-primary hover:border-industrial-yellow transition-colors cursor-default">Gresik</span>
-          <span class="px-md py-xs bg-white border border-outline-variant rounded-full font-label-md text-primary hover:border-industrial-yellow transition-colors cursor-default">Mojokerto</span>
-          <span class="px-md py-xs bg-white border border-outline-variant rounded-full font-label-md text-primary hover:border-industrial-yellow transition-colors cursor-default">Lamongan</span>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <!-- ═══ FOOTER / KONTAK ═══ -->
-  <footer class="bg-primary text-surface-container-lowest w-full px-margin-mobile md:px-margin-desktop py-xl grid grid-cols-1 md:grid-cols-4 gap-xl" id="kontak">
-    <div class="md:col-span-1">
-      <div class="font-display text-headline-sm font-bold text-industrial-yellow mb-md">JM Workshop</div>
-      <p class="text-surface-dim mb-md font-body-md opacity-80 leading-relaxed">Bengkel Las Spesialis Surabaya dengan fokus pada ketelitian, kualitas material, dan desain modern untuk kebutuhan bisnis serta properti Anda.</p>
-      <div class="flex gap-md">
-        <a id="btn-instagram"
-          class="hover:text-industrial-yellow transition-all w-10 h-10 rounded-full border border-outline-variant flex items-center justify-center"
-          href="https://www.instagram.com/jmworkshopsurabaya" rel="noopener" target="_blank" aria-label="Instagram JM Workshop">
-          <span class="material-symbols-outlined text-sm">photo_camera</span>
-        </a>
-        <a id="btn-email"
-          class="hover:text-industrial-yellow transition-all w-10 h-10 rounded-full border border-outline-variant flex items-center justify-center"
-          href="mailto:info@jmworkshop.com" aria-label="Email JM Workshop">
-          <span class="material-symbols-outlined text-sm">alternate_email</span>
-        </a>
-        <a id="btn-whatsapp-footer"
-          class="hover:text-industrial-yellow transition-all w-10 h-10 rounded-full border border-outline-variant flex items-center justify-center"
-          href="https://wa.me/628123456789" rel="noopener" target="_blank" aria-label="WhatsApp JM Workshop">
-          <span class="material-symbols-outlined text-sm">chat</span>
-        </a>
-      </div>
     </div>
-    <div>
-      <h4 class="font-label-md uppercase mb-md text-industrial-yellow">Navigasi</h4>
-      <ul class="space-y-sm">
-        <li><a class="text-surface-dim hover:text-white transition-colors" href="#">Home</a></li>
-        <li><a class="text-surface-dim hover:text-white transition-colors" href="#layanan">Layanan</a></li>
-        <li><a class="text-surface-dim hover:text-white transition-colors" href="#produk">Produk Kami</a></li>
-        <li><a class="text-surface-dim hover:text-white transition-colors" href="#kontak">Kontak</a></li>
-      </ul>
-    </div>
-    <div>
-      <h4 class="font-label-md uppercase mb-md text-industrial-yellow">Hubungi Kami</h4>
-      <ul class="space-y-sm">
-        <li class="flex items-start gap-xs text-surface-dim">
-          <span class="material-symbols-outlined text-action-green mt-1">location_on</span>
-          <span><strong>JM Workshop Surabaya</strong><br>Jl. Raya Surabaya-Gresik No. 123, Surabaya 60000</span>
-        </li>
-        <li class="flex items-center gap-xs text-surface-dim">
-          <span class="material-symbols-outlined text-action-green">call</span>
-          <a href="tel:+628123456789" class="hover:text-white transition-colors">+62 812-3456-7890</a>
-        </li>
-        <li class="flex items-center gap-xs text-surface-dim">
-          <span class="material-symbols-outlined text-action-green">mail</span>
-          <a id="btn-email-text" href="mailto:info@jmworkshop.com" class="hover:text-white transition-colors">info@jmworkshop.com</a>
-        </li>
-      </ul>
-    </div>
-    <div class="bg-primary-container p-md rounded-xl border border-outline-variant/20">
-      <h4 class="font-label-md uppercase mb-md text-industrial-yellow">Minta Penawaran</h4>
-      <form id="form-penawaran" class="space-y-sm" novalidate>
-        <input
-          class="w-full bg-primary/30 border border-outline p-xs rounded text-white placeholder:text-outline-variant focus:border-industrial-yellow outline-none"
-          placeholder="Nama Lengkap" type="text" name="name" required autocomplete="name" />
-        <input
-          class="w-full bg-primary/30 border border-outline p-xs rounded text-white placeholder:text-outline-variant focus:border-industrial-yellow outline-none"
-          placeholder="Email / WhatsApp" type="text" name="contact" required />
-        <button
-          id="btn-submit-penawaran"
-          class="w-full py-xs bg-action-green text-white font-bold rounded hover:opacity-90 transition-opacity shadow-lg"
-          type="submit">Kirim Pesan</button>
-      </form>
-    </div>
-    <div class="col-span-1 md:col-span-4 border-t border-outline-variant/10 pt-md mt-md text-center text-sm text-surface-dim opacity-50">
-      © 2024 JM Workshop Surabaya. Precision Engineering &amp; Welding Services.
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 border-t border-zinc-900 flex flex-col sm:flex-row items-center justify-between gap-4 text-zinc-600">
+      <p>&copy; 2017 - 2026 JM Workshop Surabaya. All Rights Reserved.</p>
+      <div class="flex gap-4">
+        <a href="#layanan" class="hover:text-zinc-400">Privasi</a>
+        <a href="#layanan" class="hover:text-zinc-400">Syarat &amp; Ketentuan</a>
+        <a href="https://rombongkontainersurabaya.web.id/" class="hover:text-zinc-400">rombongkontainersurabaya.web.id</a>
+      </div>
     </div>
   </footer>
 
-  <!-- Floating WhatsApp -->
-  <a id="btn-whatsapp-float" aria-label="Hubungi JM Workshop via WhatsApp"
-    class="fixed bottom-margin-mobile right-margin-mobile w-14 h-14 bg-action-green text-white rounded-full flex items-center justify-center shadow-2xl hover:scale-110 hover:-translate-y-1 transition-all z-[100]"
-    href="https://wa.me/628123456789?text=Halo%20JM%20Workshop%2C%20saya%20ingin%20konsultasi"
-    rel="noopener" target="_blank">
-    <svg class="w-8 h-8 fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"></path>
-    </svg>
-  </a>
+  <!-- ═══════════════════════════════════════════════════
+       12. PERSISTENT FLOATING WHATSAPP BUTTON (DESKTOP & MOBILE)
+  ═══════════════════════════════════════════════════ -->
+  <div class="fixed bottom-6 right-6 z-50 flex items-center gap-2">
+    <a href="https://wa.me/628155401679?text=Halo%20JM%20Workshop%2C%20saya%20ingin%20konsultasi%20langsung" 
+       target="_blank" rel="noopener"
+       class="flex items-center gap-3 px-4 py-3 rounded-full bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs shadow-2xl transition-all duration-300 hover:scale-105 active:scale-95 group">
+      <span class="relative flex h-3 w-3">
+        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-200 opacity-75"></span>
+        <span class="relative inline-flex rounded-full h-3 w-3 bg-white"></span>
+      </span>
+      <span class="hidden sm:inline font-sans">Konsultasi WhatsApp</span>
+      <span class="sm:hidden font-sans">Chat WA</span>
+      <span class="material-symbols-outlined text-lg">chat</span>
+    </a>
+  </div>
 
-  <script type="module" src="/src/main.js"></script>
+  <!-- ═══════════════════════════════════════════════════
+       13. VANILLA JAVASCRIPT LOGIC (CLEAN & MODULAR)
+  ═══════════════════════════════════════════════════ -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // 1. Mobile Menu Drawer Toggle
+      const mobileBtn = document.getElementById('mobile-menu-btn');
+      const mobileMenu = document.getElementById('mobile-menu');
+      const mobileLinks = document.querySelectorAll('.mobile-link');
+
+      if (mobileBtn && mobileMenu) {
+        mobileBtn.addEventListener('click', () => {
+          mobileMenu.classList.toggle('hidden');
+        });
+        mobileLinks.forEach(link => {
+          link.addEventListener('click', () => {
+            mobileMenu.classList.add('hidden');
+          });
+        });
+      }
+
+      // 2. Portfolio Filter Tabs Logic
+      const filterTabs = document.querySelectorAll('.portfolio-tab');
+      const filterItems = document.querySelectorAll('.filter-item');
+
+      filterTabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+          // Remove active styles from all tabs
+          filterTabs.forEach(t => {
+            t.classList.remove('bg-white', 'text-zinc-950', 'shadow-sm');
+            t.classList.add('text-zinc-600');
+          });
+
+          // Add active style to selected tab
+          tab.classList.remove('text-zinc-600');
+          tab.classList.add('bg-white', 'text-zinc-950', 'shadow-sm');
+
+          const category = tab.getAttribute('data-filter');
+
+          // Filter elements with clean display transition
+          filterItems.forEach(item => {
+            if (category === 'all' || item.classList.contains(category) || item.classList.contains('all')) {
+              item.style.display = 'block';
+              setTimeout(() => {
+                item.style.opacity = '1';
+                item.style.transform = 'scale(1)';
+              }, 50);
+            } else {
+              item.style.opacity = '0';
+              item.style.transform = 'scale(0.95)';
+              setTimeout(() => {
+                item.style.display = 'none';
+              }, 200);
+            }
+          });
+        });
+      });
+
+      // 3. Interactive Quote to WhatsApp Form
+      const quoteForm = document.getElementById('quote-form');
+      if (quoteForm) {
+        quoteForm.addEventListener('submit', (e) => {
+          e.preventDefault();
+          const service = document.getElementById('calc-service').value;
+          const dimension = document.getElementById('calc-dimension').value.trim() || 'Sesuai Rekomendasi';
+          const city = document.getElementById('calc-city').value;
+          const name = document.getElementById('calc-name').value.trim() || 'Pelanggan';
+          const notes = document.getElementById('calc-notes').value.trim() || '-';
+
+          const textMessage = `Halo JM Workshop Surabaya,%0A%0ASaya ingin konsultasi dan minta estimasi biaya:%0A• *Nama / Bisnis:* ${encodeURIComponent(name)}%0A• *Layanan:* ${encodeURIComponent(service)}%0A• *Ukuran / Dimensi:* ${encodeURIComponent(dimension)}%0A• *Lokasi Wilayah:* ${encodeURIComponent(city)}%0A• *Catatan Tambahan:* ${encodeURIComponent(notes)}%0A%0AMohon info ketersediaan slot produksi dan survei lokasinya. Terima kasih!`;
+
+          window.open(`https://wa.me/628155401679?text=${textMessage}`, '_blank', 'noopener');
+        });
+      }
+
+      // 4. FAQ Accordion Interaction
+      const faqToggles = document.querySelectorAll('.faq-toggle');
+      faqToggles.forEach(toggle => {
+        toggle.addEventListener('click', () => {
+          const content = toggle.nextElementSibling;
+          const icon = toggle.querySelector('.material-symbols-outlined');
+          const isExpanded = !content.classList.contains('hidden');
+
+          // Close all other FAQs
+          document.querySelectorAll('.faq-content').forEach(c => c.classList.add('hidden'));
+          document.querySelectorAll('.faq-toggle .material-symbols-outlined').forEach(i => i.style.transform = 'rotate(0deg)');
+
+          if (!isExpanded) {
+            content.classList.remove('hidden');
+            if (icon) icon.style.transform = 'rotate(180deg)';
+          }
+        });
+      });
+    });
+  </script>
+
 </body>
 </html>
