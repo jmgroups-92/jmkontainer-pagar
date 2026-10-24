@@ -46,74 +46,8 @@ const HERO_SLIDES = [
   },
 ]
 
-const PORTFOLIO_ITEMS = [
-  {
-    id: 1,
-    category: 'kontainer',
-    src: '/images/portfolio/rombong-kontainer-1.webp',
-    badge: 'Rombong Kontainer',
-    dim: 'Ukuran: 3.0 x 2.0 x 2.2 m',
-    loc: 'Surabaya Barat',
-    title: 'Booth Kontainer F&B Premium',
-    desc: 'Desain minimalis modern dengan warna ivory & gold accent, meja kerja stainless, siap langsung jualan.',
-    waText: 'Halo JM Kontainer, saya tertarik dengan Booth Kontainer F&B Premium ukuran 3x2m'
-  },
-  {
-    id: 2,
-    category: 'kontainer',
-    src: '/images/portfolio/booth-cafe-1.webp',
-    badge: 'Booth Cafe UMKM',
-    dim: 'Ukuran: 2.5 x 2.0 x 2.1 m',
-    loc: 'Sidoarjo',
-    title: 'Kios Kontainer Kopi Kekinian',
-    desc: 'Jendela hidrolik buka-tutup ringan, exhaust fan ready, dan finishing anti-karat tahan cuaca tropis.',
-    waText: 'Halo JM Kontainer, saya tertarik dengan Kios Kontainer Kopi Kekinian'
-  },
-  {
-    id: 3,
-    category: 'kanopi',
-    src: '/images/portfolio/kanopi-alderon-1.webp',
-    badge: 'Kanopi Alderon UPVC',
-    dim: 'Ukuran: 6.0 x 4.5 m (Carport)',
-    loc: 'Pakuwon, Surabaya',
-    title: 'Kanopi Alderon UPVC Sejuk Carport',
-    desc: 'Sangat sejuk di siang hari dan senyap saat hujan deras, rangka besi WF / hollow galvanis kokoh.',
-    waText: 'Halo JM Kontainer, saya ingin estimasi biaya pasang Kanopi Alderon'
-  },
-  {
-    id: 4,
-    category: 'pagar',
-    src: '/images/portfolio/pagar-minimalis-1.webp',
-    badge: 'Pagar Minimalis Modern',
-    dim: 'Tinggi: 1.8 m • Panjang: 4.5 m',
-    loc: 'Surabaya Timur',
-    title: 'Pagar Besi Minimalis & Security Gate',
-    desc: 'Finishing cat powder coat hitam doff anti-karat, roda bearing stainless super enteng didorong.',
-    waText: 'Halo JM Kontainer, saya ingin konsultasi model Pagar Besi Minimalis'
-  },
-  {
-    id: 5,
-    category: 'kontainer',
-    src: '/images/portfolio/workshop-las-1.webp',
-    badge: 'Workshop Pengerjaan',
-    dim: 'Kapasitas 15 Unit / Bulan',
-    loc: 'Workshop Gresik-Surabaya',
-    title: 'Fabrikasi Rangka Kuat Standar SNI',
-    desc: 'Pengelasan full weld rapi, struktur diuji beban sebelum dikirim ke lokasi pemesan.',
-    waText: 'Halo JM Kontainer, saya ingin jadwal survei lokasi dan konsultasi langsung'
-  },
-  {
-    id: 6,
-    category: 'kontainer',
-    src: '/images/portfolio/rombong-kontainer-2.webp',
-    badge: 'Booth Franchise',
-    dim: 'Ukuran: 2.0 x 1.5 x 2.0 m',
-    loc: 'Gresik Kota',
-    title: 'Booth Kontainer Mini Streetfood',
-    desc: 'Praktis, hemat tempat, cocok untuk food court outdoor maupun trotoar usaha kemitraan.',
-    waText: 'Halo JM Kontainer, saya ingin penawaran Booth Kontainer Mini Streetfood'
-  }
-]
+import { PORTFOLIO_ITEMS } from '@/lib/portfolio-data'
+
 
 const FAQS = [
   {
@@ -137,7 +71,15 @@ const FAQS = [
 export default function Home() {
   const [currentSlide, setCurrentSlide] = useState(0)
   const [filter, setFilter] = useState('all')
+  const [currentPage, setCurrentPage] = useState(1)
   const [openFaq, setOpenFaq] = useState<number | null>(null)
+
+  const ITEMS_PER_PAGE = 20
+
+  const handleFilterChange = (cat: string) => {
+    setFilter(cat)
+    setCurrentPage(1)
+  }
 
   // Form State
   const [service, setService] = useState('Rombong Kontainer / Booth UMKM')
@@ -164,6 +106,17 @@ export default function Home() {
   const filteredPortfolio = filter === 'all' 
     ? PORTFOLIO_ITEMS 
     : PORTFOLIO_ITEMS.filter(item => item.category === filter)
+
+  const totalPages = Math.ceil(filteredPortfolio.length / ITEMS_PER_PAGE)
+  const displayedItems = filteredPortfolio.slice((currentPage - 1) * ITEMS_PER_PAGE, currentPage * ITEMS_PER_PAGE)
+
+  const goToPage = (p: number) => {
+    setCurrentPage(p)
+    const el = document.getElementById('portofolio')
+    if (el) {
+      el.scrollIntoView({ behavior: 'smooth' })
+    }
+  }
 
   return (
     <div className="bg-[#FAF8F5] text-stone-900 min-h-screen">
@@ -462,7 +415,7 @@ export default function Home() {
                 ].map(t => (
                   <button 
                     key={t.key}
-                    onClick={() => setFilter(t.key)}
+                    onClick={() => handleFilterChange(t.key)}
                     className={`px-4 py-2 rounded-xl text-xs font-bold transition-all ${
                       filter === t.key 
                         ? 'bg-amber-600 text-white shadow-md' 
@@ -474,22 +427,30 @@ export default function Home() {
               </div>
             </div>
 
+            {/* SEO Summary Counter */}
+            <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between text-xs text-stone-600 mb-6 px-1 gap-2">
+              <div>
+                Menampilkan <strong className="text-stone-900 font-bold">{(currentPage - 1) * ITEMS_PER_PAGE + 1} - {Math.min(currentPage * ITEMS_PER_PAGE, filteredPortfolio.length)}</strong> dari <strong className="text-amber-800 font-bold">{filteredPortfolio.length}</strong> Proyek Dokumentasi Asli Workshop
+              </div>
+              <div className="font-mono text-[11px] bg-stone-200/80 px-3 py-1 rounded-full text-stone-700 font-semibold">
+                Halaman {currentPage} dari {totalPages || 1}
+              </div>
+            </div>
+
             {/* Portfolio Grid */}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {filteredPortfolio.map((item) => (
-                <div key={item.id} className="bg-white rounded-3xl p-4 border border-stone-200 shadow-warm hover:shadow-warm-hover transition-all">
+              {displayedItems.map((item) => (
+                <div key={item.id} className="group bg-white rounded-3xl p-4 border border-stone-200 shadow-warm hover:shadow-warm-hover transition-all">
                   <div className="relative h-60 rounded-2xl overflow-hidden mb-4 bg-stone-100 border border-stone-200">
                     <Image 
                       src={item.src} 
-                      alt={item.title} 
-                      fill className="object-cover" 
+                      alt={item.alt || item.title} 
+                      fill 
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                      loading="lazy"
+                      className="object-cover group-hover:scale-105 transition-transform duration-500" 
                     />
-                    {/* Badge Watermark JM Kontainer */}
-                    <div className="absolute top-3 right-3 px-2.5 py-1 rounded-lg bg-black/65 backdrop-blur-sm text-white font-mono text-[10px] font-bold shadow flex items-center gap-1">
-                      <span className="w-1.5 h-1.5 rounded-full bg-amber-400"></span>
-                      <span>JM Kontainer</span>
-                    </div>
-                    <span className="absolute bottom-3 left-3 px-2.5 py-1 rounded-md bg-white/90 backdrop-blur-md text-amber-800 font-mono text-[10px] font-bold">
+                    <span className="absolute bottom-3 left-3 px-2.5 py-1 rounded-md bg-white/95 backdrop-blur-md text-amber-800 font-mono text-[10px] font-bold shadow-sm">
                       {item.badge}
                     </span>
                   </div>
@@ -511,6 +472,53 @@ export default function Home() {
                 </div>
               ))}
             </div>
+
+            {/* Pagination Controls */}
+            {totalPages > 1 && (
+              <div className="flex flex-col sm:flex-row items-center justify-between gap-4 mt-12 pt-8 border-t border-stone-200">
+                <button
+                  onClick={() => goToPage(Math.max(currentPage - 1, 1))}
+                  disabled={currentPage === 1}
+                  className={`inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-xs font-bold transition-all ${
+                    currentPage === 1
+                      ? 'bg-stone-100 text-stone-400 cursor-not-allowed border border-stone-200'
+                      : 'bg-white hover:bg-stone-50 text-stone-800 border border-stone-300 shadow-sm hover:border-amber-500'
+                  }`}
+                >
+                  <span className="material-symbols-outlined text-sm">arrow_back</span>
+                  <span>Sebelumnya</span>
+                </button>
+
+                <div className="flex items-center gap-1.5 flex-wrap justify-center">
+                  {Array.from({ length: totalPages }, (_, i) => i + 1).map((p) => (
+                    <button
+                      key={p}
+                      onClick={() => goToPage(p)}
+                      className={`w-9 h-9 rounded-xl text-xs font-bold transition-all ${
+                        currentPage === p
+                          ? 'bg-amber-600 text-white shadow-md shadow-amber-600/30'
+                          : 'bg-white hover:bg-stone-100 text-stone-700 border border-stone-200'
+                      }`}
+                    >
+                      {p}
+                    </button>
+                  ))}
+                </div>
+
+                <button
+                  onClick={() => goToPage(Math.min(currentPage + 1, totalPages))}
+                  disabled={currentPage === totalPages}
+                  className={`inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-xs font-bold transition-all ${
+                    currentPage === totalPages
+                      ? 'bg-stone-100 text-stone-400 cursor-not-allowed border border-stone-200'
+                      : 'bg-white hover:bg-stone-50 text-stone-800 border border-stone-300 shadow-sm hover:border-amber-500'
+                  }`}
+                >
+                  <span>Berikutnya</span>
+                  <span className="material-symbols-outlined text-sm">arrow_forward</span>
+                </button>
+              </div>
+            )}
 
           </div>
         </section>

@@ -1,7 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  output: 'export',   // static export → Express serves web/out/
-  distDir: 'out',
+  output: 'export',
   images: { unoptimized: true },
   trailingSlash: true,
 }
