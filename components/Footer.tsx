@@ -46,14 +46,17 @@ export default function Footer() {
           </ul>
         </div>
 
-        {/* Area Layanan */}
+        {/* Area Layanan Link Per Kota (SEO Friendly) */}
         <div>
-          <h4 className="text-amber-400 font-mono uppercase tracking-widest font-bold mb-4">Jangkauan Wilayah</h4>
-          <ul className="space-y-2.5 text-stone-300">
-            <li className="flex items-center gap-2"><span className="text-amber-500">•</span> Surabaya (Pusat, Barat, Timur, Selatan, Utara)</li>
-            <li className="flex items-center gap-2"><span className="text-amber-500">•</span> Sidoarjo (Waru, Gedangan, Porong)</li>
-            <li className="flex items-center gap-2"><span className="text-amber-500">•</span> Gresik (Driyorejo, Kebomas, Manyar)</li>
-            <li className="flex items-center gap-2"><span className="text-amber-500">•</span> Mojokerto &amp; Lamongan</li>
+          <h4 className="text-amber-400 font-mono uppercase tracking-widest font-bold mb-4">Area Layanan Booth</h4>
+          <ul className="space-y-2 text-stone-300">
+            <li><a href="/kota/surabaya" className="hover:text-amber-300 transition-colors flex items-center gap-1.5"><span className="text-amber-500">•</span> Surabaya (Pusat, Barat, Timur, Selatan, Utara)</a></li>
+            <li><a href="/kota/sidoarjo" className="hover:text-amber-300 transition-colors flex items-center gap-1.5"><span className="text-amber-500">•</span> Sidoarjo (Waru, Candi, Krian)</a></li>
+            <li><a href="/kota/gresik" className="hover:text-amber-300 transition-colors flex items-center gap-1.5"><span className="text-amber-500">•</span> Gresik (Menganti, Manyar, GKB)</a></li>
+            <li><a href="/kota/bangkalan" className="hover:text-amber-300 transition-colors flex items-center gap-1.5"><span className="text-amber-500">•</span> Bangkalan (Kamal, Madura)</a></li>
+            <li><a href="/kota/lamongan" className="hover:text-amber-300 transition-colors flex items-center gap-1.5"><span className="text-amber-500">•</span> Lamongan &amp; Babat</a></li>
+            <li><a href="/kota/pasuruan" className="hover:text-amber-300 transition-colors flex items-center gap-1.5"><span className="text-amber-500">•</span> Pasuruan &amp; Pandaan</a></li>
+            <li><a href="/kota/malang" className="hover:text-amber-300 transition-colors flex items-center gap-1.5"><span className="text-amber-500">•</span> Malang &amp; Kota Batu</a></li>
           </ul>
         </div>
 
@@ -80,6 +83,24 @@ export default function Footer() {
           </ul>
         </div>
 
+      </div>
+
+      {/* SEO City Labels / Badges Pill Bar */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5 border-t border-stone-800/80">
+        <div className="flex flex-col md:flex-row items-center justify-between gap-3 text-[11px]">
+          <span className="text-amber-400/90 font-mono font-bold tracking-wider shrink-0 uppercase">
+            Jasa Booth Container Jawa Timur:
+          </span>
+          <div className="flex flex-wrap items-center justify-center md:justify-end gap-1.5">
+            <a href="/kota/surabaya" className="px-2.5 py-1 rounded-md bg-stone-800/90 hover:bg-amber-600 text-stone-300 hover:text-white transition-colors border border-stone-700/60">Surabaya</a>
+            <a href="/kota/sidoarjo" className="px-2.5 py-1 rounded-md bg-stone-800/90 hover:bg-amber-600 text-stone-300 hover:text-white transition-colors border border-stone-700/60">Sidoarjo</a>
+            <a href="/kota/gresik" className="px-2.5 py-1 rounded-md bg-stone-800/90 hover:bg-amber-600 text-stone-300 hover:text-white transition-colors border border-stone-700/60">Gresik</a>
+            <a href="/kota/bangkalan" className="px-2.5 py-1 rounded-md bg-stone-800/90 hover:bg-amber-600 text-stone-300 hover:text-white transition-colors border border-stone-700/60">Bangkalan</a>
+            <a href="/kota/lamongan" className="px-2.5 py-1 rounded-md bg-stone-800/90 hover:bg-amber-600 text-stone-300 hover:text-white transition-colors border border-stone-700/60">Lamongan</a>
+            <a href="/kota/pasuruan" className="px-2.5 py-1 rounded-md bg-stone-800/90 hover:bg-amber-600 text-stone-300 hover:text-white transition-colors border border-stone-700/60">Pasuruan</a>
+            <a href="/kota/malang" className="px-2.5 py-1 rounded-md bg-stone-800/90 hover:bg-amber-600 text-stone-300 hover:text-white transition-colors border border-stone-700/60">Malang</a>
+          </div>
+        </div>
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 border-t border-stone-800 flex flex-col sm:flex-row items-center justify-between gap-4 text-stone-500">
