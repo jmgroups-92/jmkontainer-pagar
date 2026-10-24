@@ -293,6 +293,154 @@ export default function Home() {
           </div>
         </section>
 
+        {/* ═══ 2. KENAPA MEMILIH KAMI (SECTION 2) ═══ */}
+        <section className="py-16 lg:py-20 bg-[#FAF8F5] border-t border-stone-200" id="kenapa-kami">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            {/* Section Header */}
+            <div className="text-center max-w-3xl mx-auto mb-14">
+              <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-amber-100 text-amber-900 border border-amber-300 text-xs font-mono font-bold tracking-wider uppercase mb-3">
+                <span className="material-symbols-outlined text-sm text-amber-700">verified</span>
+                Kenapa Memilih Kami
+              </div>
+              <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-stone-900 leading-tight">
+                Kualitas Terjamin, Harga Masuk Akal &amp; <span className="text-amber-700">Bukan Tipu-Tipu</span>
+              </h2>
+              <p className="text-stone-600 text-sm sm:text-base mt-3 leading-relaxed">
+                Komitmen penuh JM Kontainer Surabaya sejak 2017: Memberikan barang berkualitas tinggi, spek material apa adanya, dan harga jujur tanpa biaya tersembunyi.
+              </p>
+            </div>
+
+            {/* 6 Value Pillars Grid */}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              
+              {/* Card 1 */}
+              <div className="bg-white rounded-2xl p-7 border border-stone-200/90 shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1 flex flex-col justify-between">
+                <div>
+                  <div className="w-12 h-12 rounded-xl bg-amber-50 border border-amber-200 text-amber-700 flex items-center justify-center mb-5">
+                    <span className="material-symbols-outlined text-2xl">workspace_premium</span>
+                  </div>
+                  <h3 className="text-lg font-bold text-stone-900 mb-2">
+                    Berpengalaman Sejak 2017
+                  </h3>
+                  <p className="text-stone-600 text-xs sm:text-sm leading-relaxed">
+                    Sudah lebih dari 7 tahun fokus di bidang pembuatan booth, rombong kontainer custom, kanopi, dan pagar besi. Bukan tukang las musiman—kami paham betul standar ergonomi usaha dan kekuatan konstruksi.
+                  </p>
+                </div>
+                <div className="mt-5 pt-3 border-t border-stone-100 flex items-center gap-2 text-xs font-semibold text-amber-700 font-mono">
+                  <span>✓ 500+ Unit Fabrikasi Berhasil</span>
+                </div>
+              </div>
+
+              {/* Card 2 */}
+              <div className="bg-white rounded-2xl p-7 border border-stone-200/90 shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1 flex flex-col justify-between">
+                <div>
+                  <div className="w-12 h-12 rounded-xl bg-amber-50 border border-amber-200 text-amber-700 flex items-center justify-center mb-5">
+                    <span className="material-symbols-outlined text-2xl">price_check</span>
+                  </div>
+                  <h3 className="text-lg font-bold text-stone-900 mb-2">
+                    Harga Ekonomis, Kualitas Bukan Murahan
+                  </h3>
+                  <p className="text-stone-600 text-xs sm:text-sm leading-relaxed">
+                    Harga sangat bersahabat untuk perintis usaha UMKM maupun renovasi rumah. Kami menggunakan besi hollow berstandar SNI dan plat tebal, bukan material banci yang cepat melengkung atau karatan.
+                  </p>
+                </div>
+                <div className="mt-5 pt-3 border-t border-stone-100 flex items-center gap-2 text-xs font-semibold text-amber-700 font-mono">
+                  <span>✓ Besi SNI &amp; Cat Duco Tahan Karat</span>
+                </div>
+              </div>
+
+              {/* Card 3 */}
+              <div className="bg-white rounded-2xl p-7 border border-stone-200/90 shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1 flex flex-col justify-between">
+                <div>
+                  <div className="w-12 h-12 rounded-xl bg-amber-50 border border-amber-200 text-amber-700 flex items-center justify-center mb-5">
+                    <span className="material-symbols-outlined text-2xl">fact_check</span>
+                  </div>
+                  <h3 className="text-lg font-bold text-stone-900 mb-2">
+                    Jujur &amp; Bukan Tipu-Tipu (Harga Apa Adanya)
+                  </h3>
+                  <p className="text-stone-600 text-xs sm:text-sm leading-relaxed">
+                    Transparansi adalah prioritas kami. Rincian material, dimensi, ketebalan besi, dan biaya pengerjaan dijabarkan terbuka di awal penawaran. Tanpa biaya siluman atau jebakan di tengah jalan.
+                  </p>
+                </div>
+                <div className="mt-5 pt-3 border-t border-stone-100 flex items-center gap-2 text-xs font-semibold text-amber-700 font-mono">
+                  <span>✓ SPK Jelas &amp; Tanpa Hidden Cost</span>
+                </div>
+              </div>
+
+              {/* Card 4 */}
+              <div className="bg-white rounded-2xl p-7 border border-stone-200/90 shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1 flex flex-col justify-between">
+                <div>
+                  <div className="w-12 h-12 rounded-xl bg-amber-50 border border-amber-200 text-amber-700 flex items-center justify-center mb-5">
+                    <span className="material-symbols-outlined text-2xl">straighten</span>
+                  </div>
+                  <h3 className="text-lg font-bold text-stone-900 mb-2">
+                    Gratis Survei Lokasi &amp; Desain Custom
+                  </h3>
+                  <p className="text-stone-600 text-xs sm:text-sm leading-relaxed">
+                    Bingung mengukur luasan tempat atau memilih model? Tim kami siap datang langsung untuk survei lokasi dan konsultasi kebutuhan Anda se-Surabaya, Sidoarjo, dan Gresik secara gratis.
+                  </p>
+                </div>
+                <div className="mt-5 pt-3 border-t border-stone-100 flex items-center gap-2 text-xs font-semibold text-amber-700 font-mono">
+                  <span>✓ Free Survei Surabaya-Sidoarjo-Gresik</span>
+                </div>
+              </div>
+
+              {/* Card 5 */}
+              <div className="bg-white rounded-2xl p-7 border border-stone-200/90 shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1 flex flex-col justify-between">
+                <div>
+                  <div className="w-12 h-12 rounded-xl bg-amber-50 border border-amber-200 text-amber-700 flex items-center justify-center mb-5">
+                    <span className="material-symbols-outlined text-2xl">shield</span>
+                  </div>
+                  <h3 className="text-lg font-bold text-stone-900 mb-2">
+                    Garansi Kebocoran &amp; Kekuatan Struktur
+                  </h3>
+                  <p className="text-stone-600 text-xs sm:text-sm leading-relaxed">
+                    Setiap pesanan booth kontainer dan kanopi telah melalui uji ketahanan air sebelum serah terima. Kami berikan garansi struktur resmi agar Anda bisa tenang berbisnis tanpa khawatir bocor saat hujan.
+                  </p>
+                </div>
+                <div className="mt-5 pt-3 border-t border-stone-100 flex items-center gap-2 text-xs font-semibold text-amber-700 font-mono">
+                  <span>✓ Garansi Perbaikan Bebas Bocor</span>
+                </div>
+              </div>
+
+              {/* Card 6 */}
+              <div className="bg-white rounded-2xl p-7 border border-stone-200/90 shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1 flex flex-col justify-between">
+                <div>
+                  <div className="w-12 h-12 rounded-xl bg-amber-50 border border-amber-200 text-amber-700 flex items-center justify-center mb-5">
+                    <span className="material-symbols-outlined text-2xl">timelapse</span>
+                  </div>
+                  <h3 className="text-lg font-bold text-stone-900 mb-2">
+                    Pengerjaan Cepat 7-14 Hari
+                  </h3>
+                  <p className="text-stone-600 text-xs sm:text-sm leading-relaxed">
+                    Proses fabrikasi cepat 7-14 hari kerja (sesuai antrian urutan order). Anda dapat memantau langsung proses pengelasan dan pengecatan via dokumentasi foto/video berkala dari workshop kami.
+                  </p>
+                </div>
+                <div className="mt-5 pt-3 border-t border-stone-100 flex items-center gap-2 text-xs font-semibold text-amber-700 font-mono">
+                  <span>✓ Jadwal Transparan Sesuai Antrian</span>
+                </div>
+              </div>
+
+            </div>
+
+            {/* Quick Trust CTA Bar */}
+            <div className="mt-10 p-6 rounded-2xl bg-gradient-to-r from-amber-700 to-yellow-700 text-white flex flex-col sm:flex-row items-center justify-between gap-4 shadow-lg">
+              <div className="text-center sm:text-left">
+                <div className="font-bold text-base sm:text-lg">Mau Konsultasi Desain atau Cek Estimasi Biaya?</div>
+                <div className="text-xs sm:text-sm text-amber-100">Dapatkan saran spesifikasi material terbaik sesuai budget bisnis Anda.</div>
+              </div>
+              <a href="https://wa.me/6281554016679?text=Halo%20JM%20Kontainer%2C%20saya%20ingin%20tanya%20spesifikasi%20dan%20harga%20custom" 
+                 target="_blank" rel="noopener"
+                 className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-white text-stone-900 font-bold text-xs uppercase tracking-wider hover:bg-stone-100 transition-all shadow-md active:scale-95 shrink-0">
+                <span className="material-symbols-outlined text-base text-amber-700">chat</span>
+                Tanya Langsung ke Tukang Las
+              </a>
+            </div>
+
+          </div>
+        </section>
+
         {/* ═══ 3. BENTO SERVICES (LIGHT ELEGANT IVORY & GOLD) ═══ */}
         <section className="py-16 lg:py-24 bg-white border-t border-stone-200" id="layanan">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
