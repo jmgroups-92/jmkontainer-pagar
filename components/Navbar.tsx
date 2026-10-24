@@ -34,12 +34,12 @@ export default function Navbar() {
 
           {/* CTAs */}
           <div className="hidden sm:flex items-center gap-3">
-            <a href="tel:+628155401679" className="text-xs font-mono font-semibold text-stone-700 hover:text-stone-950 px-2 py-1 flex items-center gap-1.5">
+            <a href="tel:+6281554016679" className="text-xs font-mono font-semibold text-stone-700 hover:text-stone-950 px-2 py-1 flex items-center gap-1.5">
               <span className="material-symbols-outlined text-sm text-amber-600">call</span>
               +62 815-5401-6679
             </a>
             <a id="btn-whatsapp-nav"
-               href="https://wa.me/628155401679?text=Halo%20JM%20Kontainer%2C%20saya%20ingin%20konsultasi%20desain%20dan%20harga" 
+               href="https://wa.me/6281554016679?text=Halo%20JM%20Kontainer%2C%20saya%20ingin%20konsultasi%20desain%20dan%20harga" 
                target="_blank" rel="noopener"
                onClick={() => trackEvent('click_whatsapp', { button_location: 'nav' })}
                className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-gradient-to-r from-amber-600 to-yellow-600 hover:from-amber-700 hover:to-yellow-700 text-white active:scale-95 text-xs font-bold transition-all shadow-gold-glow">
@@ -64,7 +64,7 @@ export default function Navbar() {
             <a href="#estimasi" onClick={() => setOpen(false)} className="px-3 py-2 text-sm font-semibold text-stone-700 hover:bg-stone-50 rounded-xl">Estimator Biaya</a>
             <a href="#faq" onClick={() => setOpen(false)} className="px-3 py-2 text-sm font-semibold text-stone-700 hover:bg-stone-50 rounded-xl">FAQ</a>
             <div className="pt-3 border-t border-stone-100 flex flex-col gap-2">
-              <a href="https://wa.me/628155401679?text=Halo%20JM%20Kontainer%2C%20saya%20ingin%20konsultasi" 
+              <a href="https://wa.me/6281554016679?text=Halo%20JM%20Kontainer%2C%20saya%20ingin%20konsultasi" 
                  target="_blank" rel="noopener"
                  onClick={() => { setOpen(false); trackEvent('click_whatsapp', { button_location: 'nav_mobile' }); }}
                  className="w-full flex items-center justify-center gap-2 py-3 rounded-xl bg-gradient-to-r from-amber-600 to-yellow-600 text-white font-bold text-sm shadow-gold-glow">

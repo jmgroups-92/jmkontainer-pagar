@@ -34,7 +34,7 @@ export default function FloatingWA() {
 
       {/* 2. Simplified Clean WhatsApp FAB */}
       <a
-        href="https://wa.me/628155401679?text=Halo%20JM%20Kontainer%2C%20saya%20ingin%20konsultasi%20langsung"
+        href="https://wa.me/6281554016679?text=Halo%20JM%20Kontainer%2C%20saya%20ingin%20konsultasi%20langsung"
         target="_blank"
         rel="noopener"
         aria-label="Chat WhatsApp JM Kontainer"

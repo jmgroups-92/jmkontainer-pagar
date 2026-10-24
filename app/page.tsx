@@ -100,7 +100,7 @@ export default function Home() {
     e.preventDefault()
     trackEvent('generate_lead', { form_name: 'quote_calculator' })
     const msg = `Halo JM Kontainer Surabaya,\n\nSaya ingin konsultasi dan minta estimasi biaya:\n• *Nama / Usaha:* ${name || 'Pelanggan'}\n• *Layanan:* ${service}\n• *Ukuran / Dimensi:* ${dim || 'Sesuai Rekomendasi'}\n• *Lokasi Kota:* ${city}\n• *Catatan:* ${notes || '-'}\n\nMohon info harga terbaik dan jadwal survei gratisnya. Terima kasih!`
-    window.open(`https://wa.me/628155401679?text=${encodeURIComponent(msg)}`, '_blank', 'noopener')
+    window.open(`https://wa.me/6281554016679?text=${encodeURIComponent(msg)}`, '_blank', 'noopener')
   }
 
   const filteredPortfolio = filter === 'all' 
@@ -131,7 +131,7 @@ export default function Home() {
           </div>
           <div className="flex items-center gap-4 text-stone-300">
             <span className="hidden sm:inline font-medium">Kami Pengalaman Lebih dari 7 Tahun, <strong className="text-amber-400">Sejak 2017</strong></span>
-            <a href="https://wa.me/628155401679?text=Halo%20JM%20Kontainer%2C%20saya%20mau%20order%20batch%20baru%20dan%20ambil%20promo%20survei%20gratis" 
+            <a href="https://wa.me/6281554016679?text=Halo%20JM%20Kontainer%2C%20saya%20mau%20order%20batch%20baru%20dan%20ambil%20promo%20survei%20gratis" 
                target="_blank" rel="noopener"
                className="text-amber-400 hover:text-amber-300 font-bold underline underline-offset-2">Klaim Promo Survei Gratis &rarr;</a>
           </div>
@@ -175,7 +175,7 @@ export default function Home() {
 
                 {/* CTAs */}
                 <div className="flex flex-col sm:flex-row gap-4 pt-2">
-                  <a href="https://wa.me/628155401679?text=Halo%20JM%20Kontainer%2C%20saya%20ingin%20konsultasi%20desain%20dan%20survei%20gratis" 
+                  <a href="https://wa.me/6281554016679?text=Halo%20JM%20Kontainer%2C%20saya%20ingin%20konsultasi%20desain%20dan%20survei%20gratis" 
                      target="_blank" rel="noopener"
                      onClick={() => trackEvent('click_whatsapp', { button_location: 'hero_primary' })}
                      className="inline-flex items-center justify-center gap-3 px-7 py-4 rounded-2xl bg-gradient-to-r from-amber-600 to-yellow-600 hover:from-amber-700 hover:to-yellow-700 text-white font-bold text-base transition-all shadow-gold-glow hover:-translate-y-0.5 active:scale-95">
@@ -328,7 +328,7 @@ export default function Home() {
                   <div className="relative h-44 rounded-2xl overflow-hidden mb-4 border border-stone-200">
                     <Image src="/images/portfolio/rombong-kontainer-1.webp" alt="Rombong Kontainer UMKM" fill className="object-cover" />
                   </div>
-                  <a href="https://wa.me/628155401679?text=Halo%20JM%20Kontainer%2C%20mau%20tanya%20harga%20Rombong%20Kontainer" 
+                  <a href="https://wa.me/6281554016679?text=Halo%20JM%20Kontainer%2C%20mau%20tanya%20harga%20Rombong%20Kontainer" 
                      target="_blank" rel="noopener"
                      className="flex items-center justify-between text-xs font-bold text-amber-800 hover:text-amber-600 pt-2 border-t border-stone-200">
                     <span>Tanya Harga &amp; Ukuran</span>
@@ -352,7 +352,7 @@ export default function Home() {
                   <div className="relative h-44 rounded-2xl overflow-hidden mb-4 border border-stone-200">
                     <Image src="/images/portfolio/kanopi-alderon-1.webp" alt="Kanopi Alderon UPVC" fill className="object-cover" />
                   </div>
-                  <a href="https://wa.me/628155401679?text=Halo%20JM%20Kontainer%2C%20mau%20tanya%20pasang%20Kanopi%20Alderon" 
+                  <a href="https://wa.me/6281554016679?text=Halo%20JM%20Kontainer%2C%20mau%20tanya%20pasang%20Kanopi%20Alderon" 
                      target="_blank" rel="noopener"
                      className="flex items-center justify-between text-xs font-bold text-amber-800 hover:text-amber-600 pt-2 border-t border-stone-200">
                     <span>Konsultasi Ukuran Carport</span>
@@ -376,7 +376,7 @@ export default function Home() {
                   <div className="relative h-44 rounded-2xl overflow-hidden mb-4 border border-stone-200">
                     <Image src="/images/portfolio/pagar-minimalis-1.webp" alt="Pagar Besi Minimalis" fill className="object-cover" />
                   </div>
-                  <a href="https://wa.me/628155401679?text=Halo%20JM%20Kontainer%2C%20mau%20tanya%20desain%20Pagar%20Besi" 
+                  <a href="https://wa.me/6281554016679?text=Halo%20JM%20Kontainer%2C%20mau%20tanya%20desain%20Pagar%20Besi" 
                      target="_blank" rel="noopener"
                      className="flex items-center justify-between text-xs font-bold text-amber-800 hover:text-amber-600 pt-2 border-t border-stone-200">
                     <span>Pilih Model &amp; Desain Pagar</span>
@@ -462,7 +462,7 @@ export default function Home() {
                     </div>
                     <h4 className="font-bold text-base text-stone-900 mb-1.5">{item.title}</h4>
                     <p className="text-xs text-stone-600 line-clamp-2 mb-4 leading-relaxed">{item.desc}</p>
-                    <a href={`https://wa.me/628155401679?text=${encodeURIComponent(item.waText)}`}
+                    <a href={`https://wa.me/6281554016679?text=${encodeURIComponent(item.waText)}`}
                        target="_blank" rel="noopener"
                        className="inline-flex items-center gap-1.5 text-xs font-bold text-amber-700 hover:text-amber-900 transition-colors">
                       <span>Tanya Spek &amp; Harga Model Ini</span>
@@ -698,14 +698,14 @@ export default function Home() {
             </p>
 
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-              <a href="https://wa.me/628155401679?text=Halo%20JM%20Kontainer%2C%20saya%20siap%20order%20dan%20ingin%20konsultasi" 
+              <a href="https://wa.me/6281554016679?text=Halo%20JM%20Kontainer%2C%20saya%20siap%20order%20dan%20ingin%20konsultasi" 
                  target="_blank" rel="noopener"
                  onClick={() => trackEvent('click_whatsapp', { button_location: 'final_cta' })}
                  className="w-full sm:w-auto inline-flex items-center justify-center gap-3 px-8 py-4 rounded-2xl bg-white text-amber-800 hover:bg-stone-50 active:scale-95 font-extrabold text-base transition-all shadow-xl">
                 <span>💬 Chat WhatsApp Sekarang</span>
                 <span className="material-symbols-outlined text-lg">arrow_outward</span>
               </a>
-              <a href="tel:+628155401679" 
+              <a href="tel:+6281554016679" 
                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 rounded-2xl bg-black/20 hover:bg-black/30 border border-white/30 text-white font-bold text-base transition-all">
                 <span className="material-symbols-outlined text-base">call</span>
                 <span>Telepon: 0815-5401-6679</span>

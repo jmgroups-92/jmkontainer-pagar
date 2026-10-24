@@ -26,7 +26,7 @@ export default function Footer() {
                className="w-8 h-8 rounded-lg bg-stone-800 flex items-center justify-center hover:bg-amber-600 hover:text-white transition-colors" aria-label="Instagram">
               <span className="material-symbols-outlined text-sm">photo_camera</span>
             </a>
-            <a href="https://wa.me/628155401679" target="_blank" rel="noopener"
+            <a href="https://wa.me/6281554016679" target="_blank" rel="noopener"
                onClick={() => trackEvent('click_whatsapp', { button_location: 'footer' })}
                className="w-8 h-8 rounded-lg bg-stone-800 flex items-center justify-center hover:bg-amber-600 hover:text-white transition-colors" aria-label="WhatsApp">
               <span className="material-symbols-outlined text-sm">chat</span>
@@ -67,7 +67,7 @@ export default function Footer() {
             </li>
             <li className="flex items-center gap-2">
               <span className="material-symbols-outlined text-amber-400 text-sm">call</span>
-              <a href="tel:+628155401679" className="hover:text-white font-mono">+62 815-5401-6679</a>
+              <a href="tel:+6281554016679" className="hover:text-white font-mono">+62 815-5401-6679</a>
             </li>
             <li className="flex items-center gap-2">
               <span className="material-symbols-outlined text-amber-400 text-sm">mail</span>
