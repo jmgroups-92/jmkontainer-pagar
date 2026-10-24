@@ -1611,6 +1611,9 @@ input:where([type='file']):focus {
 .border-white\/30 {
   border-color: rgb(255 255 255 / 0.3);
 }
+.border-amber-200\/80 {
+  border-color: rgb(253 230 138 / 0.8);
+}
 .bg-\[\#09090b\] {
   --tw-bg-opacity: 1;
   background-color: rgb(9 9 11 / var(--tw-bg-opacity, 1));
@@ -1757,6 +1760,10 @@ input:where([type='file']):focus {
 }
 .bg-white\/80 {
   background-color: rgb(255 255 255 / 0.8);
+}
+.bg-emerald-500 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(16 185 129 / var(--tw-bg-opacity, 1));
 }
 .bg-gradient-to-br {
   background-image: linear-gradient(to bottom right, var(--tw-gradient-stops));
@@ -2058,6 +2065,9 @@ input:where([type='file']):focus {
 .font-semibold {
   font-weight: 600;
 }
+.font-normal {
+  font-weight: 400;
+}
 .uppercase {
   text-transform: uppercase;
 }
@@ -2198,6 +2208,10 @@ input:where([type='file']):focus {
 .text-stone-800 {
   --tw-text-opacity: 1;
   color: rgb(41 37 36 / var(--tw-text-opacity, 1));
+}
+.text-amber-900 {
+  --tw-text-opacity: 1;
+  color: rgb(120 53 15 / var(--tw-text-opacity, 1));
 }
 .underline {
   text-decoration-line: underline;

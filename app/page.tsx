@@ -50,7 +50,7 @@ const PORTFOLIO_ITEMS = [
   {
     id: 1,
     category: 'kontainer',
-    src: '/images/slider/slide-1.jpg',
+    src: '/images/portfolio/rombong-kontainer-1.webp',
     badge: 'Rombong Kontainer',
     dim: 'Ukuran: 3.0 x 2.0 x 2.2 m',
     loc: 'Surabaya Barat',
@@ -61,7 +61,7 @@ const PORTFOLIO_ITEMS = [
   {
     id: 2,
     category: 'kontainer',
-    src: '/images/slider/slide-2.jpg',
+    src: '/images/portfolio/booth-cafe-1.webp',
     badge: 'Booth Cafe UMKM',
     dim: 'Ukuran: 2.5 x 2.0 x 2.1 m',
     loc: 'Sidoarjo',
@@ -72,35 +72,46 @@ const PORTFOLIO_ITEMS = [
   {
     id: 3,
     category: 'kanopi',
-    src: '/images/slider/slide-3.jpg',
-    badge: 'Kanopi Alderon',
+    src: '/images/portfolio/kanopi-alderon-1.webp',
+    badge: 'Kanopi Alderon UPVC',
     dim: 'Ukuran: 6.0 x 4.5 m (Carport)',
     loc: 'Pakuwon, Surabaya',
-    title: 'Kanopi Alderon UPVC Sejuk',
-    desc: 'Sangat sejuk di siang hari dan senyap saat hujan deras, rangka galvanis kokoh bebas karat.',
+    title: 'Kanopi Alderon UPVC Sejuk Carport',
+    desc: 'Sangat sejuk di siang hari dan senyap saat hujan deras, rangka besi WF / hollow galvanis kokoh.',
     waText: 'Halo JM Kontainer, saya ingin estimasi biaya pasang Kanopi Alderon'
   },
   {
     id: 4,
     category: 'pagar',
-    src: '/images/slider/slide-4.jpg',
-    badge: 'Pagar Minimalis',
+    src: '/images/portfolio/pagar-minimalis-1.webp',
+    badge: 'Pagar Minimalis Modern',
     dim: 'Tinggi: 1.8 m • Panjang: 4.5 m',
     loc: 'Surabaya Timur',
-    title: 'Pagar Besi Minimalis & Gate',
-    desc: 'Cat powder coat anti gores, desain simpel elegan yang cocok untuk rumah modern minimalis.',
+    title: 'Pagar Besi Minimalis & Security Gate',
+    desc: 'Finishing cat powder coat hitam doff anti-karat, roda bearing stainless super enteng didorong.',
     waText: 'Halo JM Kontainer, saya ingin konsultasi model Pagar Besi Minimalis'
   },
   {
     id: 5,
     category: 'kontainer',
-    src: '/images/slider/slide-5.jpg',
+    src: '/images/portfolio/workshop-las-1.webp',
     badge: 'Workshop Pengerjaan',
     dim: 'Kapasitas 15 Unit / Bulan',
     loc: 'Workshop Gresik-Surabaya',
     title: 'Fabrikasi Rangka Kuat Standar SNI',
     desc: 'Pengelasan full weld rapi, struktur diuji beban sebelum dikirim ke lokasi pemesan.',
     waText: 'Halo JM Kontainer, saya ingin jadwal survei lokasi dan konsultasi langsung'
+  },
+  {
+    id: 6,
+    category: 'kontainer',
+    src: '/images/portfolio/rombong-kontainer-2.webp',
+    badge: 'Booth Franchise',
+    dim: 'Ukuran: 2.0 x 1.5 x 2.0 m',
+    loc: 'Gresik Kota',
+    title: 'Booth Kontainer Mini Streetfood',
+    desc: 'Praktis, hemat tempat, cocok untuk food court outdoor maupun trotoar usaha kemitraan.',
+    waText: 'Halo JM Kontainer, saya ingin penawaran Booth Kontainer Mini Streetfood'
   }
 ]
 
@@ -158,18 +169,18 @@ export default function Home() {
     <div className="bg-[#FAF8F5] text-stone-900 min-h-screen">
       
       {/* ═══ 1. TOP ANNOUNCEMENT BANNER ═══ */}
-      <div className="bg-stone-900 text-stone-200 text-xs py-2 px-4 border-b border-stone-800">
+      <div className="bg-stone-900 text-stone-200 text-xs py-2.5 px-4 border-b border-stone-800">
         <div className="max-w-7xl mx-auto flex items-center justify-between">
           <div className="flex items-center gap-2">
             <span className="inline-flex items-center justify-center w-2 h-2 rounded-full bg-amber-400 animate-pulse mr-1"></span>
-            <span className="font-medium text-stone-100">Buka Batch Baru Pembuatan Rombong Kontainer &amp; Kanopi</span>
-            <span className="hidden md:inline text-stone-400">— Pengerjaan Cepat 7-14 Hari Kerja</span>
+            <span className="font-semibold text-stone-100">Buka Batch Baru Pembuatan Rombong Kontainer &amp; Kanopi</span>
+            <span className="hidden md:inline text-stone-400">— Pengerjaan Cepat 7-14 Hari Kerja <strong className="text-amber-400 font-normal">(sesuai antrian Order)</strong></span>
           </div>
           <div className="flex items-center gap-4 text-stone-300">
-            <span className="hidden sm:inline">Survei Lokasi &amp; Konsultasi Desain: <strong className="text-amber-400">Gratis 100%</strong></span>
-            <a href="https://wa.me/628155401679?text=Halo%20JM%20Kontainer%2C%20saya%20mau%20ambil%20promo%20survei%20gratis" 
+            <span className="hidden sm:inline font-medium">Kami Pengalaman Lebih dari 7 Tahun, <strong className="text-amber-400">Sejak 2017</strong></span>
+            <a href="https://wa.me/628155401679?text=Halo%20JM%20Kontainer%2C%20saya%20mau%20order%20batch%20baru%20dan%20ambil%20promo%20survei%20gratis" 
                target="_blank" rel="noopener"
-               className="text-amber-400 hover:text-amber-300 font-semibold underline underline-offset-2">Klaim Promo &rarr;</a>
+               className="text-amber-400 hover:text-amber-300 font-bold underline underline-offset-2">Klaim Promo Survei Gratis &rarr;</a>
           </div>
         </div>
       </div>
@@ -187,10 +198,16 @@ export default function Home() {
               {/* Left Column: Value Prop & CTAs */}
               <div className="lg:col-span-6 space-y-6">
                 
-                {/* Pill Tag */}
-                <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white border border-stone-200/90 shadow-sm text-xs font-semibold text-stone-700">
-                  <span className="w-2 h-2 rounded-full bg-amber-600"></span>
-                  <span className="font-mono text-amber-700 font-bold uppercase tracking-wider">Bengkel Las Resmi Surabaya Sejak 2017</span>
+                {/* Pill Tag & Batch Alert */}
+                <div className="flex flex-wrap items-center gap-2">
+                  <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white border border-stone-200/90 shadow-sm text-xs font-semibold text-stone-700">
+                    <span className="w-2 h-2 rounded-full bg-amber-600"></span>
+                    <span className="font-mono text-amber-700 font-bold uppercase tracking-wider">Pengalaman 7+ Tahun • Sejak 2017</span>
+                  </div>
+                  <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-amber-50 border border-amber-200/80 shadow-sm text-xs font-bold text-amber-900">
+                    <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+                    <span>Buka Batch Baru • Pengerjaan Cepat 7-14 Hari Kerja</span>
+                  </div>
                 </div>
 
                 {/* Main Headline */}
@@ -356,10 +373,7 @@ export default function Home() {
                 </div>
                 <div>
                   <div className="relative h-44 rounded-2xl overflow-hidden mb-4 border border-stone-200">
-                    <Image src="/images/slider/slide-1.jpg" alt="Rombong Kontainer" fill className="object-cover" />
-                    <div className="absolute top-2 right-2 px-2 py-0.5 rounded bg-black/60 text-white font-mono text-[9px] font-bold">
-                      JM Kontainer
-                    </div>
+                    <Image src="/images/portfolio/rombong-kontainer-1.webp" alt="Rombong Kontainer UMKM" fill className="object-cover" />
                   </div>
                   <a href="https://wa.me/628155401679?text=Halo%20JM%20Kontainer%2C%20mau%20tanya%20harga%20Rombong%20Kontainer" 
                      target="_blank" rel="noopener"
@@ -383,10 +397,7 @@ export default function Home() {
                 </div>
                 <div>
                   <div className="relative h-44 rounded-2xl overflow-hidden mb-4 border border-stone-200">
-                    <Image src="/images/slider/slide-3.jpg" alt="Kanopi Alderon" fill className="object-cover" />
-                    <div className="absolute top-2 right-2 px-2 py-0.5 rounded bg-black/60 text-white font-mono text-[9px] font-bold">
-                      JM Kontainer
-                    </div>
+                    <Image src="/images/portfolio/kanopi-alderon-1.webp" alt="Kanopi Alderon UPVC" fill className="object-cover" />
                   </div>
                   <a href="https://wa.me/628155401679?text=Halo%20JM%20Kontainer%2C%20mau%20tanya%20pasang%20Kanopi%20Alderon" 
                      target="_blank" rel="noopener"
@@ -410,10 +421,7 @@ export default function Home() {
                 </div>
                 <div>
                   <div className="relative h-44 rounded-2xl overflow-hidden mb-4 border border-stone-200">
-                    <Image src="/images/slider/slide-4.jpg" alt="Pagar Minimalis" fill className="object-cover" />
-                    <div className="absolute top-2 right-2 px-2 py-0.5 rounded bg-black/60 text-white font-mono text-[9px] font-bold">
-                      JM Kontainer
-                    </div>
+                    <Image src="/images/portfolio/pagar-minimalis-1.webp" alt="Pagar Besi Minimalis" fill className="object-cover" />
                   </div>
                   <a href="https://wa.me/628155401679?text=Halo%20JM%20Kontainer%2C%20mau%20tanya%20desain%20Pagar%20Besi" 
                      target="_blank" rel="noopener"
