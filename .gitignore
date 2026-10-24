@@ -5,8 +5,10 @@
 .yarn/install-state.gz
 
 # Next.js build output
-/.next/
-/out/
+.next/
+.next
+out/
+out
 
 # Production build & cache
 dist/
