@@ -25,7 +25,7 @@ export default function Navbar() {
 
           {/* Desktop Nav Links */}
           <div className="hidden md:flex items-center gap-1 bg-stone-100/80 p-1 rounded-xl border border-stone-200/60">
-            <a href="#hero-slider" className="px-4 py-1.5 text-xs font-semibold text-stone-600 hover:text-stone-900 rounded-lg hover:bg-white transition-all">Galeri Proyek</a>
+            <a href="#portofolio" className="px-4 py-1.5 text-xs font-semibold text-stone-600 hover:text-stone-900 rounded-lg hover:bg-white transition-all">Portofolio</a>
             <a href="#layanan" className="px-4 py-1.5 text-xs font-semibold text-stone-600 hover:text-stone-900 rounded-lg hover:bg-white transition-all">Layanan</a>
             <a href="#workflow" className="px-4 py-1.5 text-xs font-semibold text-stone-600 hover:text-stone-900 rounded-lg hover:bg-white transition-all">Alur Kerja</a>
             <a href="#estimasi" className="px-4 py-1.5 text-xs font-semibold text-stone-600 hover:text-stone-900 rounded-lg hover:bg-white transition-all">Kalkulator Biaya</a>
@@ -58,7 +58,7 @@ export default function Navbar() {
         {/* Mobile Drawer */}
         {open && (
           <div className="md:hidden mt-2 p-4 bg-white/95 backdrop-blur-xl border border-stone-200 rounded-2xl shadow-xl flex flex-col gap-2">
-            <a href="#hero-slider" onClick={() => setOpen(false)} className="px-3 py-2 text-sm font-semibold text-stone-700 hover:bg-stone-50 rounded-xl">Galeri Proyek</a>
+            <a href="#portofolio" onClick={() => setOpen(false)} className="px-3 py-2 text-sm font-semibold text-stone-700 hover:bg-stone-50 rounded-xl">Portofolio</a>
             <a href="#layanan" onClick={() => setOpen(false)} className="px-3 py-2 text-sm font-semibold text-stone-700 hover:bg-stone-50 rounded-xl">Layanan</a>
             <a href="#workflow" onClick={() => setOpen(false)} className="px-3 py-2 text-sm font-semibold text-stone-700 hover:bg-stone-50 rounded-xl">Alur Kerja</a>
             <a href="#estimasi" onClick={() => setOpen(false)} className="px-3 py-2 text-sm font-semibold text-stone-700 hover:bg-stone-50 rounded-xl">Estimator Biaya</a>

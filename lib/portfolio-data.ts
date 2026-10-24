@@ -13,6 +13,54 @@ export interface PortfolioItem {
 
 export const PORTFOLIO_ITEMS: PortfolioItem[] = [
   {
+    "id": 1001,
+    "category": "kanopi",
+    "src": "/images/portfolio/kanopi-alderon-carport.webp",
+    "badge": "Kanopi Alderon UPVC",
+    "dim": "Ukuran: 6.0 x 4.5 m (Carport)",
+    "loc": "Pakuwon City, Surabaya",
+    "title": "Kanopi Alderon Double Layer Sejuk Carport",
+    "alt": "Kanopi Alderon UPVC Double Layer Rangka WF Hitam Carport Rumah Surabaya JM Kontainer",
+    "desc": "Rangka WF/hollow galvanis kokoh cat hitam doff, atap Alderon UPVC peredam panas terik 40% dan senyap saat hujan deras.",
+    "waText": "Halo JM Kontainer Surabaya, saya tertarik dengan pemasangan Kanopi Alderon Double Layer Carport"
+  },
+  {
+    "id": 1002,
+    "category": "kanopi",
+    "src": "/images/portfolio/kanopi-alderon-teras.webp",
+    "badge": "Kanopi Alderon UPVC",
+    "dim": "Ukuran: 5.0 x 3.5 m (Teras)",
+    "loc": "Citraland, Surabaya",
+    "title": "Kanopi Alderon Teras & Carport Minimalis",
+    "alt": "Kanopi Teras Rumah Minimalis Alderon UPVC Rangka Besi Baja SNI JM Kontainer Surabaya",
+    "desc": "Desain tiang kokoh industrial modern, finishing rapi anti bocor bergaransi konstruksi resmi bengkel las.",
+    "waText": "Halo JM Kontainer Surabaya, saya tertarik dengan Kanopi Alderon Teras Minimalis"
+  },
+  {
+    "id": 1003,
+    "category": "pagar",
+    "src": "/images/portfolio/pagar-minimalis-modern.webp",
+    "badge": "Pagar Minimalis Modern",
+    "dim": "Tinggi: 1.8 m • Panjang: 4.5 m",
+    "loc": "Dharmahusada, Surabaya",
+    "title": "Pagar Besi Minimalis Kombinasi Woodplank",
+    "alt": "Pagar Besi Minimalis Modern Sliding Gate Hollow Galvanis Woodplank JM Kontainer Surabaya",
+    "desc": "Rangka hollow galvanis tebal finishing cat powder coating hitam doff dengan kisi woodplank tahan cuaca tropis, rel stainless super enteng.",
+    "waText": "Halo JM Kontainer Surabaya, saya tertarik dengan Pagar Besi Minimalis Kombinasi Woodplank"
+  },
+  {
+    "id": 1004,
+    "category": "pagar",
+    "src": "/images/portfolio/pagar-minimalis-laser.webp",
+    "badge": "Pagar Minimalis Modern",
+    "dim": "Tinggi: 2.0 m • Panjang: 5.0 m",
+    "loc": "Kertajaya Indah, Surabaya",
+    "title": "Pagar Besi Minimalis Slats & Laser Cutting",
+    "alt": "Pagar Besi Minimalis Laser Cutting Modern Sliding Gate JM Kontainer Surabaya",
+    "desc": "Desain vertikal slats presisi dengan ornamen laser cutting elegan, anti karat maksimal bergaransi.",
+    "waText": "Halo JM Kontainer Surabaya, saya tertarik dengan Pagar Besi Minimalis Slats & Laser Cutting"
+  },
+  {
     "id": 1,
     "category": "kontainer",
     "src": "/images/portfolio/portfolio-01.webp",
