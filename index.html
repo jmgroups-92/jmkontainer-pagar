@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html class="scroll-smooth antialiased selection:bg-amber-500 selection:text-white" lang="id">
+<html class="scroll-smooth antialiased selection:bg-orange-500 selection:text-white" lang="id">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -44,23 +44,11 @@
           },
           colors: {
             brand: {
-              50: '#fff7ed',
-              100: '#ffedd5',
-              400: '#fb923c',
-              500: '#f97316',
-              600: '#ea580c',
               accent: '#FF5722',
-            },
-            surface: {
-              DEFAULT: '#FAFAF9',
-              card: '#FFFFFF',
-              dark: '#0C0A09',
             }
           },
           boxShadow: {
-            'bento': '0 8px 30px rgba(0, 0, 0, 0.04)',
-            'bento-hover': '0 20px 40px rgba(0, 0, 0, 0.08)',
-            'glow-amber': '0 0 50px -10px rgba(249, 115, 22, 0.35)',
+            'glow-orange': '0 0 50px -10px rgba(255, 87, 34, 0.4)',
           }
         }
       }
@@ -68,24 +56,16 @@
   </script>
 
   <style>
-    /* Engineering Blueprint Grid Pattern */
-    .bg-grid-pattern {
-      background-size: 32px 32px;
-      background-image: 
-        linear-gradient(to right, rgba(0, 0, 0, 0.035) 1px, transparent 1px),
-        linear-gradient(to bottom, rgba(0, 0, 0, 0.035) 1px, transparent 1px);
-    }
+    /* Dark Blueprint Pattern */
     .dark-grid-pattern {
       background-size: 32px 32px;
       background-image: 
-        linear-gradient(to right, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
-        linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+        linear-gradient(to right, rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
     }
-    /* Smooth Transitions */
     .filter-item {
       transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
     }
-    /* Hide scrollbar for tabs on mobile */
     .no-scrollbar::-webkit-scrollbar { display: none; }
     .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
   </style>
@@ -120,30 +100,23 @@
       "opens": "08:00",
       "closes": "17:00"
     },
-    "areaServed": ["Surabaya", "Sidoarjo", "Gresik", "Mojokerto", "Lamongan"],
-    "aggregateRating": {
-      "@type": "AggregateRating",
-      "ratingValue": "4.9",
-      "reviewCount": "128"
-    }
+    "areaServed": ["Surabaya", "Sidoarjo", "Gresik", "Mojokerto", "Lamongan"]
   }
   </script>
 </head>
 
-<body class="bg-surface text-zinc-900 font-sans antialiased overflow-x-hidden">
+<body class="bg-[#09090b] text-zinc-100 font-sans antialiased overflow-x-hidden">
 
-  <!-- ═══════════════════════════════════════════════════
-       1. TOP ANNOUNCEMENT BANNER
-  ═══════════════════════════════════════════════════ -->
-  <div class="bg-zinc-950 text-white text-xs py-2 px-4 border-b border-zinc-800">
+  <!-- ═══ TOP ANNOUNCEMENT BANNER ═══ -->
+  <div class="bg-zinc-950 text-white text-xs py-2 px-4 border-b border-zinc-800/80">
     <div class="max-w-7xl mx-auto flex items-center justify-between">
       <div class="flex items-center gap-2">
-        <span class="inline-flex items-center justify-center w-2 h-2 rounded-full bg-emerald-500 animate-ping mr-1"></span>
+        <span class="inline-flex items-center justify-center w-2 h-2 rounded-full bg-emerald-400 animate-ping mr-1"></span>
         <span class="font-medium text-zinc-300">Slot Produksi Batch Baru Dibuka</span>
         <span class="hidden md:inline text-zinc-500">— Estimasi Pengerjaan 7-14 Hari Kerja</span>
       </div>
       <div class="flex items-center gap-4 text-zinc-400">
-        <span class="hidden sm:inline">Survei Lokasi & Konsultasi Desain 3D: <strong class="text-white">Gratis 100%</strong></span>
+        <span class="hidden sm:inline">Survei Lokasi & Konsultasi Desain 3D: <strong class="text-amber-400">Gratis 100%</strong></span>
         <a href="https://wa.me/628155401679?text=Halo%20JM%20Workshop%2C%20saya%20mau%20ambil%20promo%20survei%20gratis" 
            target="_blank" rel="noopener"
            class="text-amber-400 hover:text-amber-300 font-semibold underline underline-offset-2">Klaim Promo &rarr;</a>
@@ -151,67 +124,65 @@
     </div>
   </div>
 
-  <!-- ═══════════════════════════════════════════════════
-       2. FLOATING / STICKY NAVBAR (SLINGSHOT STYLE)
-  ═══════════════════════════════════════════════════ -->
+  <!-- ═══ NAVBAR ═══ -->
   <header class="sticky top-0 z-40 w-full px-4 sm:px-6 lg:px-8 pt-3">
     <div class="max-w-7xl mx-auto">
-      <nav class="flex items-center justify-between px-5 py-3.5 bg-white/80 backdrop-blur-xl border border-zinc-200/80 rounded-2xl shadow-sm transition-all duration-300">
-        <!-- Brand Monogram & Label -->
+      <nav class="flex items-center justify-between px-5 py-3.5 bg-zinc-950/85 backdrop-blur-xl border border-zinc-800/80 rounded-2xl shadow-2xl transition-all duration-300">
+        <!-- Brand -->
         <a href="#" class="flex items-center gap-3 group">
-          <div class="w-10 h-10 rounded-xl bg-zinc-950 flex items-center justify-center text-white font-mono font-bold text-sm tracking-wider group-hover:bg-brand-600 transition-colors shadow-inner">
+          <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-amber-500 to-orange-600 flex items-center justify-center text-black font-mono font-black text-sm tracking-wider shadow-md shadow-amber-500/20 group-hover:scale-105 transition-transform">
             JM
           </div>
           <div>
-            <div class="font-bold text-base tracking-tight text-zinc-950 flex items-center gap-1.5">
+            <div class="font-bold text-base tracking-tight text-white flex items-center gap-1.5">
               JM Workshop
-              <span class="w-1.5 h-1.5 rounded-full bg-brand-500"></span>
+              <span class="w-1.5 h-1.5 rounded-full bg-orange-500 animate-pulse"></span>
             </div>
-            <p class="text-[11px] font-mono tracking-wider text-zinc-600 uppercase">Fabrikasi Presisi • Surabaya</p>
+            <p class="text-[10px] font-mono tracking-widest text-zinc-400 uppercase">Fabrikasi Presisi • Surabaya</p>
           </div>
         </a>
 
-        <!-- Desktop Navigation Links -->
-        <div class="hidden md:flex items-center gap-1 bg-zinc-100/70 p-1 rounded-xl border border-zinc-200/50">
-          <a href="#layanan" class="px-4 py-1.5 text-xs font-semibold text-zinc-600 hover:text-zinc-950 rounded-lg hover:bg-white transition-all">Layanan Bento</a>
-          <a href="#portofolio" class="px-4 py-1.5 text-xs font-semibold text-zinc-600 hover:text-zinc-950 rounded-lg hover:bg-white transition-all">Portofolio</a>
-          <a href="#workflow" class="px-4 py-1.5 text-xs font-semibold text-zinc-600 hover:text-zinc-950 rounded-lg hover:bg-white transition-all">Cara Kerja</a>
-          <a href="#estimasi" class="px-4 py-1.5 text-xs font-semibold text-zinc-600 hover:text-zinc-950 rounded-lg hover:bg-white transition-all">Kalkulator Biaya</a>
-          <a href="#faq" class="px-4 py-1.5 text-xs font-semibold text-zinc-600 hover:text-zinc-950 rounded-lg hover:bg-white transition-all">FAQ</a>
+        <!-- Desktop Nav Links -->
+        <div class="hidden md:flex items-center gap-1 bg-zinc-900/80 p-1 rounded-xl border border-zinc-800/60">
+          <a href="#layanan" class="px-4 py-1.5 text-xs font-semibold text-zinc-400 hover:text-white rounded-lg hover:bg-zinc-800 transition-all">Layanan</a>
+          <a href="#portofolio" class="px-4 py-1.5 text-xs font-semibold text-zinc-400 hover:text-white rounded-lg hover:bg-zinc-800 transition-all">Portofolio</a>
+          <a href="#workflow" class="px-4 py-1.5 text-xs font-semibold text-zinc-400 hover:text-white rounded-lg hover:bg-zinc-800 transition-all">Alur Kerja</a>
+          <a href="#estimasi" class="px-4 py-1.5 text-xs font-semibold text-zinc-400 hover:text-white rounded-lg hover:bg-zinc-800 transition-all">Kalkulator Biaya</a>
+          <a href="#faq" class="px-4 py-1.5 text-xs font-semibold text-zinc-400 hover:text-white rounded-lg hover:bg-zinc-800 transition-all">FAQ</a>
         </div>
 
-        <!-- Action CTA Buttons -->
+        <!-- Action CTA -->
         <div class="hidden sm:flex items-center gap-3">
-          <a href="tel:+628155401679" class="text-xs font-semibold text-zinc-600 hover:text-zinc-950 px-2 py-1 flex items-center gap-1">
-            <span class="material-symbols-outlined text-sm text-zinc-600">call</span>
+          <a href="tel:+628155401679" class="text-xs font-mono font-semibold text-zinc-400 hover:text-white px-2 py-1 flex items-center gap-1.5">
+            <span class="material-symbols-outlined text-sm text-orange-500">call</span>
             +62 815-5401-6679
           </a>
           <a href="https://wa.me/628155401679?text=Halo%20JM%20Workshop%2C%20saya%20ingin%20konsultasi%20desain%20dan%20harga" 
              target="_blank" rel="noopener"
-             class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-zinc-950 text-white hover:bg-brand-600 active:scale-95 text-xs font-semibold transition-all shadow-md shadow-zinc-950/10">
-            <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+             class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-gradient-to-r from-orange-500 to-amber-500 hover:from-orange-600 hover:to-amber-600 text-white active:scale-95 text-xs font-bold transition-all shadow-glow-orange">
+            <span class="w-2 h-2 rounded-full bg-white animate-ping"></span>
             Konsultasi WhatsApp
             <span class="material-symbols-outlined text-sm">arrow_outward</span>
           </a>
         </div>
 
-        <!-- Mobile Menu Toggle Button -->
-        <button id="mobile-menu-btn" class="md:hidden p-2 text-zinc-700 hover:text-zinc-950 rounded-xl hover:bg-zinc-100 transition-colors" aria-label="Toggle navigation">
+        <!-- Mobile Menu Toggle -->
+        <button id="mobile-menu-btn" class="md:hidden p-2 text-zinc-300 hover:text-white rounded-xl hover:bg-zinc-800 transition-colors" aria-label="Toggle navigation">
           <span class="material-symbols-outlined text-2xl">menu</span>
         </button>
       </nav>
 
-      <!-- Mobile Navigation Drawer -->
-      <div id="mobile-menu" class="hidden md:hidden mt-2 p-4 bg-white/95 backdrop-blur-xl border border-zinc-200/80 rounded-2xl shadow-xl flex flex-col gap-2">
-        <a href="#layanan" class="mobile-link px-3 py-2 text-sm font-semibold text-zinc-700 hover:bg-zinc-50 rounded-xl">Layanan Bento</a>
-        <a href="#portofolio" class="mobile-link px-3 py-2 text-sm font-semibold text-zinc-700 hover:bg-zinc-50 rounded-xl">Portofolio Proyek</a>
-        <a href="#workflow" class="mobile-link px-3 py-2 text-sm font-semibold text-zinc-700 hover:bg-zinc-50 rounded-xl">Alur Fabrikasi</a>
-        <a href="#estimasi" class="mobile-link px-3 py-2 text-sm font-semibold text-zinc-700 hover:bg-zinc-50 rounded-xl">Estimator Biaya</a>
-        <a href="#faq" class="mobile-link px-3 py-2 text-sm font-semibold text-zinc-700 hover:bg-zinc-50 rounded-xl">Tanya Jawab (FAQ)</a>
-        <div class="pt-3 border-t border-zinc-100 flex flex-col gap-2">
+      <!-- Mobile Menu Drawer -->
+      <div id="mobile-menu" class="hidden md:hidden mt-2 p-4 bg-zinc-950/95 backdrop-blur-xl border border-zinc-800 rounded-2xl shadow-2xl flex flex-col gap-2">
+        <a href="#layanan" class="mobile-link px-3 py-2 text-sm font-semibold text-zinc-300 hover:bg-zinc-900 rounded-xl">Layanan</a>
+        <a href="#portofolio" class="mobile-link px-3 py-2 text-sm font-semibold text-zinc-300 hover:bg-zinc-900 rounded-xl">Portofolio Proyek</a>
+        <a href="#workflow" class="mobile-link px-3 py-2 text-sm font-semibold text-zinc-300 hover:bg-zinc-900 rounded-xl">Alur Fabrikasi</a>
+        <a href="#estimasi" class="mobile-link px-3 py-2 text-sm font-semibold text-zinc-300 hover:bg-zinc-900 rounded-xl">Estimator Biaya</a>
+        <a href="#faq" class="mobile-link px-3 py-2 text-sm font-semibold text-zinc-300 hover:bg-zinc-900 rounded-xl">FAQ</a>
+        <div class="pt-3 border-t border-zinc-800 flex flex-col gap-2">
           <a href="https://wa.me/628155401679?text=Halo%20JM%20Workshop%2C%20saya%20ingin%20konsultasi" 
              target="_blank" rel="noopener"
-             class="w-full flex items-center justify-center gap-2 py-3 rounded-xl bg-brand-600 text-white font-semibold text-sm">
+             class="w-full flex items-center justify-center gap-2 py-3 rounded-xl bg-gradient-to-r from-orange-500 to-amber-500 text-white font-bold text-sm shadow-glow-orange">
             <span class="material-symbols-outlined text-base">chat</span>
             Hubungi WhatsApp Sekarang
           </a>
@@ -220,69 +191,62 @@
     </div>
   </header>
 
-  <!-- ═══════════════════════════════════════════════════
-       3. HERO SECTION (HIGH CONVERTING & REFINED)
-  ═══════════════════════════════════════════════════ -->
-  <section class="relative pt-12 pb-20 md:pt-20 md:pb-32 overflow-hidden bg-grid-pattern">
-    <!-- Ambient Radial Light -->
-    <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[650px] h-[350px] bg-gradient-to-tr from-amber-400/15 via-orange-500/10 to-transparent blur-3xl pointer-events-none -z-10"></div>
+  <!-- ═══ HERO SECTION ═══ -->
+  <section class="relative pt-16 pb-24 md:pt-28 md:pb-36 overflow-hidden dark-grid-pattern">
+    <div class="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[380px] bg-gradient-to-tr from-orange-500/20 via-amber-500/15 to-transparent blur-3xl pointer-events-none -z-10"></div>
+    <div class="absolute -top-10 right-10 w-72 h-72 bg-amber-600/10 rounded-full blur-3xl pointer-events-none -z-10"></div>
 
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="max-w-4xl mx-auto text-center">
         
-        <!-- Eyebrow Pill -->
-        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white border border-zinc-200/90 shadow-sm text-xs font-semibold text-zinc-700 mb-6 hover:border-amber-400 transition-colors">
+        <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-zinc-900/90 border border-zinc-800 shadow-xl text-xs font-semibold text-zinc-300 mb-8 hover:border-amber-500/50 transition-colors">
           <span class="flex h-2 w-2 relative">
-            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-400 opacity-75"></span>
-            <span class="relative inline-flex rounded-full h-2 w-2 bg-brand-500"></span>
+            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-orange-400 opacity-75"></span>
+            <span class="relative inline-flex rounded-full h-2 w-2 bg-orange-500"></span>
           </span>
-          <span class="font-mono text-zinc-600 tracking-wide">EST. 2017</span>
-          <span class="w-1 h-1 rounded-full bg-zinc-300"></span>
-          <span>Bengkel Fabrikasi Logam Presisi Surabaya</span>
+          <span class="font-mono text-amber-400 tracking-wider">EST. 2017</span>
+          <span class="w-1 h-1 rounded-full bg-zinc-600"></span>
+          <span class="text-zinc-200">Bengkel Fabrikasi Logam Presisi Surabaya</span>
         </div>
 
-        <!-- Main H1 Headline -->
-        <h1 class="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-zinc-950 leading-[1.08] mb-6">
+        <h1 class="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-white leading-[1.08] mb-6">
           Rombong Kontainer UMKM <br class="hidden sm:inline" />
-          &amp; Fabrikasi Besi <span class="bg-gradient-to-r from-zinc-950 via-zinc-800 to-brand-600 bg-clip-text text-transparent">Presisi Tinggi.</span>
+          &amp; Fabrikasi Besi <span class="bg-gradient-to-r from-orange-400 via-amber-400 to-amber-200 bg-clip-text text-transparent">Presisi Tinggi.</span>
         </h1>
 
-        <!-- Subtitle -->
-        <p class="text-lg sm:text-xl text-zinc-600 max-w-2xl mx-auto leading-relaxed mb-10">
+        <p class="text-base sm:text-lg text-zinc-400 max-w-2xl mx-auto leading-relaxed mb-10">
           Transformasi ruang usaha dan hunian Anda dengan konstruksi modular berstandar SNI. Tahan cuaca ekstrem, finishing powder coat awet, dan garansi struktur hingga 15 tahun.
         </p>
 
-        <!-- Dual CTA Buttons -->
-        <div class="flex flex-col sm:flex-row items-center justify-center gap-3.5 mb-14">
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16">
           <a href="https://wa.me/628155401679?text=Halo%20JM%20Workshop%2C%20saya%20tertarik%20dengan%20Rombong%20Kontainer%20%2F%20Kanopi.%20Bisa%20minta%20info%20katalog%20dan%20harga%3F" 
              target="_blank" rel="noopener"
-             class="w-full sm:w-auto inline-flex items-center justify-center gap-3 px-8 py-4 rounded-2xl bg-zinc-950 text-white hover:bg-brand-600 active:scale-98 font-bold text-base transition-all shadow-xl shadow-zinc-950/20 group">
+             class="w-full sm:w-auto inline-flex items-center justify-center gap-3 px-8 py-4 rounded-2xl bg-gradient-to-r from-orange-500 to-amber-500 hover:from-orange-600 hover:to-amber-600 text-white font-extrabold text-base transition-all shadow-glow-orange group active:scale-95">
             <span>💬 Konsultasi &amp; Survei Gratis</span>
-            <span class="material-symbols-outlined text-lg group-hover:translate-x-0.5 transition-transform">arrow_forward</span>
+            <span class="material-symbols-outlined text-lg group-hover:translate-x-1 transition-transform">arrow_forward</span>
           </a>
           <a href="#portofolio" 
-             class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 rounded-2xl bg-white text-zinc-800 hover:bg-zinc-50 border border-zinc-200/90 font-semibold text-base transition-all shadow-sm">
+             class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 rounded-2xl bg-zinc-900/80 hover:bg-zinc-800 text-zinc-200 border border-zinc-800 hover:border-zinc-700 font-semibold text-base transition-all shadow-sm">
             <span>Lihat Galeri Proyek (500+)</span>
           </a>
         </div>
 
-        <!-- Social Proof Stats Strip -->
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 p-4 sm:p-6 bg-white/90 backdrop-blur-md rounded-2xl border border-zinc-200/80 shadow-bento max-w-4xl mx-auto">
-          <div class="text-center p-2 border-r border-zinc-100 last:border-none">
-            <div class="text-2xl sm:text-3xl font-extrabold text-zinc-950 font-mono">500+</div>
-            <div class="text-xs font-medium text-zinc-500 mt-0.5">Unit Proyek Terpasang</div>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 p-5 sm:p-6 bg-zinc-900/70 backdrop-blur-xl rounded-3xl border border-zinc-800/80 shadow-2xl max-w-4xl mx-auto">
+          <div class="text-center p-2 border-r border-zinc-800 last:border-none">
+            <div class="text-3xl font-extrabold text-white font-mono">500+</div>
+            <div class="text-xs font-medium text-zinc-400 mt-1">Unit Proyek Selesai</div>
           </div>
-          <div class="text-center p-2 md:border-r border-zinc-100 last:border-none">
-            <div class="text-2xl sm:text-3xl font-extrabold text-zinc-950 font-mono">7+ Thn</div>
-            <div class="text-xs font-medium text-zinc-500 mt-0.5">Pengalaman Fabrikasi</div>
+          <div class="text-center p-2 md:border-r border-zinc-800 last:border-none">
+            <div class="text-3xl font-extrabold text-white font-mono">7+ Thn</div>
+            <div class="text-xs font-medium text-zinc-400 mt-1">Pengalaman Fabrikasi</div>
           </div>
-          <div class="text-center p-2 border-r border-zinc-100 last:border-none">
-            <div class="text-2xl sm:text-3xl font-extrabold text-zinc-950 font-mono">100%</div>
-            <div class="text-xs font-medium text-zinc-500 mt-0.5">Material Baja SNI</div>
+          <div class="text-center p-2 border-r border-zinc-800 last:border-none">
+            <div class="text-3xl font-extrabold text-amber-400 font-mono">100%</div>
+            <div class="text-xs font-medium text-zinc-400 mt-1">Material Baja SNI</div>
           </div>
           <div class="text-center p-2">
-            <div class="text-2xl sm:text-3xl font-extrabold text-brand-600 font-mono">4.9 ★</div>
-            <div class="text-xs font-medium text-zinc-500 mt-0.5">Rating Kepuasan Mitra</div>
+            <div class="text-3xl font-extrabold text-orange-400 font-mono">4.9 ★</div>
+            <div class="text-xs font-medium text-zinc-400 mt-1">Rating Kepuasan Mitra</div>
           </div>
         </div>
 
@@ -290,66 +254,59 @@
     </div>
   </section>
 
-  <!-- ═══════════════════════════════════════════════════
-       4. BENTO GRID SERVICES (SLINGSHOT DESIGN SYSTEM)
-  ═══════════════════════════════════════════════════ -->
-  <section class="py-20 lg:py-28 bg-white border-t border-zinc-100" id="layanan">
+  <!-- ═══ BENTO GRID SERVICES ═══ -->
+  <section class="py-20 lg:py-28 bg-[#0c0c0e] border-t border-zinc-800/60" id="layanan">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       
-      <!-- Section Header -->
       <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
         <div>
-          <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-md bg-amber-50 text-brand-600 text-xs font-mono font-bold tracking-wider uppercase mb-3">
+          <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-md bg-amber-500/10 text-amber-400 border border-amber-500/20 text-xs font-mono font-bold tracking-wider uppercase mb-3">
             Layanan Unggulan
           </div>
-          <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-zinc-950">
+          <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-white">
             Katalog Fabrikasi Khusus. <br class="hidden sm:inline"/>
             Dirancang Kuat, Tampil Modern.
           </h2>
         </div>
-        <p class="text-zinc-600 max-w-md text-sm sm:text-base leading-relaxed">
+        <p class="text-zinc-400 max-w-md text-sm leading-relaxed">
           Semua pengerjaan menggunakan teknik las presisi, pengelasan TIG/MIG rapi, pemotongan laser presisi, dan pelapisan anti-karat standar industri.
         </p>
       </div>
 
-      <!-- Bento Grid (3-4 Cards with hierarchy) -->
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
 
-        <!-- Bento Card 1: Featured 2-Col Span (Rombong Kontainer) -->
-        <div class="lg:col-span-8 group relative bg-zinc-950 rounded-3xl p-8 sm:p-12 overflow-hidden flex flex-col justify-between text-white border border-zinc-800 shadow-xl transition-all duration-300 hover:border-zinc-700">
-          <!-- Background Image Overlay with Fade -->
+        <!-- Bento Card 1: 8-Col -->
+        <div class="lg:col-span-8 group relative bg-zinc-900/80 rounded-3xl p-8 sm:p-12 overflow-hidden flex flex-col justify-between border border-zinc-800 shadow-2xl transition-all duration-300 hover:border-amber-500/40">
           <div class="absolute inset-0 opacity-40 group-hover:opacity-50 transition-opacity duration-500">
             <img src="/images/modern_premium_container_booth_rombong_kontainer_for_umkm_street_food_business.png" 
                  alt="Rombong Kontainer Surabaya JM Workshop" 
                  class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700">
           </div>
-          <div class="absolute inset-0 bg-gradient-to-t from-zinc-950 via-zinc-950/70 to-transparent"></div>
+          <div class="absolute inset-0 bg-gradient-to-t from-zinc-950 via-zinc-950/80 to-transparent"></div>
 
-          <!-- Top Badge -->
           <div class="relative z-10 flex items-center justify-between mb-24">
-            <span class="px-3.5 py-1.5 rounded-full bg-brand-500 text-white font-mono text-xs font-bold tracking-wider uppercase">
+            <span class="px-3.5 py-1.5 rounded-full bg-gradient-to-r from-orange-500 to-amber-500 text-white font-mono text-xs font-bold tracking-wider uppercase shadow-md">
               ★ Produk Utama UMKM
             </span>
-            <span class="text-xs font-mono text-zinc-400">01 / BOOTH KONTAINER</span>
+            <span class="text-xs font-mono text-amber-400">01 / BOOTH KONTAINER</span>
           </div>
 
-          <!-- Content Body -->
           <div class="relative z-10">
             <div class="flex flex-wrap gap-2 mb-3">
-              <span class="px-2.5 py-1 rounded-md bg-white/10 backdrop-blur-md text-[11px] font-mono text-zinc-300">Modular Siap Pakai</span>
-              <span class="px-2.5 py-1 rounded-md bg-white/10 backdrop-blur-md text-[11px] font-mono text-zinc-300">Instalasi Listrik Lengkap</span>
-              <span class="px-2.5 py-1 rounded-md bg-white/10 backdrop-blur-md text-[11px] font-mono text-zinc-300">Tahan Hujan &amp; Panas</span>
+              <span class="px-2.5 py-1 rounded-md bg-zinc-800/80 backdrop-blur-md text-[11px] font-mono text-zinc-300 border border-zinc-700/50">Modular Siap Pakai</span>
+              <span class="px-2.5 py-1 rounded-md bg-zinc-800/80 backdrop-blur-md text-[11px] font-mono text-zinc-300 border border-zinc-700/50">Instalasi Listrik Lengkap</span>
+              <span class="px-2.5 py-1 rounded-md bg-zinc-800/80 backdrop-blur-md text-[11px] font-mono text-zinc-300 border border-zinc-700/50">Tahan Hujan &amp; Panas</span>
             </div>
             <h3 class="text-2xl sm:text-3xl font-extrabold text-white mb-3">
               Rombong Kontainer &amp; Container Booth Bisnis
             </h3>
-            <p class="text-zinc-300 text-sm sm:text-base max-w-xl mb-6 leading-relaxed">
+            <p class="text-zinc-300 text-sm max-w-xl mb-6 leading-relaxed">
               Solusi gerobak dan booth usaha kekinian untuk cafe, street food, franchise f&amp;b, maupun pop-up store. Rangka kokoh hollow galvanis, dinding spandek/zincalume pilihan, dan sistem hidrolik jendela kanopi.
             </p>
             <div class="flex flex-wrap items-center gap-4">
               <a href="https://wa.me/628155401679?text=Halo%20JM%20Workshop%2C%20saya%20ingin%20tanya%20detail%20Rombong%20Kontainer" 
                  target="_blank" rel="noopener"
-                 class="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-white text-zinc-950 hover:bg-brand-500 hover:text-white font-bold text-xs uppercase tracking-wider transition-all">
+                 class="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-gradient-to-r from-orange-500 to-amber-500 hover:from-orange-600 hover:to-amber-600 text-white font-bold text-xs uppercase tracking-wider transition-all shadow-glow-orange">
                 <span>Tanya Harga Booth Kontainer</span>
                 <span class="material-symbols-outlined text-sm">arrow_outward</span>
               </a>
@@ -358,80 +315,80 @@
           </div>
         </div>
 
-        <!-- Bento Card 2: Kanopi Alderon UPVC (Col Span 4) -->
-        <div class="lg:col-span-4 group relative bg-surface rounded-3xl p-8 border border-zinc-200/90 shadow-bento hover:shadow-bento-hover transition-all duration-300 flex flex-col justify-between">
+        <!-- Bento Card 2: 4-Col Kanopi Alderon -->
+        <div class="lg:col-span-4 group relative bg-zinc-900/80 rounded-3xl p-8 border border-zinc-800 hover:border-amber-500/40 shadow-xl transition-all duration-300 flex flex-col justify-between">
           <div>
             <div class="flex items-center justify-between mb-6">
-              <div class="w-12 h-12 rounded-2xl bg-zinc-950 text-amber-400 flex items-center justify-center shadow-sm">
+              <div class="w-12 h-12 rounded-2xl bg-amber-500/10 text-amber-400 border border-amber-500/20 flex items-center justify-center shadow-sm">
                 <span class="material-symbols-outlined text-2xl">roofing</span>
               </div>
-              <span class="text-xs font-mono text-zinc-400">02 / KANOPI</span>
+              <span class="text-xs font-mono text-zinc-500">02 / KANOPI</span>
             </div>
-            <h3 class="text-xl font-extrabold text-zinc-950 mb-2">
+            <h3 class="text-xl font-extrabold text-white mb-2">
               Kanopi Alderon UPVC Double Layer
             </h3>
-            <p class="text-zinc-600 text-sm leading-relaxed mb-6">
+            <p class="text-zinc-400 text-xs sm:text-sm leading-relaxed mb-6">
               Struktur kanopi carport dan teras bebas bising saat hujan lebat dan sejuk menyerap panas matahari. Rangka besi hollow tebal bergaransi anti-bocor.
             </p>
           </div>
 
           <div>
-            <div class="rounded-2xl overflow-hidden mb-5 h-44 relative border border-zinc-200">
+            <div class="rounded-2xl overflow-hidden mb-5 h-44 relative border border-zinc-800">
               <img src="/images/high_quality_alderon_canopy_installation_on_a_modern_house_white_and_black.png" 
                    alt="Pemasangan Kanopi Alderon Surabaya" 
                    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-              <span class="absolute bottom-2 left-2 px-2 py-0.5 rounded bg-zinc-950/80 backdrop-blur-sm text-[10px] font-mono text-white">Garansi 10+ Thn</span>
+              <span class="absolute bottom-2 left-2 px-2.5 py-0.5 rounded-full bg-zinc-950/80 backdrop-blur-md text-[10px] font-mono text-amber-400 border border-zinc-700">Garansi 10+ Thn</span>
             </div>
             <a href="https://wa.me/628155401679?text=Halo%20JM%20Workshop%2C%20mau%20hitung%20biaya%20pasang%20kanopi%20alderon" 
                target="_blank" rel="noopener"
-               class="flex items-center justify-between w-full text-xs font-bold text-zinc-900 group-hover:text-brand-600 transition-colors pt-2 border-t border-zinc-100">
+               class="flex items-center justify-between w-full text-xs font-bold text-zinc-200 group-hover:text-amber-400 transition-colors pt-2 border-t border-zinc-800">
               <span>Konsultasi Ukuran Carport</span>
               <span class="material-symbols-outlined text-base">arrow_forward</span>
             </a>
           </div>
         </div>
 
-        <!-- Bento Card 3: Pagar Minimalis Modern (Col Span 5) -->
-        <div class="lg:col-span-5 group relative bg-surface rounded-3xl p-8 border border-zinc-200/90 shadow-bento hover:shadow-bento-hover transition-all duration-300 flex flex-col justify-between">
+        <!-- Bento Card 3: 5-Col Pagar -->
+        <div class="lg:col-span-5 group relative bg-zinc-900/80 rounded-3xl p-8 border border-zinc-800 hover:border-amber-500/40 shadow-xl transition-all duration-300 flex flex-col justify-between">
           <div>
             <div class="flex items-center justify-between mb-6">
-              <div class="w-12 h-12 rounded-2xl bg-zinc-950 text-amber-400 flex items-center justify-center shadow-sm">
+              <div class="w-12 h-12 rounded-2xl bg-amber-500/10 text-amber-400 border border-amber-500/20 flex items-center justify-center shadow-sm">
                 <span class="material-symbols-outlined text-2xl">fence</span>
               </div>
-              <span class="text-xs font-mono text-zinc-400">03 / PAGAR &amp; PINTU</span>
+              <span class="text-xs font-mono text-zinc-500">03 / PAGAR &amp; PINTU</span>
             </div>
-            <h3 class="text-xl font-extrabold text-zinc-950 mb-2">
+            <h3 class="text-xl font-extrabold text-white mb-2">
               Pagar Minimalis &amp; Laser-Cut Besi
             </h3>
-            <p class="text-zinc-600 text-sm leading-relaxed mb-6">
+            <p class="text-zinc-400 text-xs sm:text-sm leading-relaxed mb-6">
               Pagar hollow tebal, plat perforated, atau motif laser-cut modern. Dilapisi cat epoxy primer dan powder coat tahan karat cuaca tropis Surabaya.
             </p>
           </div>
 
           <div>
-            <div class="rounded-2xl overflow-hidden mb-5 h-44 relative border border-zinc-200">
+            <div class="rounded-2xl overflow-hidden mb-5 h-44 relative border border-zinc-800">
               <img src="/images/modern_minimalist_house_gate_pagar_minimalis_black_powder_coated_iron_elegant.png" 
                    alt="Pagar Minimalis Modern Surabaya" 
                    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-              <span class="absolute bottom-2 left-2 px-2 py-0.5 rounded bg-zinc-950/80 backdrop-blur-sm text-[10px] font-mono text-white">Powder Coated</span>
+              <span class="absolute bottom-2 left-2 px-2.5 py-0.5 rounded-full bg-zinc-950/80 backdrop-blur-md text-[10px] font-mono text-amber-400 border border-zinc-700">Powder Coated</span>
             </div>
             <a href="https://wa.me/628155401679?text=Halo%20JM%20Workshop%2C%20mau%20tanya%20desain%20pagar%20minimalis" 
                target="_blank" rel="noopener"
-               class="flex items-center justify-between w-full text-xs font-bold text-zinc-900 group-hover:text-brand-600 transition-colors pt-2 border-t border-zinc-100">
+               class="flex items-center justify-between w-full text-xs font-bold text-zinc-200 group-hover:text-amber-400 transition-colors pt-2 border-t border-zinc-800">
               <span>Pilih Desain &amp; Model Pagar</span>
               <span class="material-symbols-outlined text-base">arrow_forward</span>
             </a>
           </div>
         </div>
 
-        <!-- Bento Card 4: Fabrikasi Custom & Workshop Kapasitas (Col Span 7) -->
-        <div class="lg:col-span-7 group relative bg-zinc-900 text-white rounded-3xl p-8 sm:p-10 border border-zinc-800 shadow-xl overflow-hidden flex flex-col justify-between">
+        <!-- Bento Card 4: 7-Col Custom -->
+        <div class="lg:col-span-7 group relative bg-zinc-900/80 rounded-3xl p-8 sm:p-10 border border-zinc-800 hover:border-amber-500/40 shadow-xl overflow-hidden flex flex-col justify-between">
           <div class="flex items-center justify-between mb-6">
-            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-white/10 text-amber-400 text-xs font-mono">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-white/5 border border-zinc-700 text-amber-400 text-xs font-mono">
               <span class="material-symbols-outlined text-sm">precision_manufacturing</span>
               Fasilitas Workshop Lengkap
             </div>
-            <span class="text-xs font-mono text-zinc-400">04 / CUSTOM WELDING</span>
+            <span class="text-xs font-mono text-zinc-500">04 / CUSTOM WELDING</span>
           </div>
 
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 items-center">
@@ -439,16 +396,16 @@
               <h3 class="text-2xl font-extrabold text-white mb-2">
                 Fabrikasi Logam &amp; Konstruksi Khusus
               </h3>
-              <p class="text-zinc-400 text-sm leading-relaxed mb-6">
+              <p class="text-zinc-400 text-xs sm:text-sm leading-relaxed mb-6">
                 Menerima pesanan tangga putar, mezzanine, railing balkon, pos sekuriti, dan rangka struktural komersial dengan gambar teknis presisi.
               </p>
               <ul class="space-y-2 text-xs text-zinc-300 font-medium mb-6">
                 <li class="flex items-center gap-2">
-                  <span class="material-symbols-outlined text-brand-500 text-sm">check_circle</span>
+                  <span class="material-symbols-outlined text-amber-400 text-sm">check_circle</span>
                   Keahlian Tukang Las Bersertifikat
                 </li>
                 <li class="flex items-center gap-2">
-                  <span class="material-symbols-outlined text-brand-500 text-sm">check_circle</span>
+                  <span class="material-symbols-outlined text-amber-400 text-sm">check_circle</span>
                   QC Ketat: Sambungan Halus &amp; Anti-Melengkung
                 </li>
               </ul>
@@ -459,7 +416,7 @@
                 <span class="material-symbols-outlined text-sm">arrow_forward</span>
               </a>
             </div>
-            <div class="rounded-2xl overflow-hidden h-52 border border-zinc-700/60 shadow-lg">
+            <div class="rounded-2xl overflow-hidden h-52 relative border border-zinc-800 shadow-lg">
               <img src="/images/professional_welding_workshop_interior_skilled_craftsmen_working_on_custom.png" 
                    alt="Interior Bengkel Las JM Workshop Surabaya" 
                    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
@@ -472,36 +429,33 @@
     </div>
   </section>
 
-  <!-- ═══════════════════════════════════════════════════
-       5. FILTERABLE PORTFOLIO SHOWCASE (INTERACTIVE)
-  ═══════════════════════════════════════════════════ -->
-  <section class="py-20 lg:py-28 bg-surface border-t border-zinc-200/80" id="portofolio">
+  <!-- ═══ PORTFOLIO SHOWCASE ═══ -->
+  <section class="py-20 lg:py-28 bg-[#09090b] border-t border-zinc-800/80" id="portofolio">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
-      <!-- Header & Tab Controls -->
       <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
         <div>
-          <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-md bg-zinc-200/80 text-zinc-800 text-xs font-mono font-bold tracking-wider uppercase mb-3">
+          <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-md bg-zinc-800 text-zinc-300 text-xs font-mono font-bold tracking-wider uppercase mb-3 border border-zinc-700">
             Portofolio Riil
           </div>
-          <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-zinc-950">
+          <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-white">
             Dokumentasi Pengerjaan di Lapangan
           </h2>
-          <p class="text-zinc-600 text-sm mt-2">Bukan gambar render 3D — semua foto merupakan hasil fabrikasi langsung di workshop dan lokasi mitra.</p>
+          <p class="text-zinc-400 text-sm mt-2">Bukan gambar render 3D — semua foto merupakan hasil fabrikasi langsung di workshop dan lokasi mitra.</p>
         </div>
 
-        <!-- Filter Tabs (Vanilla JS Controlled) -->
-        <div class="flex items-center gap-1.5 p-1.5 bg-zinc-200/60 rounded-2xl border border-zinc-200 no-scrollbar overflow-x-auto">
-          <button data-filter="all" class="portfolio-tab active-tab px-4 py-2 rounded-xl text-xs font-bold transition-all bg-white text-zinc-950 shadow-sm">
+        <!-- Filter Tabs -->
+        <div class="flex items-center gap-1.5 p-1.5 bg-zinc-900 rounded-2xl border border-zinc-800 no-scrollbar overflow-x-auto">
+          <button data-filter="all" class="portfolio-tab active-tab px-4 py-2 rounded-xl text-xs font-bold transition-all bg-gradient-to-r from-orange-500 to-amber-500 text-white shadow-md">
             Semua
           </button>
-          <button data-filter="kontainer" class="portfolio-tab px-4 py-2 rounded-xl text-xs font-bold transition-all text-zinc-600 hover:text-zinc-950">
+          <button data-filter="kontainer" class="portfolio-tab px-4 py-2 rounded-xl text-xs font-bold transition-all text-zinc-400 hover:text-white">
             Rombong Kontainer
           </button>
-          <button data-filter="kanopi" class="portfolio-tab px-4 py-2 rounded-xl text-xs font-bold transition-all text-zinc-600 hover:text-zinc-950">
+          <button data-filter="kanopi" class="portfolio-tab px-4 py-2 rounded-xl text-xs font-bold transition-all text-zinc-400 hover:text-white">
             Kanopi Alderon
           </button>
-          <button data-filter="pagar" class="portfolio-tab px-4 py-2 rounded-xl text-xs font-bold transition-all text-zinc-600 hover:text-zinc-950">
+          <button data-filter="pagar" class="portfolio-tab px-4 py-2 rounded-xl text-xs font-bold transition-all text-zinc-400 hover:text-white">
             Pagar Minimalis
           </button>
         </div>
@@ -511,25 +465,25 @@
       <div id="portfolio-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
 
         <!-- Item 1: Kontainer Cafe -->
-        <div class="filter-item kontainer group bg-white rounded-3xl p-4 border border-zinc-200/90 shadow-bento hover:shadow-bento-hover transition-all">
-          <div class="relative h-64 rounded-2xl overflow-hidden mb-4 bg-zinc-100">
+        <div class="filter-item kontainer group bg-zinc-900/70 rounded-3xl p-4 border border-zinc-800 hover:border-amber-500/40 shadow-xl transition-all">
+          <div class="relative h-64 rounded-2xl overflow-hidden mb-4 bg-zinc-950 border border-zinc-800">
             <img src="/images/modern_premium_container_booth_rombong_kontainer_for_umkm_street_food_business.png" 
                  alt="Booth Kontainer Cafe Matte Black Surabaya" 
                  class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-            <span class="absolute top-3 left-3 px-2.5 py-1 rounded-full bg-zinc-950/80 backdrop-blur-md text-white font-mono text-[10px]">
+            <span class="absolute top-3 left-3 px-2.5 py-1 rounded-full bg-zinc-950/80 backdrop-blur-md text-amber-400 font-mono text-[10px] border border-zinc-800">
               Booth Kontainer
             </span>
           </div>
           <div class="px-2">
-            <div class="flex items-center justify-between text-xs font-mono text-zinc-600 mb-1">
+            <div class="flex items-center justify-between text-xs font-mono text-zinc-500 mb-1">
               <span>Dimensi: 3.0 x 2.0 x 2.2 m</span>
-              <span class="text-brand-600 font-semibold">Surabaya Barat</span>
+              <span class="text-amber-400 font-semibold">Surabaya Barat</span>
             </div>
-            <h4 class="font-extrabold text-base text-zinc-950 mb-2">Matte Black Beverage Kiosk</h4>
-            <p class="text-xs text-zinc-600 line-clamp-2 mb-4">Sistem jendela kanopi hidrolik gas, interior meja stainless steel, kelistrikan LED spot siap colok.</p>
+            <h4 class="font-extrabold text-base text-white mb-2">Matte Black Beverage Kiosk</h4>
+            <p class="text-xs text-zinc-400 line-clamp-2 mb-4">Sistem jendela kanopi hidrolik gas, interior meja stainless steel, kelistrikan LED spot siap colok.</p>
             <a href="https://wa.me/628155401679?text=Halo%20JM%20Workshop%2C%20saya%20tertarik%20dengan%20proyek%20Matte%20Black%20Beverage%20Kiosk" 
                target="_blank" rel="noopener"
-               class="inline-flex items-center gap-1.5 text-xs font-bold text-zinc-950 group-hover:text-brand-600 transition-colors">
+               class="inline-flex items-center gap-1.5 text-xs font-bold text-amber-400 hover:text-amber-300 transition-colors">
               <span>Tanya Spek Model Ini</span>
               <span class="material-symbols-outlined text-sm">arrow_outward</span>
             </a>
@@ -537,25 +491,25 @@
         </div>
 
         <!-- Item 2: Kanopi Alderon -->
-        <div class="filter-item kanopi group bg-white rounded-3xl p-4 border border-zinc-200/90 shadow-bento hover:shadow-bento-hover transition-all">
-          <div class="relative h-64 rounded-2xl overflow-hidden mb-4 bg-zinc-100">
+        <div class="filter-item kanopi group bg-zinc-900/70 rounded-3xl p-4 border border-zinc-800 hover:border-amber-500/40 shadow-xl transition-all">
+          <div class="relative h-64 rounded-2xl overflow-hidden mb-4 bg-zinc-950 border border-zinc-800">
             <img src="/images/high_quality_alderon_canopy_installation_on_a_modern_house_white_and_black.png" 
                  alt="Kanopi Alderon UPVC Carport Rumah Modern" 
                  class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-            <span class="absolute top-3 left-3 px-2.5 py-1 rounded-full bg-zinc-950/80 backdrop-blur-md text-white font-mono text-[10px]">
+            <span class="absolute top-3 left-3 px-2.5 py-1 rounded-full bg-zinc-950/80 backdrop-blur-md text-amber-400 font-mono text-[10px] border border-zinc-800">
               Kanopi Carport
             </span>
           </div>
           <div class="px-2">
-            <div class="flex items-center justify-between text-xs font-mono text-zinc-600 mb-1">
+            <div class="flex items-center justify-between text-xs font-mono text-zinc-500 mb-1">
               <span>Dimensi: 6.0 x 4.5 m</span>
-              <span class="text-brand-600 font-semibold">Pakuwon, Sidoarjo</span>
+              <span class="text-amber-400 font-semibold">Pakuwon, Sidoarjo</span>
             </div>
-            <h4 class="font-extrabold text-base text-zinc-950 mb-2">Kanopi Alderon Double Layer Rangka WF</h4>
-            <p class="text-xs text-zinc-600 line-clamp-2 mb-4">Meredam panas maksimal hingga 40%, tanpa suara berisik hujan, struktur besi galvanis anti-karat.</p>
+            <h4 class="font-extrabold text-base text-white mb-2">Kanopi Alderon Double Layer Rangka WF</h4>
+            <p class="text-xs text-zinc-400 line-clamp-2 mb-4">Meredam panas maksimal hingga 40%, tanpa suara berisik hujan, struktur besi galvanis anti-karat.</p>
             <a href="https://wa.me/628155401679?text=Halo%20JM%20Workshop%2C%20saya%20tertarik%20dengan%20model%20Kanopi%20Alderon%20WF" 
                target="_blank" rel="noopener"
-               class="inline-flex items-center gap-1.5 text-xs font-bold text-zinc-950 group-hover:text-brand-600 transition-colors">
+               class="inline-flex items-center gap-1.5 text-xs font-bold text-amber-400 hover:text-amber-300 transition-colors">
               <span>Estimasi Luasan Carport</span>
               <span class="material-symbols-outlined text-sm">arrow_outward</span>
             </a>
@@ -563,25 +517,25 @@
         </div>
 
         <!-- Item 3: Pagar Minimalis -->
-        <div class="filter-item pagar group bg-white rounded-3xl p-4 border border-zinc-200/90 shadow-bento hover:shadow-bento-hover transition-all">
-          <div class="relative h-64 rounded-2xl overflow-hidden mb-4 bg-zinc-100">
+        <div class="filter-item pagar group bg-zinc-900/70 rounded-3xl p-4 border border-zinc-800 hover:border-amber-500/40 shadow-xl transition-all">
+          <div class="relative h-64 rounded-2xl overflow-hidden mb-4 bg-zinc-950 border border-zinc-800">
             <img src="/images/modern_minimalist_house_gate_pagar_minimalis_black_powder_coated_iron_elegant.png" 
                  alt="Pagar Besi Minimalis Powder Coating" 
                  class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-            <span class="absolute top-3 left-3 px-2.5 py-1 rounded-full bg-zinc-950/80 backdrop-blur-md text-white font-mono text-[10px]">
+            <span class="absolute top-3 left-3 px-2.5 py-1 rounded-full bg-zinc-950/80 backdrop-blur-md text-amber-400 font-mono text-[10px] border border-zinc-800">
               Pagar Minimalis
             </span>
           </div>
           <div class="px-2">
-            <div class="flex items-center justify-between text-xs font-mono text-zinc-600 mb-1">
+            <div class="flex items-center justify-between text-xs font-mono text-zinc-500 mb-1">
               <span>Tinggi: 1.8 m • Panjang: 4.2 m</span>
-              <span class="text-brand-600 font-semibold">Surabaya Timur</span>
+              <span class="text-amber-400 font-semibold">Surabaya Timur</span>
             </div>
-            <h4 class="font-extrabold text-base text-zinc-950 mb-2">Industrial Security Gate Powder Coat</h4>
-            <p class="text-xs text-zinc-600 line-clamp-2 mb-4">Rel bawah stainless steel super enteng didorong, finishing powder coat hitam doff anti gores.</p>
+            <h4 class="font-extrabold text-base text-white mb-2">Industrial Security Gate Powder Coat</h4>
+            <p class="text-xs text-zinc-400 line-clamp-2 mb-4">Rel bawah stainless steel super enteng didorong, finishing powder coat hitam doff anti gores.</p>
             <a href="https://wa.me/628155401679?text=Halo%20JM%20Workshop%2C%20saya%20tertarik%20dengan%20Industrial%20Security%20Gate" 
                target="_blank" rel="noopener"
-               class="inline-flex items-center gap-1.5 text-xs font-bold text-zinc-950 group-hover:text-brand-600 transition-colors">
+               class="inline-flex items-center gap-1.5 text-xs font-bold text-amber-400 hover:text-amber-300 transition-colors">
               <span>Konsultasi Model Pagar</span>
               <span class="material-symbols-outlined text-sm">arrow_outward</span>
             </a>
@@ -589,69 +543,45 @@
         </div>
 
         <!-- Item 4: Workshop Custom -->
-        <div class="filter-item kontainer group bg-white rounded-3xl p-4 border border-zinc-200/90 shadow-bento hover:shadow-bento-hover transition-all">
-          <div class="relative h-64 rounded-2xl overflow-hidden mb-4 bg-zinc-100">
+        <div class="filter-item kontainer group bg-zinc-900/70 rounded-3xl p-4 border border-zinc-800 hover:border-amber-500/40 shadow-xl transition-all">
+          <div class="relative h-64 rounded-2xl overflow-hidden mb-4 bg-zinc-950 border border-zinc-800">
             <img src="/images/professional_welding_workshop_interior_skilled_craftsmen_working_on_custom.png" 
                  alt="Proses Perakitan Rangka Booth Kontainer" 
                  class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-            <span class="absolute top-3 left-3 px-2.5 py-1 rounded-full bg-zinc-950/80 backdrop-blur-md text-white font-mono text-[10px]">
+            <span class="absolute top-3 left-3 px-2.5 py-1 rounded-full bg-zinc-950/80 backdrop-blur-md text-amber-400 font-mono text-[10px] border border-zinc-800">
               Proses Fabrikasi
             </span>
           </div>
           <div class="px-2">
-            <div class="flex items-center justify-between text-xs font-mono text-zinc-600 mb-1">
+            <div class="flex items-center justify-between text-xs font-mono text-zinc-500 mb-1">
               <span>Standar Toleransi Presisi</span>
-              <span class="text-brand-600 font-semibold">Workshop Gresik</span>
+              <span class="text-amber-400 font-semibold">Workshop Gresik</span>
             </div>
-            <h4 class="font-extrabold text-base text-zinc-950 mb-2">Perakitan Sasis &amp; Rangka Besi SNI</h4>
-            <p class="text-xs text-zinc-600 line-clamp-2 mb-4">Pengelasan full weld kokoh, pelapisan meni zinchromate anti-karat sebelum proses pengecatan warna.</p>
+            <h4 class="font-extrabold text-base text-white mb-2">Perakitan Sasis &amp; Rangka Besi SNI</h4>
+            <p class="text-xs text-zinc-400 line-clamp-2 mb-4">Pengelasan full weld kokoh, pelapisan meni zinchromate anti-karat sebelum proses pengecatan warna.</p>
             <a href="https://wa.me/628155401679?text=Halo%20JM%20Workshop%2C%20saya%20ingin%20tinjau%20langsung%20ke%20workshop" 
                target="_blank" rel="noopener"
-               class="inline-flex items-center gap-1.5 text-xs font-bold text-zinc-950 group-hover:text-brand-600 transition-colors">
+               class="inline-flex items-center gap-1.5 text-xs font-bold text-amber-400 hover:text-amber-300 transition-colors">
               <span>Jadwalkan Kunjungan Bengkel</span>
               <span class="material-symbols-outlined text-sm">arrow_outward</span>
             </a>
           </div>
         </div>
 
-        <!-- Item 5: Booth Streetfood Warna Kuning/Custom -->
-        <div class="filter-item kontainer group bg-white rounded-3xl p-4 border border-zinc-200/90 shadow-bento hover:shadow-bento-hover transition-all">
-          <div class="relative h-64 rounded-2xl overflow-hidden mb-4 bg-zinc-900 flex items-center justify-center p-6 text-center text-white">
-            <div class="space-y-2">
-              <span class="material-symbols-outlined text-5xl text-brand-500">storefront</span>
-              <div class="font-bold text-base">Rombong Kontainer Franchise</div>
-              <div class="text-xs text-zinc-400">Order Massal 10+ Unit Tersedia</div>
-            </div>
-          </div>
-          <div class="px-2">
-            <div class="flex items-center justify-between text-xs font-mono text-zinc-600 mb-1">
-              <span>Skala Franchise UMKM</span>
-              <span class="text-brand-600 font-semibold">Gresik &amp; Sidoarjo</span>
-            </div>
-            <h4 class="font-extrabold text-base text-zinc-950 mb-2">Kemitraan Booth Multi-Outlet</h4>
-            <p class="text-xs text-zinc-600 line-clamp-2 mb-4">Spesialisasi pembuatan booth seragam untuk brand kemitraan kopi susu, ayam geprek, dan minuman boba.</p>
-            <a href="https://wa.me/628155401679?text=Halo%20JM%20Workshop%2C%20saya%20butuh%20penawaran%20booth%20kontainer%20untuk%20franchise" 
-               target="_blank" rel="noopener"
-               class="inline-flex items-center gap-1.5 text-xs font-bold text-zinc-950 group-hover:text-brand-600 transition-colors">
-              <span>Harga Khusus Franchise &rarr;</span>
-            </a>
-          </div>
-        </div>
-
-        <!-- Item 6: Instagram Direct Banner -->
-        <div class="filter-item all group bg-gradient-to-br from-zinc-900 to-zinc-950 rounded-3xl p-8 border border-zinc-800 text-white flex flex-col justify-between shadow-xl">
+        <!-- Item 5: Instagram Direct Banner -->
+        <div class="filter-item all md:col-span-2 group bg-gradient-to-br from-zinc-900 to-zinc-950 rounded-3xl p-8 border border-zinc-800 text-white flex flex-col justify-between shadow-xl">
           <div>
-            <div class="w-12 h-12 rounded-2xl bg-white/10 flex items-center justify-center text-amber-400 mb-6">
+            <div class="w-12 h-12 rounded-2xl bg-amber-500/10 border border-amber-500/20 flex items-center justify-center text-amber-400 mb-6">
               <span class="material-symbols-outlined text-2xl">photo_library</span>
             </div>
-            <h4 class="text-2xl font-extrabold mb-3">Mau Lihat Lebih Banyak Hasil Jadi?</h4>
+            <h4 class="text-2xl font-extrabold mb-3 text-white">Mau Lihat Lebih Banyak Hasil Jadi?</h4>
             <p class="text-zinc-400 text-sm leading-relaxed mb-6">
               Kami aktif mengunggah video reels proses pengerjaan, uji kekuatan, dan serah terima unit di Instagram resmi kami.
             </p>
           </div>
           <a href="https://www.instagram.com/jayamaswood" 
              target="_blank" rel="noopener"
-             class="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-gradient-to-r from-amber-500 to-brand-600 hover:from-amber-600 hover:to-brand-700 text-white font-bold text-xs uppercase tracking-wider transition-all">
+             class="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-gradient-to-r from-orange-500 to-amber-500 hover:from-orange-600 hover:to-amber-600 text-white font-bold text-xs uppercase tracking-wider transition-all shadow-glow-orange">
             <span>Follow @jayamaswood</span>
             <span class="material-symbols-outlined text-base">open_in_new</span>
           </a>
@@ -662,75 +592,57 @@
     </div>
   </section>
 
-  <!-- ═══════════════════════════════════════════════════
-       6. WORKFLOW / STEP-BY-STEP (PRECISION FABRICATION)
-  ═══════════════════════════════════════════════════ -->
-  <section class="py-20 lg:py-28 bg-white border-t border-zinc-100" id="workflow">
+  <!-- ═══ WORKFLOW BENTO ═══ -->
+  <section class="py-20 lg:py-28 bg-[#0c0c0e] border-t border-zinc-800/80" id="workflow">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      
       <div class="text-center max-w-2xl mx-auto mb-16">
-        <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-md bg-amber-50 text-brand-600 text-xs font-mono font-bold tracking-wider uppercase mb-3">
+        <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-md bg-amber-500/10 border border-amber-500/20 text-amber-400 text-xs font-mono font-bold tracking-wider uppercase mb-3">
           Alur Kerja Transparan
         </div>
-        <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-zinc-950 mb-4">
+        <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-white mb-4">
           5 Langkah Fabrikasi Tanpa Ribet
         </h2>
-        <p class="text-zinc-600 text-sm sm:text-base">
+        <p class="text-zinc-400 text-sm sm:text-base">
           Setiap proyek dikerjakan secara sistematis. Anda selalu mendapatkan update progres berkala via WhatsApp.
         </p>
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-5 gap-4">
-        
-        <!-- Step 1 -->
-        <div class="p-6 rounded-2xl bg-surface border border-zinc-200/80 hover:border-amber-400 transition-colors">
-          <div class="font-mono text-2xl font-extrabold text-brand-600 mb-3">01</div>
-          <h3 class="font-extrabold text-base text-zinc-950 mb-2">Konsultasi &amp; Survei</h3>
-          <p class="text-xs text-zinc-600 leading-relaxed">Diskusi kebutuhan, ukuran tempat, dan tim kami survei langsung ke lokasi Anda gratis.</p>
+        <div class="p-6 rounded-2xl bg-zinc-900/60 border border-zinc-800 hover:border-amber-500/40 transition-colors">
+          <div class="font-mono text-2xl font-extrabold text-amber-400 mb-3">01</div>
+          <h3 class="font-extrabold text-base text-white mb-2">Konsultasi &amp; Survei</h3>
+          <p class="text-xs text-zinc-400 leading-relaxed">Diskusi kebutuhan, ukuran tempat, dan tim kami survei langsung ke lokasi Anda gratis.</p>
         </div>
-
-        <!-- Step 2 -->
-        <div class="p-6 rounded-2xl bg-surface border border-zinc-200/80 hover:border-amber-400 transition-colors">
-          <div class="font-mono text-2xl font-extrabold text-brand-600 mb-3">02</div>
-          <h3 class="font-extrabold text-base text-zinc-950 mb-2">Desain &amp; RAB Pasti</h3>
-          <p class="text-xs text-zinc-600 leading-relaxed">Penyusunan desain layout &amp; penawaran harga tertulis transparan tanpa biaya siluman.</p>
+        <div class="p-6 rounded-2xl bg-zinc-900/60 border border-zinc-800 hover:border-amber-500/40 transition-colors">
+          <div class="font-mono text-2xl font-extrabold text-amber-400 mb-3">02</div>
+          <h3 class="font-extrabold text-base text-white mb-2">Desain &amp; RAB Pasti</h3>
+          <p class="text-xs text-zinc-400 leading-relaxed">Penyusunan desain layout &amp; penawaran harga tertulis transparan tanpa biaya siluman.</p>
         </div>
-
-        <!-- Step 3 -->
-        <div class="p-6 rounded-2xl bg-surface border border-zinc-200/80 hover:border-amber-400 transition-colors">
-          <div class="font-mono text-2xl font-extrabold text-brand-600 mb-3">03</div>
-          <h3 class="font-extrabold text-base text-zinc-950 mb-2">Fabrikasi Logam Presisi</h3>
-          <p class="text-xs text-zinc-600 leading-relaxed">Pemotongan baja SNI, pengelasan kuat, dan perakitan struktur di bengkel utama kami.</p>
+        <div class="p-6 rounded-2xl bg-zinc-900/60 border border-zinc-800 hover:border-amber-500/40 transition-colors">
+          <div class="font-mono text-2xl font-extrabold text-amber-400 mb-3">03</div>
+          <h3 class="font-extrabold text-base text-white mb-2">Fabrikasi Presisi</h3>
+          <p class="text-xs text-zinc-400 leading-relaxed">Pemotongan baja SNI, pengelasan kuat, dan perakitan struktur di bengkel utama kami.</p>
         </div>
-
-        <!-- Step 4 -->
-        <div class="p-6 rounded-2xl bg-surface border border-zinc-200/80 hover:border-amber-400 transition-colors">
-          <div class="font-mono text-2xl font-extrabold text-brand-600 mb-3">04</div>
-          <h3 class="font-extrabold text-base text-zinc-950 mb-2">Finishing &amp; QC Ketat</h3>
-          <p class="text-xs text-zinc-600 leading-relaxed">Aplikasi cat epoxy anti-karat, uji kebocoran air pada atap, dan pengecekan kelistrikan.</p>
+        <div class="p-6 rounded-2xl bg-zinc-900/60 border border-zinc-800 hover:border-amber-500/40 transition-colors">
+          <div class="font-mono text-2xl font-extrabold text-amber-400 mb-3">04</div>
+          <h3 class="font-extrabold text-base text-white mb-2">Finishing &amp; QC Ketat</h3>
+          <p class="text-xs text-zinc-400 leading-relaxed">Aplikasi cat epoxy anti-karat, uji kebocoran air pada atap, dan pengecekan kelistrikan.</p>
         </div>
-
-        <!-- Step 5 -->
-        <div class="p-6 rounded-2xl bg-surface border border-zinc-200/80 hover:border-amber-400 transition-colors">
-          <div class="font-mono text-2xl font-extrabold text-brand-600 mb-3">05</div>
-          <h3 class="font-extrabold text-base text-zinc-950 mb-2">Kirim &amp; Serah Terima</h3>
-          <p class="text-xs text-zinc-600 leading-relaxed">Pengiriman aman menggunakan armada truk workshop, instalasi di lokasi, dan kartu garansi resmi.</p>
+        <div class="p-6 rounded-2xl bg-zinc-900/60 border border-zinc-800 hover:border-amber-500/40 transition-colors">
+          <div class="font-mono text-2xl font-extrabold text-amber-400 mb-3">05</div>
+          <h3 class="font-extrabold text-base text-white mb-2">Kirim &amp; Instalasi</h3>
+          <p class="text-xs text-zinc-400 leading-relaxed">Pengiriman aman dengan armada truk workshop, instalasi di lokasi, dan kartu garansi resmi.</p>
         </div>
-
       </div>
-
     </div>
   </section>
 
-  <!-- ═══════════════════════════════════════════════════
-       7. INTERACTIVE QUOTE & WHATSAPP GENERATOR
-  ═══════════════════════════════════════════════════ -->
+  <!-- ═══ INTERACTIVE ESTIMATOR ═══ -->
   <section class="py-20 bg-zinc-950 text-white dark-grid-pattern relative overflow-hidden" id="estimasi">
     <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-      
       <div class="bg-zinc-900/90 backdrop-blur-xl border border-zinc-800 rounded-3xl p-8 sm:p-12 shadow-2xl">
         <div class="text-center max-w-xl mx-auto mb-10">
-          <span class="px-3.5 py-1 rounded-full bg-brand-500/20 text-brand-400 text-xs font-mono font-bold tracking-wider uppercase mb-3 inline-block">
+          <span class="px-3.5 py-1 rounded-full bg-amber-500/10 border border-amber-500/20 text-amber-400 text-xs font-mono font-bold tracking-wider uppercase mb-3 inline-block">
             Kalkulator &amp; Konsultasi Instan
           </span>
           <h2 class="text-2xl sm:text-3xl font-extrabold text-white mb-2">
@@ -743,28 +655,23 @@
 
         <form id="quote-form" class="space-y-6">
           <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
-            <!-- Pilihan Layanan -->
             <div>
               <label class="block text-xs font-mono text-zinc-400 mb-2">1. PILIH LAYANAN</label>
-              <select id="calc-service" class="w-full bg-zinc-950 border border-zinc-800 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-brand-500">
+              <select id="calc-service" class="w-full bg-zinc-950 border border-zinc-800 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-amber-500">
                 <option value="Rombong Kontainer / Booth UMKM">Rombong Kontainer UMKM</option>
                 <option value="Kanopi Alderon UPVC">Kanopi Alderon UPVC</option>
                 <option value="Pagar Minimalis Modern">Pagar Minimalis Besi</option>
                 <option value="Konstruksi Mezzanine / Tangga">Konstruksi Custom Lainnya</option>
               </select>
             </div>
-
-            <!-- Ukuran / Dimensi -->
             <div>
               <label class="block text-xs font-mono text-zinc-400 mb-2">2. PERKIRAAN UKURAN (P x L)</label>
               <input type="text" id="calc-dimension" placeholder="Contoh: 3x2 meter / 6x4 meter" 
-                     class="w-full bg-zinc-950 border border-zinc-800 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-brand-500">
+                     class="w-full bg-zinc-950 border border-zinc-800 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-amber-500">
             </div>
-
-            <!-- Wilayah / Kota -->
             <div>
               <label class="block text-xs font-mono text-zinc-400 mb-2">3. WILAYAH LOKASI ANDA</label>
-              <select id="calc-city" class="w-full bg-zinc-950 border border-zinc-800 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-brand-500">
+              <select id="calc-city" class="w-full bg-zinc-950 border border-zinc-800 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-amber-500">
                 <option value="Surabaya">Surabaya</option>
                 <option value="Sidoarjo">Sidoarjo</option>
                 <option value="Gresik">Gresik</option>
@@ -779,12 +686,12 @@
             <div>
               <label class="block text-xs font-mono text-zinc-400 mb-2">NAMA ANDA / NAMA USAHA</label>
               <input type="text" id="calc-name" placeholder="Nama Anda (Misal: Pak Hendra / Kopi Kenangan)" 
-                     class="w-full bg-zinc-950 border border-zinc-800 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-brand-500">
+                     class="w-full bg-zinc-950 border border-zinc-800 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-amber-500">
             </div>
             <div>
               <label class="block text-xs font-mono text-zinc-400 mb-2">CATATAN KHUSUS (OPSIONAL)</label>
               <input type="text" id="calc-notes" placeholder="Contoh: Butuh meja stainless & neon box" 
-                     class="w-full bg-zinc-950 border border-zinc-800 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-brand-500">
+                     class="w-full bg-zinc-950 border border-zinc-800 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-amber-500">
             </div>
           </div>
 
@@ -794,177 +701,147 @@
               Respon cepat langsung dari Kepala Bengkel JM Workshop
             </div>
             <button type="submit" 
-                    class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-xl bg-brand-500 hover:bg-brand-600 active:scale-95 text-white font-bold text-sm tracking-wide transition-all shadow-lg shadow-brand-500/25">
+                    class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-xl bg-gradient-to-r from-orange-500 to-amber-500 hover:from-orange-600 hover:to-amber-600 active:scale-95 text-white font-bold text-sm tracking-wide transition-all shadow-glow-orange">
               <span>Buka Chat WhatsApp &amp; Dapatkan Penawaran</span>
               <span class="material-symbols-outlined text-base">send</span>
             </button>
           </div>
         </form>
-
       </div>
-
     </div>
   </section>
 
-  <!-- ═══════════════════════════════════════════════════
-       8. TESTIMONIALS (REAL MITRA SATISFACTION)
-  ═══════════════════════════════════════════════════ -->
-  <section class="py-20 lg:py-28 bg-white border-t border-zinc-100">
+  <!-- ═══ TESTIMONIALS ═══ -->
+  <section class="py-20 lg:py-28 bg-[#0c0c0e] border-t border-zinc-800/80">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      
       <div class="text-center max-w-2xl mx-auto mb-16">
-        <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-md bg-amber-50 text-brand-600 text-xs font-mono font-bold tracking-wider uppercase mb-3">
+        <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-md bg-amber-500/10 border border-amber-500/20 text-amber-400 text-xs font-mono font-bold tracking-wider uppercase mb-3">
           Ulasan Nyata
         </div>
-        <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-zinc-950 mb-3">
+        <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-white mb-3">
           Kepercayaan yang Dibangun dari Mutu
         </h2>
-        <p class="text-zinc-600 text-sm">Kata mereka yang telah mempercayakan fabrikasi booth & kanopi kepada kami.</p>
+        <p class="text-zinc-400 text-sm">Kata mereka yang telah mempercayakan fabrikasi booth &amp; kanopi kepada kami.</p>
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-
-        <!-- Card 1 -->
-        <div class="p-8 rounded-3xl bg-surface border border-zinc-200/90 shadow-bento flex flex-col justify-between">
+        <div class="p-8 rounded-3xl bg-zinc-900/60 border border-zinc-800 shadow-xl flex flex-col justify-between">
           <div>
-            <div class="flex text-amber-500 text-sm mb-4">★★★★★</div>
-            <p class="text-zinc-700 text-sm leading-relaxed mb-6 italic">
+            <div class="flex text-amber-400 text-sm mb-4">★★★★★</div>
+            <p class="text-zinc-300 text-sm leading-relaxed mb-6 italic">
               &ldquo;Pesan rombong kontainer 3x2m buat booth kopi di Manyar Surabaya. Hasil las rapi banget, cat hitam doff elegan, dan instalasi kelistrikannya aman. Pengunjung banyak yang puji tampilan booth kami.&rdquo;
             </p>
           </div>
-          <div class="flex items-center gap-3 pt-4 border-t border-zinc-200/60">
-            <div class="w-10 h-10 rounded-full bg-zinc-950 text-white font-mono font-bold text-xs flex items-center justify-center">
-              PB
-            </div>
+          <div class="flex items-center gap-3 pt-4 border-t border-zinc-800">
+            <div class="w-10 h-10 rounded-full bg-zinc-800 text-white font-mono font-bold text-xs flex items-center justify-center border border-zinc-700">PB</div>
             <div>
-              <div class="font-bold text-sm text-zinc-950">Pak Budi Santoso</div>
-              <div class="text-xs text-zinc-500">Owner Coffee Shop Kopi Kulo Mitra • Surabaya</div>
+              <div class="font-bold text-sm text-white">Pak Budi Santoso</div>
+              <div class="text-xs text-zinc-500">Owner Coffee Shop Kulo Mitra • Surabaya</div>
             </div>
           </div>
         </div>
 
-        <!-- Card 2 -->
-        <div class="p-8 rounded-3xl bg-surface border border-zinc-200/90 shadow-bento flex flex-col justify-between">
+        <div class="p-8 rounded-3xl bg-zinc-900/60 border border-zinc-800 shadow-xl flex flex-col justify-between">
           <div>
-            <div class="flex text-amber-500 text-sm mb-4">★★★★★</div>
-            <p class="text-zinc-700 text-sm leading-relaxed mb-6 italic">
+            <div class="flex text-amber-400 text-sm mb-4">★★★★★</div>
+            <p class="text-zinc-300 text-sm leading-relaxed mb-6 italic">
               &ldquo;Pasang kanopi alderon di carport perumahan Waru Sidoarjo. Benar-benar tidak berisik saat hujan deras kemarin, dan teras jadi sejuk. Tukangnya tepat waktu dan sopan. Mantap!&rdquo;
             </p>
           </div>
-          <div class="flex items-center gap-3 pt-4 border-t border-zinc-200/60">
-            <div class="w-10 h-10 rounded-full bg-brand-600 text-white font-mono font-bold text-xs flex items-center justify-center">
-              SW
-            </div>
+          <div class="flex items-center gap-3 pt-4 border-t border-zinc-800">
+            <div class="w-10 h-10 rounded-full bg-orange-600 text-white font-mono font-bold text-xs flex items-center justify-center">SW</div>
             <div>
-              <div class="font-bold text-sm text-zinc-950">Ibu Sari Wulandari</div>
+              <div class="font-bold text-sm text-white">Ibu Sari Wulandari</div>
               <div class="text-xs text-zinc-500">Residensial • Waru, Sidoarjo</div>
             </div>
           </div>
         </div>
 
-        <!-- Card 3 -->
-        <div class="p-8 rounded-3xl bg-surface border border-zinc-200/90 shadow-bento flex flex-col justify-between">
+        <div class="p-8 rounded-3xl bg-zinc-900/60 border border-zinc-800 shadow-xl flex flex-col justify-between">
           <div>
-            <div class="flex text-amber-500 text-sm mb-4">★★★★★</div>
-            <p class="text-zinc-700 text-sm leading-relaxed mb-6 italic">
+            <div class="flex text-amber-400 text-sm mb-4">★★★★★</div>
+            <p class="text-zinc-300 text-sm leading-relaxed mb-6 italic">
               &ldquo;Sudah beberapa kali sub-kontrak pengerjaan pagar laser cut dan tangga besi ke JM Workshop. Penawaran harga transparan, toleransi milimeter presisi, serah terima selalu on schedule.&rdquo;
             </p>
           </div>
-          <div class="flex items-center gap-3 pt-4 border-t border-zinc-200/60">
-            <div class="w-10 h-10 rounded-full bg-zinc-800 text-white font-mono font-bold text-xs flex items-center justify-center">
-              RH
-            </div>
+          <div class="flex items-center gap-3 pt-4 border-t border-zinc-800">
+            <div class="w-10 h-10 rounded-full bg-zinc-800 text-white font-mono font-bold text-xs flex items-center justify-center border border-zinc-700">RH</div>
             <div>
-              <div class="font-bold text-sm text-zinc-950">Rudy Hermawan, S.T.</div>
+              <div class="font-bold text-sm text-white">Rudy Hermawan, S.T.</div>
               <div class="text-xs text-zinc-500">Kontraktor Sipil &amp; Interior • Gresik</div>
             </div>
           </div>
         </div>
-
       </div>
-
     </div>
   </section>
 
-  <!-- ═══════════════════════════════════════════════════
-       9. FAQ ACCORDION (SEO RICH)
-  ═══════════════════════════════════════════════════ -->
-  <section class="py-20 bg-surface border-t border-zinc-200/80" id="faq">
+  <!-- ═══ FAQ ═══ -->
+  <section class="py-20 bg-[#09090b] border-t border-zinc-800/80" id="faq">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-      
       <div class="text-center mb-14">
-        <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-md bg-zinc-200 text-zinc-800 text-xs font-mono font-bold tracking-wider uppercase mb-3">
+        <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-md bg-zinc-800 border border-zinc-700 text-zinc-300 text-xs font-mono font-bold tracking-wider uppercase mb-3">
           Frequently Asked Questions
         </div>
-        <h2 class="text-3xl font-extrabold tracking-tight text-zinc-950 mb-2">
+        <h2 class="text-3xl font-extrabold tracking-tight text-white mb-2">
           Pertanyaan yang Sering Diajukan
         </h2>
-        <p class="text-zinc-600 text-sm">Informasi lengkap seputar pemesanan, pengiriman, dan garansi.</p>
+        <p class="text-zinc-400 text-sm">Informasi lengkap seputar pemesanan, pengiriman, dan garansi.</p>
       </div>
 
       <div class="space-y-3" id="faq-accordion">
-        
-        <!-- FAQ 1 -->
-        <div class="faq-item border border-zinc-200 rounded-2xl bg-white overflow-hidden transition-all">
-          <button class="faq-toggle w-full px-6 py-5 text-left flex items-center justify-between font-bold text-zinc-950 text-sm sm:text-base">
+        <div class="faq-item border border-zinc-800 rounded-2xl bg-zinc-900/60 overflow-hidden transition-all">
+          <button class="faq-toggle w-full px-6 py-5 text-left flex items-center justify-between font-bold text-white text-sm sm:text-base">
             <span>Berapa lama proses pembuatan satu unit Rombong Kontainer?</span>
-            <span class="material-symbols-outlined text-zinc-500 transition-transform">expand_more</span>
+            <span class="material-symbols-outlined text-amber-400 transition-transform">expand_more</span>
           </button>
-          <div class="faq-content hidden px-6 pb-5 text-xs sm:text-sm text-zinc-600 leading-relaxed border-t border-zinc-100 pt-3">
+          <div class="faq-content hidden px-6 pb-5 text-xs sm:text-sm text-zinc-400 leading-relaxed border-t border-zinc-800 pt-3">
             Rata-rata waktu pengerjaan berkisar antara <strong>7 hingga 14 hari kerja</strong>, tergantung tingkat kerumitan dimensi, aksesoris rak interior, dan sistem kelistrikan yang Anda minta.
           </div>
         </div>
 
-        <!-- FAQ 2 -->
-        <div class="faq-item border border-zinc-200 rounded-2xl bg-white overflow-hidden transition-all">
-          <button class="faq-toggle w-full px-6 py-5 text-left flex items-center justify-between font-bold text-zinc-950 text-sm sm:text-base">
+        <div class="faq-item border border-zinc-800 rounded-2xl bg-zinc-900/60 overflow-hidden transition-all">
+          <button class="faq-toggle w-full px-6 py-5 text-left flex items-center justify-between font-bold text-white text-sm sm:text-base">
             <span>Apakah ada biaya untuk survei lokasi dan konsultasi ukuran?</span>
-            <span class="material-symbols-outlined text-zinc-500 transition-transform">expand_more</span>
+            <span class="material-symbols-outlined text-amber-400 transition-transform">expand_more</span>
           </button>
-          <div class="faq-content hidden px-6 pb-5 text-xs sm:text-sm text-zinc-600 leading-relaxed border-t border-zinc-100 pt-3">
+          <div class="faq-content hidden px-6 pb-5 text-xs sm:text-sm text-zinc-400 leading-relaxed border-t border-zinc-800 pt-3">
             <strong>Tidak ada biaya sama sekali (100% Gratis)</strong> untuk area Surabaya, Sidoarjo, dan Gresik. Tim kami akan datang membawa meteran presisi dan katalog material untuk mendiskusikan rancangan terbaik.
           </div>
         </div>
 
-        <!-- FAQ 3 -->
-        <div class="faq-item border border-zinc-200 rounded-2xl bg-white overflow-hidden transition-all">
-          <button class="faq-toggle w-full px-6 py-5 text-left flex items-center justify-between font-bold text-zinc-950 text-sm sm:text-base">
+        <div class="faq-item border border-zinc-800 rounded-2xl bg-zinc-900/60 overflow-hidden transition-all">
+          <button class="faq-toggle w-full px-6 py-5 text-left flex items-center justify-between font-bold text-white text-sm sm:text-base">
             <span>Bagaimana jaminan dan garansi pengerjaan di JM Workshop?</span>
-            <span class="material-symbols-outlined text-zinc-500 transition-transform">expand_more</span>
+            <span class="material-symbols-outlined text-amber-400 transition-transform">expand_more</span>
           </button>
-          <div class="faq-content hidden px-6 pb-5 text-xs sm:text-sm text-zinc-600 leading-relaxed border-t border-zinc-100 pt-3">
-            Setiap unit rombong kontainer, kanopi, maupun pagar dilengkapi garansi konstruksi. Jika terdapat kebocoran atap atau kendala struktur dalam masa garansi, teknisi kami akan segera datang melakukan perbaikan tanpa dipungut biaya.
+          <div class="faq-content hidden px-6 pb-5 text-xs sm:text-sm text-zinc-400 leading-relaxed border-t border-zinc-800 pt-3">
+            Setiap unit rombong kontainer, kanopi, maupun pagar dilengkapi garansi konstruksi. Jika terdapat kendala struktur dalam masa garansi, teknisi kami akan segera datang melakukan perbaikan tanpa dipungut biaya.
           </div>
         </div>
 
-        <!-- FAQ 4 -->
-        <div class="faq-item border border-zinc-200 rounded-2xl bg-white overflow-hidden transition-all">
-          <button class="faq-toggle w-full px-6 py-5 text-left flex items-center justify-between font-bold text-zinc-950 text-sm sm:text-base">
+        <div class="faq-item border border-zinc-800 rounded-2xl bg-zinc-900/60 overflow-hidden transition-all">
+          <button class="faq-toggle w-full px-6 py-5 text-left flex items-center justify-between font-bold text-white text-sm sm:text-base">
             <span>Apakah melayani pengiriman ke luar kota Surabaya?</span>
-            <span class="material-symbols-outlined text-zinc-500 transition-transform">expand_more</span>
+            <span class="material-symbols-outlined text-amber-400 transition-transform">expand_more</span>
           </button>
-          <div class="faq-content hidden px-6 pb-5 text-xs sm:text-sm text-zinc-600 leading-relaxed border-t border-zinc-100 pt-3">
-            Ya! Selain melayani Surabaya, Sidoarjo, Gresik, Mojokerto, dan Lamongan, kami juga dapat mengirimkan unit kontainer modular siap pakai ke seluruh kota di Jawa Timur menggunakan ekspedisi truk towing atau flatbed.
+          <div class="faq-content hidden px-6 pb-5 text-xs sm:text-sm text-zinc-400 leading-relaxed border-t border-zinc-800 pt-3">
+            Ya! Selain melayani Surabaya, Sidoarjo, Gresik, Mojokerto, dan Lamongan, kami juga dapat mengirimkan unit kontainer modular siap pakai ke seluruh kota di Jawa Timur menggunakan armada flatbed/towing.
           </div>
         </div>
-
       </div>
-
     </div>
   </section>
 
-  <!-- ═══════════════════════════════════════════════════
-       10. FINAL CALL TO ACTION (CTA SLINGSHOT STYLE)
-  ═══════════════════════════════════════════════════ -->
-  <section class="py-20 bg-zinc-950 text-white relative overflow-hidden">
-    <!-- Ambient glow circle -->
-    <div class="absolute -bottom-20 right-1/4 w-96 h-96 bg-brand-600/20 rounded-full blur-3xl pointer-events-none"></div>
+  <!-- ═══ FINAL CTA ═══ -->
+  <section class="py-24 bg-zinc-950 text-white relative overflow-hidden border-t border-zinc-800">
+    <div class="absolute -bottom-20 right-1/4 w-96 h-96 bg-orange-600/20 rounded-full blur-3xl pointer-events-none"></div>
 
     <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
-      <div class="w-14 h-14 rounded-2xl bg-brand-500 text-white flex items-center justify-center mx-auto mb-6 shadow-glow-amber">
+      <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-orange-500 to-amber-500 text-white flex items-center justify-center mx-auto mb-6 shadow-glow-orange">
         <span class="material-symbols-outlined text-3xl">handyman</span>
       </div>
-      <h2 class="text-3xl sm:text-5xl font-extrabold tracking-tight mb-4">
+      <h2 class="text-3xl sm:text-5xl font-extrabold tracking-tight mb-4 text-white">
         Mulai Wujudkan Rombong Kontainer <br class="hidden sm:inline" />
         &amp; Kanopi Impian Anda Hari Ini
       </h2>
@@ -975,7 +852,7 @@
       <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
         <a href="https://wa.me/628155401679?text=Halo%20JM%20Workshop%2C%20saya%20siap%20order%20dan%20ingin%20konsultasi" 
            target="_blank" rel="noopener"
-           class="w-full sm:w-auto inline-flex items-center justify-center gap-3 px-8 py-4 rounded-2xl bg-brand-500 hover:bg-brand-600 active:scale-95 text-white font-extrabold text-base transition-all shadow-xl shadow-brand-500/30">
+           class="w-full sm:w-auto inline-flex items-center justify-center gap-3 px-8 py-4 rounded-2xl bg-gradient-to-r from-orange-500 to-amber-500 hover:from-orange-600 hover:to-amber-600 active:scale-95 text-white font-extrabold text-base transition-all shadow-glow-orange">
           <span>Chat WhatsApp Sekarang</span>
           <span class="material-symbols-outlined text-lg">arrow_outward</span>
         </a>
@@ -988,16 +865,12 @@
     </div>
   </section>
 
-  <!-- ═══════════════════════════════════════════════════
-       11. FOOTER
-  ═══════════════════════════════════════════════════ -->
+  <!-- ═══ FOOTER ═══ -->
   <footer class="bg-black text-zinc-400 py-16 border-t border-zinc-900 text-xs">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-4 gap-10 mb-12">
-      
-      <!-- Brand & Description -->
       <div class="space-y-4 md:col-span-1">
         <div class="flex items-center gap-3">
-          <div class="w-8 h-8 rounded-lg bg-brand-600 flex items-center justify-center text-white font-mono font-bold text-xs">
+          <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-amber-500 to-orange-600 flex items-center justify-center text-black font-mono font-black text-xs">
             JM
           </div>
           <span class="text-white font-bold text-sm tracking-tight">JM Workshop Surabaya</span>
@@ -1005,17 +878,8 @@
         <p class="leading-relaxed text-zinc-500">
           Bengkel las dan fabrikasi presisi spesialis booth kontainer UMKM, kanopi alderon, dan pagar minimalis modern di Jawa Timur sejak 2017.
         </p>
-        <div class="flex items-center gap-3 text-zinc-300">
-          <a href="https://www.instagram.com/jayamaswood" target="_blank" rel="noopener" class="w-8 h-8 rounded-lg bg-zinc-900 flex items-center justify-center hover:bg-brand-600 transition-colors" aria-label="Instagram">
-            <span class="material-symbols-outlined text-sm">photo_camera</span>
-          </a>
-          <a href="https://wa.me/628155401679" target="_blank" rel="noopener" class="w-8 h-8 rounded-lg bg-zinc-900 flex items-center justify-center hover:bg-brand-600 transition-colors" aria-label="WhatsApp">
-            <span class="material-symbols-outlined text-sm">chat</span>
-          </a>
-        </div>
       </div>
 
-      <!-- Layanan Links -->
       <div>
         <h4 class="text-white font-mono uppercase tracking-widest font-bold mb-4">Layanan Utama</h4>
         <ul class="space-y-2.5">
@@ -1027,7 +891,6 @@
         </ul>
       </div>
 
-      <!-- Area Layanan -->
       <div>
         <h4 class="text-white font-mono uppercase tracking-widest font-bold mb-4">Jangkauan Wilayah</h4>
         <ul class="space-y-2.5">
@@ -1038,7 +901,6 @@
         </ul>
       </div>
 
-      <!-- Contact Info -->
       <div>
         <h4 class="text-white font-mono uppercase tracking-widest font-bold mb-4">Kontak &amp; Workshop</h4>
         <ul class="space-y-2.5">
@@ -1060,22 +922,14 @@
           </li>
         </ul>
       </div>
-
     </div>
 
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 border-t border-zinc-900 flex flex-col sm:flex-row items-center justify-between gap-4 text-zinc-600">
       <p>&copy; 2017 - 2026 JM Workshop Surabaya. All Rights Reserved.</p>
-      <div class="flex gap-4">
-        <a href="#layanan" class="hover:text-zinc-400">Privasi</a>
-        <a href="#layanan" class="hover:text-zinc-400">Syarat &amp; Ketentuan</a>
-        <a href="https://rombongkontainersurabaya.web.id/" class="hover:text-zinc-400">rombongkontainersurabaya.web.id</a>
-      </div>
     </div>
   </footer>
 
-  <!-- ═══════════════════════════════════════════════════
-       12. PERSISTENT FLOATING WHATSAPP BUTTON (DESKTOP & MOBILE)
-  ═══════════════════════════════════════════════════ -->
+  <!-- ═══ FLOATING WA ═══ -->
   <div class="fixed bottom-6 right-6 z-50 flex items-center gap-2">
     <a href="https://wa.me/628155401679?text=Halo%20JM%20Workshop%2C%20saya%20ingin%20konsultasi%20langsung" 
        target="_blank" rel="noopener"
@@ -1090,65 +944,44 @@
     </a>
   </div>
 
-  <!-- ═══════════════════════════════════════════════════
-       13. VANILLA JAVASCRIPT LOGIC (CLEAN & MODULAR)
-  ═══════════════════════════════════════════════════ -->
   <script>
     document.addEventListener('DOMContentLoaded', () => {
-      // 1. Mobile Menu Drawer Toggle
+      // Mobile Menu
       const mobileBtn = document.getElementById('mobile-menu-btn');
       const mobileMenu = document.getElementById('mobile-menu');
       const mobileLinks = document.querySelectorAll('.mobile-link');
-
       if (mobileBtn && mobileMenu) {
-        mobileBtn.addEventListener('click', () => {
-          mobileMenu.classList.toggle('hidden');
-        });
-        mobileLinks.forEach(link => {
-          link.addEventListener('click', () => {
-            mobileMenu.classList.add('hidden');
-          });
-        });
+        mobileBtn.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+        mobileLinks.forEach(link => link.addEventListener('click', () => mobileMenu.classList.add('hidden')));
       }
 
-      // 2. Portfolio Filter Tabs Logic
+      // Portfolio Filter
       const filterTabs = document.querySelectorAll('.portfolio-tab');
       const filterItems = document.querySelectorAll('.filter-item');
-
       filterTabs.forEach(tab => {
         tab.addEventListener('click', () => {
-          // Remove active styles from all tabs
           filterTabs.forEach(t => {
-            t.classList.remove('bg-white', 'text-zinc-950', 'shadow-sm');
-            t.classList.add('text-zinc-600');
+            t.classList.remove('bg-gradient-to-r', 'from-orange-500', 'to-amber-500', 'text-white', 'shadow-md');
+            t.classList.add('text-zinc-400');
           });
-
-          // Add active style to selected tab
-          tab.classList.remove('text-zinc-600');
-          tab.classList.add('bg-white', 'text-zinc-950', 'shadow-sm');
+          tab.classList.remove('text-zinc-400');
+          tab.classList.add('bg-gradient-to-r', 'from-orange-500', 'to-amber-500', 'text-white', 'shadow-md');
 
           const category = tab.getAttribute('data-filter');
-
-          // Filter elements with clean display transition
           filterItems.forEach(item => {
             if (category === 'all' || item.classList.contains(category) || item.classList.contains('all')) {
               item.style.display = 'block';
-              setTimeout(() => {
-                item.style.opacity = '1';
-                item.style.transform = 'scale(1)';
-              }, 50);
+              setTimeout(() => { item.style.opacity = '1'; item.style.transform = 'scale(1)'; }, 50);
             } else {
               item.style.opacity = '0';
               item.style.transform = 'scale(0.95)';
-              setTimeout(() => {
-                item.style.display = 'none';
-              }, 200);
+              setTimeout(() => { item.style.display = 'none'; }, 200);
             }
           });
         });
       });
 
-      // 3. Interactive Quote to WhatsApp Form
+      // Quote Form
       const quoteForm = document.getElementById('quote-form');
       if (quoteForm) {
         quoteForm.addEventListener('submit', (e) => {
@@ -1158,25 +991,20 @@
           const city = document.getElementById('calc-city').value;
           const name = document.getElementById('calc-name').value.trim() || 'Pelanggan';
           const notes = document.getElementById('calc-notes').value.trim() || '-';
-
           const textMessage = `Halo JM Workshop Surabaya,%0A%0ASaya ingin konsultasi dan minta estimasi biaya:%0A• *Nama / Bisnis:* ${encodeURIComponent(name)}%0A• *Layanan:* ${encodeURIComponent(service)}%0A• *Ukuran / Dimensi:* ${encodeURIComponent(dimension)}%0A• *Lokasi Wilayah:* ${encodeURIComponent(city)}%0A• *Catatan Tambahan:* ${encodeURIComponent(notes)}%0A%0AMohon info ketersediaan slot produksi dan survei lokasinya. Terima kasih!`;
-
           window.open(`https://wa.me/628155401679?text=${textMessage}`, '_blank', 'noopener');
         });
       }
 
-      // 4. FAQ Accordion Interaction
+      // FAQ
       const faqToggles = document.querySelectorAll('.faq-toggle');
       faqToggles.forEach(toggle => {
         toggle.addEventListener('click', () => {
           const content = toggle.nextElementSibling;
           const icon = toggle.querySelector('.material-symbols-outlined');
           const isExpanded = !content.classList.contains('hidden');
-
-          // Close all other FAQs
           document.querySelectorAll('.faq-content').forEach(c => c.classList.add('hidden'));
           document.querySelectorAll('.faq-toggle .material-symbols-outlined').forEach(i => i.style.transform = 'rotate(0deg)');
-
           if (!isExpanded) {
             content.classList.remove('hidden');
             if (icon) icon.style.transform = 'rotate(180deg)';
@@ -1185,6 +1013,5 @@
       });
     });
   </script>
-
 </body>
 </html>

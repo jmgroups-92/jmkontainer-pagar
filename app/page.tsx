@@ -1,320 +1,708 @@
+'use client'
+import { useState, useEffect } from 'react'
 import Image from 'next/image'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import FloatingWA from '@/components/FloatingWA'
 import TrackingEvents from '@/components/TrackingEvents'
+import { trackEvent } from '@/lib/gtag'
 
-const SERVICES = [
-  { icon: 'storefront', title: 'Rombong Kontainer / Container Booth', desc: 'Rombong Kontainer modular fungsional, tahan cuaca, dan memberikan identitas kuat bagi brand UMKM Anda di Surabaya. Harga terjangkau, kualitas premium.', tag: 'Business Solution' },
-  { icon: 'roofing',    title: 'Kanopi Alderon UPVC',                  desc: 'Pemasangan Kanopi Alderon UPVC murah di Surabaya dengan rangka kokoh. Sejuk, kedap suara, anti bocor, tahan lama hingga 15+ tahun.', tag: 'Residential' },
-  { icon: 'fence',      title: 'Pagar Minimalis Modern',                desc: 'Pagar besi powder coat premium yang mengutamakan keamanan tanpa mengesampingkan estetika industrial modern. Desain custom sesuai selera.', tag: 'Security' },
+// 5 Real Gallery Images from D:\Codes\bisnis\jmkontainer-pagar\public\gallery
+const HERO_SLIDES = [
+  {
+    id: 1,
+    src: '/images/slider/slide-1.jpg',
+    title: 'Rombong Kontainer F&B Modern 3x2m',
+    location: 'Surabaya Timur',
+    spec: 'Hollow Galvanis • Cat Duco Ivory Gold • Hidrolik Otomatis',
+  },
+  {
+    id: 2,
+    src: '/images/slider/slide-2.jpg',
+    title: 'Booth Kontainer Cafe Modular Siap Pakai',
+    location: 'Sidoarjo Kota',
+    spec: 'Instalasi Listrik Terpadu • Meja Stainless • Anti Bocor',
+  },
+  {
+    id: 3,
+    src: '/images/slider/slide-3.jpg',
+    title: 'Kanopi Alderon UPVC Double Layer Carport',
+    location: 'Pakuwon City, Surabaya',
+    spec: 'Peredam Panas 40% • Rangka Kokoh WF • Garansi 10 Tahun',
+  },
+  {
+    id: 4,
+    src: '/images/slider/slide-4.jpg',
+    title: 'Pagar Besi Minimalis Powder Coating Elegan',
+    location: 'Gresik Kota Baru',
+    spec: 'Besi Hollow Tebal SNI • Rel Stainless Anti Seret',
+  },
+  {
+    id: 5,
+    src: '/images/slider/slide-5.jpg',
+    title: 'Pengerjaan & Perakitan Presisi di Workshop',
+    location: 'Workshop JM Kontainer Surabaya',
+    spec: 'Tukang Las Berpengalaman 7+ Tahun • QC Presisi',
+  },
 ]
 
-const GALLERY = [
-  { src: '/images/modern_premium_container_booth_rombong_kontainer_for_umkm_street_food_business.png', alt: 'Rombong Kontainer Murah Premium Surabaya untuk UMKM Street Food', tag: 'Rombong Kontainer', title: 'Premium Matte Black Booth', wide: true },
-  { src: '/images/modern_minimalist_house_gate_pagar_minimalis_black_powder_coated_iron_elegant.png',  alt: 'Pagar Minimalis Modern Powder Coat Surabaya', tag: 'Pagar Minimalis', title: 'Industrial Security Gate', wide: false },
-  { src: '/images/high_quality_alderon_canopy_installation_on_a_modern_house_white_and_black.png',     alt: 'Kanopi Alderon UPVC Murah Surabaya Instalasi Rumah Modern', tag: 'Kanopi Alderon', title: 'Modern UPVC Canopy', wide: false },
-  { src: '/images/professional_welding_workshop_interior_skilled_craftsmen_working_on_custom.png',      alt: 'Workshop Las Profesional JM Workshop Surabaya', tag: 'Workshop Las', title: 'Crafted with Precision', wide: false },
+const PORTFOLIO_ITEMS = [
+  {
+    id: 1,
+    category: 'kontainer',
+    src: '/images/slider/slide-1.jpg',
+    badge: 'Rombong Kontainer',
+    dim: 'Ukuran: 3.0 x 2.0 x 2.2 m',
+    loc: 'Surabaya Barat',
+    title: 'Booth Kontainer F&B Premium',
+    desc: 'Desain minimalis modern dengan warna ivory & gold accent, meja kerja stainless, siap langsung jualan.',
+    waText: 'Halo JM Kontainer, saya tertarik dengan Booth Kontainer F&B Premium ukuran 3x2m'
+  },
+  {
+    id: 2,
+    category: 'kontainer',
+    src: '/images/slider/slide-2.jpg',
+    badge: 'Booth Cafe UMKM',
+    dim: 'Ukuran: 2.5 x 2.0 x 2.1 m',
+    loc: 'Sidoarjo',
+    title: 'Kios Kontainer Kopi Kekinian',
+    desc: 'Jendela hidrolik buka-tutup ringan, exhaust fan ready, dan finishing anti-karat tahan cuaca tropis.',
+    waText: 'Halo JM Kontainer, saya tertarik dengan Kios Kontainer Kopi Kekinian'
+  },
+  {
+    id: 3,
+    category: 'kanopi',
+    src: '/images/slider/slide-3.jpg',
+    badge: 'Kanopi Alderon',
+    dim: 'Ukuran: 6.0 x 4.5 m (Carport)',
+    loc: 'Pakuwon, Surabaya',
+    title: 'Kanopi Alderon UPVC Sejuk',
+    desc: 'Sangat sejuk di siang hari dan senyap saat hujan deras, rangka galvanis kokoh bebas karat.',
+    waText: 'Halo JM Kontainer, saya ingin estimasi biaya pasang Kanopi Alderon'
+  },
+  {
+    id: 4,
+    category: 'pagar',
+    src: '/images/slider/slide-4.jpg',
+    badge: 'Pagar Minimalis',
+    dim: 'Tinggi: 1.8 m • Panjang: 4.5 m',
+    loc: 'Surabaya Timur',
+    title: 'Pagar Besi Minimalis & Gate',
+    desc: 'Cat powder coat anti gores, desain simpel elegan yang cocok untuk rumah modern minimalis.',
+    waText: 'Halo JM Kontainer, saya ingin konsultasi model Pagar Besi Minimalis'
+  },
+  {
+    id: 5,
+    category: 'kontainer',
+    src: '/images/slider/slide-5.jpg',
+    badge: 'Workshop Pengerjaan',
+    dim: 'Kapasitas 15 Unit / Bulan',
+    loc: 'Workshop Gresik-Surabaya',
+    title: 'Fabrikasi Rangka Kuat Standar SNI',
+    desc: 'Pengelasan full weld rapi, struktur diuji beban sebelum dikirim ke lokasi pemesan.',
+    waText: 'Halo JM Kontainer, saya ingin jadwal survei lokasi dan konsultasi langsung'
+  }
 ]
 
-const USPS = [
-  { icon: '🏆', title: '7+ Tahun Pengalaman', desc: 'Berdiri sejak 2017, sudah dipercaya ratusan pelanggan di Jawa Timur.' },
-  { icon: '✅', title: '500+ Proyek Selesai', desc: 'Portofolio lengkap mulai rombong kontainer, kanopi, hingga pagar minimalis.' },
-  { icon: '🔩', title: 'Material Premium SNI', desc: 'Hanya menggunakan bahan baku bersertifikat — tidak ada kompromi soal kualitas.' },
-  { icon: '🛡️', title: 'Garansi Pengerjaan',  desc: 'Setiap proyek dilengkapi garansi konstruksi. Kami bertanggung jawab penuh.' },
-  { icon: '💰', title: 'Harga Transparan',    desc: 'Penawaran tertulis, tidak ada biaya tersembunyi. Cocok untuk semua budget.' },
-  { icon: '📐', title: 'Survei & Konsultasi Gratis', desc: 'Tim kami siap datang ke lokasi Anda gratis untuk mengukur dan berdiskusi.' },
-]
-
-const TESTIMONIALS = [
-  { name: 'Pak Budi', business: 'Pemilik Booth Kopi Surabaya', text: 'Rombong kontainer dari JM Workshop keren banget! Sudah jalan 1 tahun, masih kokoh dan banyak yang tertarik lihat booth saya.' },
-  { name: 'Bu Sari',  business: 'Pemilik Rumah Sidoarjo',       text: 'Kanopi alderonnya bagus, rapih, dan tidak bocor sama sekali. Pengerjaannya cepat dan harga sesuai penawaran awal.' },
-  { name: 'Pak Hendra', business: 'Kontraktor Gresik',          text: 'Sudah 3x order pagar di sini. Hasilnya selalu memuaskan, tukang las mereka profesional dan disiplin.' },
+const FAQS = [
+  {
+    q: 'Berapa lama proses pembuatan satu unit Rombong Kontainer?',
+    a: 'Rata-rata waktu pengerjaan berkisar antara 7 hingga 14 hari kerja, tergantung ukuran dan aksesoris kelistrikan/interior yang Anda pilih.'
+  },
+  {
+    q: 'Apakah survei lokasi dan konsultasi benar-benar gratis?',
+    a: 'Ya, 100% GRATIS tanpa biaya tersembunyi untuk wilayah Surabaya, Sidoarjo, dan Gresik. Tim kami siap datang membawa meteran presisi dan katalog material.'
+  },
+  {
+    q: 'Bagaimana garansi pengerjaan di JM Kontainer?',
+    a: 'Setiap unit rombong kontainer, kanopi, maupun pagar memiliki garansi konstruksi. Jika ada kendala kebocoran atau struktur, teknisi kami segera datang memperbaiki.'
+  },
+  {
+    q: 'Bisa melayani pengiriman ke luar kota?',
+    a: 'Tentu bisa. Kami melayani seluruh area Jawa Timur (Surabaya, Sidoarjo, Gresik, Mojokerto, Lamongan, Malang, dll) dengan armada pengiriman aman langsung sampai lokasi Anda.'
+  }
 ]
 
 export default function Home() {
+  const [currentSlide, setCurrentSlide] = useState(0)
+  const [filter, setFilter] = useState('all')
+  const [openFaq, setOpenFaq] = useState<number | null>(null)
+
+  // Form State
+  const [service, setService] = useState('Rombong Kontainer / Booth UMKM')
+  const [dim, setDim] = useState('')
+  const [city, setCity] = useState('Surabaya')
+  const [name, setName] = useState('')
+  const [notes, setNotes] = useState('')
+
+  // Auto-play Slider every 4 seconds
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % HERO_SLIDES.length)
+    }, 4500)
+    return () => clearInterval(timer)
+  }, [])
+
+  const handleQuoteSubmit = (e: React.FormEvent) => {
+    e.preventDefault()
+    trackEvent('generate_lead', { form_name: 'quote_calculator' })
+    const msg = `Halo JM Kontainer Surabaya,\n\nSaya ingin konsultasi dan minta estimasi biaya:\n• *Nama / Usaha:* ${name || 'Pelanggan'}\n• *Layanan:* ${service}\n• *Ukuran / Dimensi:* ${dim || 'Sesuai Rekomendasi'}\n• *Lokasi Kota:* ${city}\n• *Catatan:* ${notes || '-'}\n\nMohon info harga terbaik dan jadwal survei gratisnya. Terima kasih!`
+    window.open(`https://wa.me/628155401679?text=${encodeURIComponent(msg)}`, '_blank', 'noopener')
+  }
+
+  const filteredPortfolio = filter === 'all' 
+    ? PORTFOLIO_ITEMS 
+    : PORTFOLIO_ITEMS.filter(item => item.category === filter)
+
   return (
-    <>
+    <div className="bg-[#FAF8F5] text-stone-900 min-h-screen">
+      
+      {/* ═══ 1. TOP ANNOUNCEMENT BANNER ═══ */}
+      <div className="bg-stone-900 text-stone-200 text-xs py-2 px-4 border-b border-stone-800">
+        <div className="max-w-7xl mx-auto flex items-center justify-between">
+          <div className="flex items-center gap-2">
+            <span className="inline-flex items-center justify-center w-2 h-2 rounded-full bg-amber-400 animate-pulse mr-1"></span>
+            <span className="font-medium text-stone-100">Buka Batch Baru Pembuatan Rombong Kontainer &amp; Kanopi</span>
+            <span className="hidden md:inline text-stone-400">— Pengerjaan Cepat 7-14 Hari Kerja</span>
+          </div>
+          <div className="flex items-center gap-4 text-stone-300">
+            <span className="hidden sm:inline">Survei Lokasi &amp; Konsultasi Desain: <strong className="text-amber-400">Gratis 100%</strong></span>
+            <a href="https://wa.me/628155401679?text=Halo%20JM%20Kontainer%2C%20saya%20mau%20ambil%20promo%20survei%20gratis" 
+               target="_blank" rel="noopener"
+               className="text-amber-400 hover:text-amber-300 font-semibold underline underline-offset-2">Klaim Promo &rarr;</a>
+          </div>
+        </div>
+      </div>
+
       <Navbar />
-      <main className="pt-16">
 
-        {/* ═══ HERO ═══ */}
-        <section className="relative h-[90vh] flex items-center overflow-hidden">
-          <Image
-            src="/images/modern_premium_container_booth_rombong_kontainer_for_umkm_street_food_business.png"
-            alt="Rombong Kontainer Murah Berkualitas — JM Workshop Surabaya"
-            fill className="object-cover" priority quality={90}
-          />
-          <div className="absolute inset-0 hero-overlay" />
-          <div className="relative z-10 max-w-5xl mx-auto px-4 md:px-16 text-white">
-            {/* Badge */}
-            <span className="inline-block px-4 py-1 bg-[#F59E0B] text-black font-bold text-xs uppercase tracking-widest mb-5 rounded-sm">
-              Bengkel Las Terpercaya · Surabaya Sejak 2017
-            </span>
+      <main className="overflow-x-hidden">
 
-            {/* H1 — wajib mengandung keyword utama */}
-            <h1 className="font-display mb-3 leading-tight" style={{ fontSize: 'clamp(28px,5vw,56px)', fontWeight: 800 }}>
-              Spesialis Rombong Kontainer,<br />
-              Kanopi Alderon &amp; Pagar Minimalis<br />
-              <span className="text-[#F59E0B]">Surabaya</span>
-            </h1>
+        {/* ═══ 2. HERO SECTION WITH IMAGE SLIDER (IVORY / GOLD THEME) ═══ */}
+        <section className="relative pt-8 pb-16 md:pt-14 md:pb-24 light-grid-pattern overflow-hidden" id="hero-slider">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+              
+              {/* Left Column: Value Prop & CTAs */}
+              <div className="lg:col-span-6 space-y-6">
+                
+                {/* Pill Tag */}
+                <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white border border-stone-200/90 shadow-sm text-xs font-semibold text-stone-700">
+                  <span className="w-2 h-2 rounded-full bg-amber-600"></span>
+                  <span className="font-mono text-amber-700 font-bold uppercase tracking-wider">Bengkel Las Resmi Surabaya Sejak 2017</span>
+                </div>
 
-            {/* Subtitle / marketing copy */}
-            <p className="text-body-lg text-gray-300 mb-4 max-w-2xl">
-              Konstruksi besi presisi untuk bisnis UMKM &amp; hunian modern Anda.
-              Material premium standar SNI, garansi pengerjaan, harga terjangkau.
+                {/* Main Headline */}
+                <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-stone-900 leading-[1.12]">
+                  Spesialis <span className="text-amber-700">Rombong Kontainer</span> UMKM, Kanopi &amp; Pagar Minimalis.
+                </h1>
+
+                {/* Subtitle */}
+                <p className="text-base sm:text-lg text-stone-600 leading-relaxed">
+                  Solusi booth usaha kekinian, kanopi sejuk anti-bocor, dan pagar kokoh presisi berstandar SNI. Kami melayani seluruh generasi pengusaha kuliner hingga pemilik hunian di Jawa Timur.
+                </p>
+
+                {/* CTAs */}
+                <div className="flex flex-col sm:flex-row gap-4 pt-2">
+                  <a href="https://wa.me/628155401679?text=Halo%20JM%20Kontainer%2C%20saya%20ingin%20konsultasi%20desain%20dan%20survei%20gratis" 
+                     target="_blank" rel="noopener"
+                     onClick={() => trackEvent('click_whatsapp', { button_location: 'hero_primary' })}
+                     className="inline-flex items-center justify-center gap-3 px-7 py-4 rounded-2xl bg-gradient-to-r from-amber-600 to-yellow-600 hover:from-amber-700 hover:to-yellow-700 text-white font-bold text-base transition-all shadow-gold-glow hover:-translate-y-0.5 active:scale-95">
+                    <span>💬 Konsultasi &amp; Survei Gratis</span>
+                    <span className="material-symbols-outlined text-lg">arrow_forward</span>
+                  </a>
+                  <a href="#portofolio" 
+                     className="inline-flex items-center justify-center gap-2 px-6 py-4 rounded-2xl bg-white hover:bg-stone-50 text-stone-800 border border-stone-300 font-bold text-base transition-all shadow-sm">
+                    <span>Lihat Portofolio (500+)</span>
+                  </a>
+                </div>
+
+                {/* Trust Points */}
+                <div className="grid grid-cols-3 gap-4 pt-4 border-t border-stone-200 text-center">
+                  <div className="p-2 bg-white/70 backdrop-blur-sm rounded-xl border border-stone-200">
+                    <div className="text-2xl font-black text-amber-700 font-mono">500+</div>
+                    <div className="text-[11px] text-stone-600 font-medium mt-0.5">Proyek Selesai</div>
+                  </div>
+                  <div className="p-2 bg-white/70 backdrop-blur-sm rounded-xl border border-stone-200">
+                    <div className="text-2xl font-black text-amber-700 font-mono">7+ Thn</div>
+                    <div className="text-[11px] text-stone-600 font-medium mt-0.5">Pengalaman Las</div>
+                  </div>
+                  <div className="p-2 bg-white/70 backdrop-blur-sm rounded-xl border border-stone-200">
+                    <div className="text-2xl font-black text-amber-700 font-mono">100%</div>
+                    <div className="text-[11px] text-stone-600 font-medium mt-0.5">Material SNI Asli</div>
+                  </div>
+                </div>
+
+              </div>
+
+              {/* Right Column: Hero Slider with Watermark "JM Kontainer" */}
+              <div className="lg:col-span-6">
+                <div className="relative bg-white rounded-3xl p-3 border border-stone-200 shadow-xl overflow-hidden group">
+                  
+                  {/* Slider Container */}
+                  <div className="relative h-[380px] sm:h-[460px] w-full rounded-2xl overflow-hidden bg-stone-100">
+                    {HERO_SLIDES.map((slide, index) => (
+                      <div 
+                        key={slide.id}
+                        className={`absolute inset-0 transition-opacity duration-700 ease-in-out ${
+                          index === currentSlide ? 'opacity-100 z-10' : 'opacity-0 z-0'
+                        }`}>
+                        <Image 
+                          src={slide.src} 
+                          alt={slide.title} 
+                          fill 
+                          priority={index === 0}
+                          className="object-cover" 
+                        />
+
+                        {/* Subtle dark gradient overlay for text readability */}
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/20 to-transparent"></div>
+
+                        {/* 🔒 WATERMARK "JM KONTAINER" (Prominent & Professional) */}
+                        <div className="absolute top-4 right-4 z-20 flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-black/60 backdrop-blur-md border border-white/20 text-white shadow-lg pointer-events-none select-none">
+                          <span className="w-2 h-2 rounded-full bg-amber-400"></span>
+                          <span className="font-mono font-extrabold text-xs tracking-wider uppercase">JM Kontainer</span>
+                          <span className="text-[10px] text-stone-300 font-mono font-medium">• Surabaya</span>
+                        </div>
+
+                        {/* Slide Caption Bottom */}
+                        <div className="absolute bottom-0 left-0 right-0 p-5 z-20 text-white">
+                          <div className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-amber-600 text-white text-[10px] font-mono font-bold tracking-wider uppercase mb-1.5">
+                            {slide.location}
+                          </div>
+                          <h3 className="text-lg sm:text-xl font-bold leading-snug drop-shadow-md">
+                            {slide.title}
+                          </h3>
+                          <p className="text-xs text-stone-200 mt-1 line-clamp-1 drop-shadow">
+                            {slide.spec}
+                          </p>
+                        </div>
+                      </div>
+                    ))}
+
+                    {/* Left & Right Slider Arrows */}
+                    <button 
+                      onClick={() => setCurrentSlide((prev) => (prev === 0 ? HERO_SLIDES.length - 1 : prev - 1))}
+                      className="absolute left-3 top-1/2 -translate-y-1/2 z-30 w-10 h-10 rounded-full bg-white/80 hover:bg-white text-stone-800 backdrop-blur-md flex items-center justify-center shadow-lg transition-all active:scale-95"
+                      aria-label="Previous Slide">
+                      <span className="material-symbols-outlined text-lg">chevron_left</span>
+                    </button>
+                    <button 
+                      onClick={() => setCurrentSlide((prev) => (prev + 1) % HERO_SLIDES.length)}
+                      className="absolute right-3 top-1/2 -translate-y-1/2 z-30 w-10 h-10 rounded-full bg-white/80 hover:bg-white text-stone-800 backdrop-blur-md flex items-center justify-center shadow-lg transition-all active:scale-95"
+                      aria-label="Next Slide">
+                      <span className="material-symbols-outlined text-lg">chevron_right</span>
+                    </button>
+                  </div>
+
+                  {/* Slide Indicators Dots */}
+                  <div className="flex items-center justify-between px-2 pt-3">
+                    <span className="text-xs font-mono text-stone-500 font-semibold">
+                      Dokumentasi Hasil Jadi Lapangan (100% Asli)
+                    </span>
+                    <div className="flex items-center gap-1.5">
+                      {HERO_SLIDES.map((_, idx) => (
+                        <button
+                          key={idx}
+                          onClick={() => setCurrentSlide(idx)}
+                          className={`h-2 rounded-full transition-all ${
+                            idx === currentSlide ? 'w-6 bg-amber-600' : 'w-2 bg-stone-300'
+                          }`}
+                          aria-label={`Go to slide ${idx + 1}`}
+                        />
+                      ))}
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+        </section>
+
+        {/* ═══ 3. BENTO SERVICES (LIGHT ELEGANT IVORY & GOLD) ═══ */}
+        <section className="py-16 lg:py-24 bg-white border-t border-stone-200" id="layanan">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div className="flex flex-col md:flex-row md:items-end justify-between mb-14 gap-6">
+              <div>
+                <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-md bg-amber-50 text-amber-800 border border-amber-200 text-xs font-mono font-bold tracking-wider uppercase mb-3">
+                  Katalog Layanan
+                </div>
+                <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-stone-900">
+                  Fabrikasi Presisi Berkualitas Tinggi
+                </h2>
+              </div>
+              <p className="text-stone-600 max-w-md text-sm leading-relaxed">
+                Kami melayani pembuatan custom sesuai luasan tempat dan anggaran Anda. Rapi, kokoh, dan bergaransi resmi dari bengkel las profesional.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              
+              {/* Service 1 */}
+              <div className="bg-[#FAF8F5] rounded-3xl p-7 border border-stone-200 shadow-warm hover:shadow-warm-hover transition-all duration-300 flex flex-col justify-between">
+                <div>
+                  <div className="w-12 h-12 rounded-2xl bg-amber-100 text-amber-700 flex items-center justify-center mb-6">
+                    <span className="material-symbols-outlined text-2xl">storefront</span>
+                  </div>
+                  <h3 className="text-xl font-bold text-stone-900 mb-2">Rombong Kontainer UMKM</h3>
+                  <p className="text-stone-600 text-sm leading-relaxed mb-6">
+                    Solusi booth jualan makanan, minuman, dan cafe modular. Bahan spandek/zincalume tahan karat dengan rangka hollow tebal dan instalasi kelistrikan siap colok.
+                  </p>
+                </div>
+                <div>
+                  <div className="relative h-44 rounded-2xl overflow-hidden mb-4 border border-stone-200">
+                    <Image src="/images/slider/slide-1.jpg" alt="Rombong Kontainer" fill className="object-cover" />
+                    <div className="absolute top-2 right-2 px-2 py-0.5 rounded bg-black/60 text-white font-mono text-[9px] font-bold">
+                      JM Kontainer
+                    </div>
+                  </div>
+                  <a href="https://wa.me/628155401679?text=Halo%20JM%20Kontainer%2C%20mau%20tanya%20harga%20Rombong%20Kontainer" 
+                     target="_blank" rel="noopener"
+                     className="flex items-center justify-between text-xs font-bold text-amber-800 hover:text-amber-600 pt-2 border-t border-stone-200">
+                    <span>Tanya Harga &amp; Ukuran</span>
+                    <span className="material-symbols-outlined text-base">arrow_forward</span>
+                  </a>
+                </div>
+              </div>
+
+              {/* Service 2 */}
+              <div className="bg-[#FAF8F5] rounded-3xl p-7 border border-stone-200 shadow-warm hover:shadow-warm-hover transition-all duration-300 flex flex-col justify-between">
+                <div>
+                  <div className="w-12 h-12 rounded-2xl bg-amber-100 text-amber-700 flex items-center justify-center mb-6">
+                    <span className="material-symbols-outlined text-2xl">roofing</span>
+                  </div>
+                  <h3 className="text-xl font-bold text-stone-900 mb-2">Kanopi Alderon UPVC</h3>
+                  <p className="text-stone-600 text-sm leading-relaxed mb-6">
+                    Meredam panas terik hingga 40% dan tidak berisik saat hujan lebat. Pilihan tepat untuk carport mobil dan teras rumah keluarga modern.
+                  </p>
+                </div>
+                <div>
+                  <div className="relative h-44 rounded-2xl overflow-hidden mb-4 border border-stone-200">
+                    <Image src="/images/slider/slide-3.jpg" alt="Kanopi Alderon" fill className="object-cover" />
+                    <div className="absolute top-2 right-2 px-2 py-0.5 rounded bg-black/60 text-white font-mono text-[9px] font-bold">
+                      JM Kontainer
+                    </div>
+                  </div>
+                  <a href="https://wa.me/628155401679?text=Halo%20JM%20Kontainer%2C%20mau%20tanya%20pasang%20Kanopi%20Alderon" 
+                     target="_blank" rel="noopener"
+                     className="flex items-center justify-between text-xs font-bold text-amber-800 hover:text-amber-600 pt-2 border-t border-stone-200">
+                    <span>Konsultasi Ukuran Carport</span>
+                    <span className="material-symbols-outlined text-base">arrow_forward</span>
+                  </a>
+                </div>
+              </div>
+
+              {/* Service 3 */}
+              <div className="bg-[#FAF8F5] rounded-3xl p-7 border border-stone-200 shadow-warm hover:shadow-warm-hover transition-all duration-300 flex flex-col justify-between">
+                <div>
+                  <div className="w-12 h-12 rounded-2xl bg-amber-100 text-amber-700 flex items-center justify-center mb-6">
+                    <span className="material-symbols-outlined text-2xl">fence</span>
+                  </div>
+                  <h3 className="text-xl font-bold text-stone-900 mb-2">Pagar Besi Minimalis &amp; Gate</h3>
+                  <p className="text-stone-600 text-sm leading-relaxed mb-6">
+                    Keamanan maksimal tanpa melupakan estetika rumah. Dilapisi cat dasar anti-karat dan finishing warna custom (hitam, putih, ivory, atau motif kayu).
+                  </p>
+                </div>
+                <div>
+                  <div className="relative h-44 rounded-2xl overflow-hidden mb-4 border border-stone-200">
+                    <Image src="/images/slider/slide-4.jpg" alt="Pagar Minimalis" fill className="object-cover" />
+                    <div className="absolute top-2 right-2 px-2 py-0.5 rounded bg-black/60 text-white font-mono text-[9px] font-bold">
+                      JM Kontainer
+                    </div>
+                  </div>
+                  <a href="https://wa.me/628155401679?text=Halo%20JM%20Kontainer%2C%20mau%20tanya%20desain%20Pagar%20Besi" 
+                     target="_blank" rel="noopener"
+                     className="flex items-center justify-between text-xs font-bold text-amber-800 hover:text-amber-600 pt-2 border-t border-stone-200">
+                    <span>Pilih Model &amp; Desain Pagar</span>
+                    <span className="material-symbols-outlined text-base">arrow_forward</span>
+                  </a>
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+        </section>
+
+        {/* ═══ 4. FILTERABLE REAL PORTFOLIO WITH WATERMARK ═══ */}
+        <section className="py-16 lg:py-24 bg-[#FAF8F5] border-t border-stone-200" id="portofolio">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+            <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
+              <div>
+                <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-md bg-stone-200/80 text-stone-800 text-xs font-mono font-bold tracking-wider uppercase mb-3">
+                  Dokumentasi Foto Nyata
+                </div>
+                <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-stone-900">
+                  Portofolio Hasil Produksi Kami
+                </h2>
+                <p className="text-stone-600 text-sm mt-1">Foto asli langsung dari workshop dan instalasi di tempat pelanggan.</p>
+              </div>
+
+              {/* Filter Tabs */}
+              <div className="flex items-center gap-1.5 p-1.5 bg-stone-200/80 rounded-2xl border border-stone-300 no-scrollbar overflow-x-auto">
+                {[
+                  { key: 'all', label: 'Semua Produk' },
+                  { key: 'kontainer', label: 'Rombong Kontainer' },
+                  { key: 'kanopi', label: 'Kanopi Alderon' },
+                  { key: 'pagar', label: 'Pagar Minimalis' },
+                ].map(t => (
+                  <button 
+                    key={t.key}
+                    onClick={() => setFilter(t.key)}
+                    className={`px-4 py-2 rounded-xl text-xs font-bold transition-all ${
+                      filter === t.key 
+                        ? 'bg-amber-600 text-white shadow-md' 
+                        : 'text-stone-600 hover:text-stone-950'
+                    }`}>
+                    {t.label}
+                  </button>
+                ))}
+              </div>
+            </div>
+
+            {/* Portfolio Grid */}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {filteredPortfolio.map((item) => (
+                <div key={item.id} className="bg-white rounded-3xl p-4 border border-stone-200 shadow-warm hover:shadow-warm-hover transition-all">
+                  <div className="relative h-60 rounded-2xl overflow-hidden mb-4 bg-stone-100 border border-stone-200">
+                    <Image 
+                      src={item.src} 
+                      alt={item.title} 
+                      fill className="object-cover" 
+                    />
+                    {/* Badge Watermark JM Kontainer */}
+                    <div className="absolute top-3 right-3 px-2.5 py-1 rounded-lg bg-black/65 backdrop-blur-sm text-white font-mono text-[10px] font-bold shadow flex items-center gap-1">
+                      <span className="w-1.5 h-1.5 rounded-full bg-amber-400"></span>
+                      <span>JM Kontainer</span>
+                    </div>
+                    <span className="absolute bottom-3 left-3 px-2.5 py-1 rounded-md bg-white/90 backdrop-blur-md text-amber-800 font-mono text-[10px] font-bold">
+                      {item.badge}
+                    </span>
+                  </div>
+
+                  <div className="px-2">
+                    <div className="flex items-center justify-between text-xs font-mono text-stone-500 mb-1">
+                      <span>{item.dim}</span>
+                      <span className="text-amber-700 font-bold">{item.loc}</span>
+                    </div>
+                    <h4 className="font-bold text-base text-stone-900 mb-1.5">{item.title}</h4>
+                    <p className="text-xs text-stone-600 line-clamp-2 mb-4 leading-relaxed">{item.desc}</p>
+                    <a href={`https://wa.me/628155401679?text=${encodeURIComponent(item.waText)}`}
+                       target="_blank" rel="noopener"
+                       className="inline-flex items-center gap-1.5 text-xs font-bold text-amber-700 hover:text-amber-900 transition-colors">
+                      <span>Tanya Spek &amp; Harga Model Ini</span>
+                      <span className="material-symbols-outlined text-sm">arrow_outward</span>
+                    </a>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+          </div>
+        </section>
+
+        {/* ═══ 5. WORKFLOW BENTO (CLEAN LIGHT) ═══ */}
+        <section className="py-16 lg:py-24 bg-white border-t border-stone-200" id="workflow">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center max-w-2xl mx-auto mb-14">
+              <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-md bg-amber-50 text-amber-800 border border-amber-200 text-xs font-mono font-bold tracking-wider uppercase mb-3">
+                Langkah Mudah Pemesanan
+              </div>
+              <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-stone-900 mb-3">
+                Proses Pengerjaan Transparan &amp; Rapi
+              </h2>
+              <p className="text-stone-600 text-sm">Dari awal konsultasi hingga serah terima kunci di lokasi Anda.</p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-5 gap-4">
+              {[
+                { no: '01', title: 'Konsultasi & Survei', desc: 'Diskusikan model impian Anda. Tim kami survei gratis ke lokasi Anda.' },
+                { no: '02', title: 'RAB & Desain Pasti', desc: 'Penawaran harga tertulis jelas tanpa biaya tambahan di kemudian hari.' },
+                { no: '03', title: 'Fabrikasi Presisi', desc: 'Pemotongan & pengelasan baja SNI oleh tenaga ahli bersertifikat.' },
+                { no: '04', title: 'Finishing & Cat Anti-Karat', desc: 'Pengecatan duco/powder coat rapi & uji kebocoran air sebelum kirim.' },
+                { no: '05', title: 'Kirim & Garansi', desc: 'Pengiriman aman ke lokasi Anda dilengkapi garansi pengerjaan resmi.' },
+              ].map((step) => (
+                <div key={step.no} className="p-6 rounded-2xl bg-[#FAF8F5] border border-stone-200 hover:border-amber-400 transition-colors shadow-sm">
+                  <div className="font-mono text-2xl font-extrabold text-amber-600 mb-2">{step.no}</div>
+                  <h3 className="font-bold text-base text-stone-900 mb-2">{step.title}</h3>
+                  <p className="text-xs text-stone-600 leading-relaxed">{step.desc}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* ═══ 6. KALKULATOR PENAWARAN INSTAN (LIGHT IVORY/GOLD) ═══ */}
+        <section className="py-16 bg-[#FAF8F5] border-t border-stone-200" id="estimasi">
+          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="bg-white rounded-3xl p-8 sm:p-12 border border-stone-200 shadow-xl">
+              <div className="text-center max-w-xl mx-auto mb-8">
+                <span className="px-3.5 py-1 rounded-full bg-amber-100 text-amber-800 text-xs font-mono font-bold tracking-wider uppercase mb-2 inline-block">
+                  Kalkulator &amp; Estimasi Biaya
+                </span>
+                <h2 className="text-2xl sm:text-3xl font-extrabold text-stone-900 mb-2">
+                  Dapatkan Perkiraan Harga &amp; Jadwal Survei
+                </h2>
+                <p className="text-stone-600 text-xs sm:text-sm">
+                  Isi form singkat ini, sistem kami akan langsung menghubungkan Anda ke WhatsApp resmi Kepala Bengkel JM Kontainer.
+                </p>
+              </div>
+
+              <form onSubmit={handleQuoteSubmit} className="space-y-5">
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                  <div>
+                    <label className="block text-xs font-mono font-bold text-stone-700 mb-1.5">1. PILIH PRODUK</label>
+                    <select 
+                      value={service} 
+                      onChange={(e) => setService(e.target.value)}
+                      className="w-full bg-[#FAF8F5] border border-stone-300 rounded-xl px-4 py-3 text-sm text-stone-900 focus:outline-none focus:border-amber-600">
+                      <option value="Rombong Kontainer / Booth UMKM">Rombong Kontainer UMKM</option>
+                      <option value="Kanopi Alderon UPVC">Kanopi Alderon UPVC</option>
+                      <option value="Pagar Minimalis Modern">Pagar Minimalis Besi</option>
+                      <option value="Tangga Putar / Mezzanine">Konstruksi Custom Lainnya</option>
+                    </select>
+                  </div>
+                  <div>
+                    <label className="block text-xs font-mono font-bold text-stone-700 mb-1.5">2. UKURAN (P x L)</label>
+                    <input 
+                      type="text" 
+                      value={dim}
+                      onChange={(e) => setDim(e.target.value)}
+                      placeholder="Misal: 3x2m atau 6x4m" 
+                      className="w-full bg-[#FAF8F5] border border-stone-300 rounded-xl px-4 py-3 text-sm text-stone-900 focus:outline-none focus:border-amber-600" 
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-xs font-mono font-bold text-stone-700 mb-1.5">3. KOTA ANDA</label>
+                    <select 
+                      value={city} 
+                      onChange={(e) => setCity(e.target.value)}
+                      className="w-full bg-[#FAF8F5] border border-stone-300 rounded-xl px-4 py-3 text-sm text-stone-900 focus:outline-none focus:border-amber-600">
+                      <option value="Surabaya">Surabaya</option>
+                      <option value="Sidoarjo">Sidoarjo</option>
+                      <option value="Gresik">Gresik</option>
+                      <option value="Mojokerto">Mojokerto</option>
+                      <option value="Lamongan">Lamongan</option>
+                      <option value="Luar Kota (Jawa Timur)">Luar Kota Lainnya</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div>
+                    <label className="block text-xs font-mono font-bold text-stone-700 mb-1.5">NAMA ANDA / NAMA USAHA</label>
+                    <input 
+                      type="text" 
+                      value={name}
+                      onChange={(e) => setName(e.target.value)}
+                      placeholder="Contoh: Pak Budi / Kopi Sejahtera" 
+                      className="w-full bg-[#FAF8F5] border border-stone-300 rounded-xl px-4 py-3 text-sm text-stone-900 focus:outline-none focus:border-amber-600" 
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-xs font-mono font-bold text-stone-700 mb-1.5">CATATAN KHUSUS (OPSIONAL)</label>
+                    <input 
+                      type="text" 
+                      value={notes}
+                      onChange={(e) => setNotes(e.target.value)}
+                      placeholder="Contoh: Butuh meja stainless & roda putar" 
+                      className="w-full bg-[#FAF8F5] border border-stone-300 rounded-xl px-4 py-3 text-sm text-stone-900 focus:outline-none focus:border-amber-600" 
+                    />
+                  </div>
+                </div>
+
+                <div className="pt-3 flex flex-col sm:flex-row items-center justify-between gap-4 border-t border-stone-200">
+                  <div className="text-xs text-stone-500 flex items-center gap-1.5">
+                    <span className="material-symbols-outlined text-amber-700 text-sm">verified_user</span>
+                    Respon cepat &amp; konsultasi ramah
+                  </div>
+                  <button type="submit" 
+                          className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-xl bg-gradient-to-r from-amber-600 to-yellow-600 hover:from-amber-700 hover:to-yellow-700 active:scale-95 text-white font-bold text-sm tracking-wide transition-all shadow-gold-glow">
+                    <span>Kirim ke WhatsApp &amp; Minta Penawaran</span>
+                    <span className="material-symbols-outlined text-base">send</span>
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </section>
+
+        {/* ═══ 7. FAQ ACCORDION ═══ */}
+        <section className="py-16 bg-white border-t border-stone-200" id="faq">
+          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-12">
+              <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-md bg-stone-200/80 text-stone-800 text-xs font-mono font-bold tracking-wider uppercase mb-2">
+                Tanya Jawab
+              </div>
+              <h2 className="text-3xl font-extrabold tracking-tight text-stone-900 mb-2">
+                Pertanyaan yang Sering Diajukan
+              </h2>
+              <p className="text-stone-600 text-sm">Informasi seputar lama pengerjaan, pengiriman, dan garansi.</p>
+            </div>
+
+            <div className="space-y-3">
+              {FAQS.map((faq, idx) => (
+                <div key={idx} className="border border-stone-200 rounded-2xl bg-[#FAF8F5] overflow-hidden transition-all">
+                  <button 
+                    onClick={() => setOpenFaq(openFaq === idx ? null : idx)}
+                    className="w-full px-6 py-4 text-left flex items-center justify-between font-bold text-stone-900 text-sm sm:text-base">
+                    <span>{faq.q}</span>
+                    <span className={`material-symbols-outlined text-amber-700 transition-transform ${openFaq === idx ? 'rotate-180' : ''}`}>
+                      expand_more
+                    </span>
+                  </button>
+                  {openFaq === idx && (
+                    <div className="px-6 pb-5 text-xs sm:text-sm text-stone-600 leading-relaxed border-t border-stone-200 pt-3">
+                      {faq.a}
+                    </div>
+                  )}
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* ═══ 8. FINAL WARM CTA ═══ */}
+        <section className="py-20 bg-gradient-to-br from-amber-600 via-amber-700 to-yellow-700 text-white relative overflow-hidden">
+          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+            <div className="w-14 h-14 rounded-2xl bg-white/20 backdrop-blur-md flex items-center justify-center mx-auto mb-6 shadow-md">
+              <span className="material-symbols-outlined text-3xl text-white">handyman</span>
+            </div>
+            <h2 className="text-3xl sm:text-5xl font-extrabold tracking-tight mb-4 text-white">
+              Pesan Rombong Kontainer &amp; Kanopi Impian Anda
+            </h2>
+            <p className="text-amber-100 text-base sm:text-lg max-w-xl mx-auto mb-8">
+              Konsultasikan kebutuhan tempat usaha atau rumah Anda bersama tim ahli kami. Survei lokasi gratis dan penawaran transparan.
             </p>
 
-            {/* Trust signals di bawah headline */}
-            <div className="flex flex-wrap gap-4 mb-8 text-sm text-gray-300">
-              <span>⭐ 500+ Proyek Selesai</span>
-              <span>·</span>
-              <span>🛡️ Garansi Kualitas</span>
-              <span>·</span>
-              <span>📐 Survei Gratis</span>
-              <span>·</span>
-              <span>💰 Harga Transparan</span>
-            </div>
-
-            <div className="flex flex-col sm:flex-row gap-4">
-              <a id="btn-whatsapp-hero"
-                href="https://wa.me/628155401679?text=Halo%20JM%20Workshop%2C%20saya%20ingin%20konsultasi%20gratis"
-                target="_blank" rel="noopener"
-                className="px-8 py-4 bg-[#22C55E] text-white font-bold text-lg rounded-lg hover:shadow-2xl hover:-translate-y-1 transition-all text-center flex items-center justify-center gap-2">
-                💬 Konsultasi Gratis Sekarang
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+              <a href="https://wa.me/628155401679?text=Halo%20JM%20Kontainer%2C%20saya%20siap%20order%20dan%20ingin%20konsultasi" 
+                 target="_blank" rel="noopener"
+                 onClick={() => trackEvent('click_whatsapp', { button_location: 'final_cta' })}
+                 className="w-full sm:w-auto inline-flex items-center justify-center gap-3 px-8 py-4 rounded-2xl bg-white text-amber-800 hover:bg-stone-50 active:scale-95 font-extrabold text-base transition-all shadow-xl">
+                <span>💬 Chat WhatsApp Sekarang</span>
+                <span className="material-symbols-outlined text-lg">arrow_outward</span>
               </a>
-              <a id="btn-lihat-kontak" href="#kontak"
-                className="px-8 py-4 border-2 border-white text-white font-bold text-lg rounded-lg hover:bg-white hover:text-black transition-all text-center">
-                Lihat Kontak
+              <a href="tel:+628155401679" 
+                 className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 rounded-2xl bg-black/20 hover:bg-black/30 border border-white/30 text-white font-bold text-base transition-all">
+                <span className="material-symbols-outlined text-base">call</span>
+                <span>Telepon: 0815-5401-6679</span>
               </a>
             </div>
-          </div>
-        </section>
-
-        {/* ═══ TRUST BAR ═══ */}
-        <section className="bg-black py-5 border-b border-gray-800">
-          <div className="max-w-7xl mx-auto px-4 md:px-16 flex flex-wrap justify-center gap-8 text-white text-sm font-semibold">
-            {['🏭 Bengkel Las Profesional Surabaya','📦 Rombong Kontainer Murah','🏠 Kanopi Alderon Murah','🔒 Pagar Minimalis Murah','🚚 Melayani Surabaya, Sidoarjo, Gresik'].map(t => (
-              <span key={t} className="text-gray-300">{t}</span>
-            ))}
-          </div>
-        </section>
-
-        {/* ═══ LAYANAN ═══ */}
-        <section className="py-20 bg-[#f8f9fb]" id="layanan">
-          <div className="max-w-7xl mx-auto px-4 md:px-16">
-            <div className="text-center mb-14">
-              <h2 className="font-display text-headline-lg text-black mb-3">Layanan Unggulan Fabrikasi Logam Surabaya</h2>
-              <div className="w-20 h-1.5 bg-[#F59E0B] mx-auto mb-5" />
-              <p className="text-gray-500 max-w-2xl mx-auto">Solusi fabrikasi logam dengan teknik pengelasan presisi, material berkualitas standar SNI, dan harga yang kompetitif di Surabaya.</p>
-            </div>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              {SERVICES.map((s, i) => (
-                <div key={i} className="reveal bg-white rounded-xl p-10 border border-gray-200 industrial-shadow hover:border-[#F59E0B] transition-all group" style={{ transitionDelay: `${i * 100}ms` }}>
-                  <div className="w-16 h-16 bg-gray-100 rounded-xl flex items-center justify-center mb-6 group-hover:bg-[#F59E0B] transition-colors">
-                    <span className="material-symbols-outlined text-black text-4xl">{s.icon}</span>
-                  </div>
-                  <h3 className="font-display text-headline-sm mb-3">{s.title}</h3>
-                  <p className="text-gray-500 text-body-md mb-6">{s.desc}</p>
-                  <div className="pt-5 border-t border-gray-100 flex items-center justify-between">
-                    <span className="text-[#F59E0B] text-label-md uppercase tracking-wider">{s.tag}</span>
-                    <a href="https://wa.me/628155401679" target="_blank" rel="noopener"
-                      className="text-xs font-bold text-gray-400 hover:text-[#22C55E] transition-colors">Tanya Harga →</a>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* ═══ KENAPA PILIH KAMI ═══ */}
-        <section className="py-20 bg-[#1A1A1A] text-white" id="keunggulan">
-          <div className="max-w-7xl mx-auto px-4 md:px-16">
-            <div className="text-center mb-14">
-              <h2 className="font-display text-headline-lg text-[#F59E0B] mb-3">Kenapa Order ke JM Workshop Surabaya?</h2>
-              <div className="w-20 h-1.5 bg-[#F59E0B] mx-auto mb-5" />
-              <p className="text-gray-400 max-w-2xl mx-auto">Kami bukan sekadar bengkel las biasa. Setiap detail dikerjakan dengan standar tinggi agar Anda puas dan percaya pada kami.</p>
-            </div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-              {USPS.map((u, i) => (
-                <div key={i} className="reveal bg-white/5 border border-white/10 rounded-xl p-8 hover:border-[#F59E0B] transition-all" style={{ transitionDelay: `${i * 80}ms` }}>
-                  <div className="text-4xl mb-4">{u.icon}</div>
-                  <h3 className="font-display text-headline-sm text-white mb-2">{u.title}</h3>
-                  <p className="text-gray-400 text-sm leading-relaxed">{u.desc}</p>
-                </div>
-              ))}
-            </div>
-            <div className="text-center mt-12">
-              <a href="https://wa.me/628155401679?text=Halo%20JM%20Workshop%2C%20saya%20ingin%20minta%20penawaran"
-                target="_blank" rel="noopener"
-                className="inline-block px-10 py-4 bg-[#22C55E] text-white font-bold text-lg rounded-lg hover:-translate-y-1 hover:shadow-xl transition-all">
-                💬 Minta Penawaran Gratis Sekarang
-              </a>
-            </div>
-          </div>
-        </section>
-
-        {/* ═══ GALLERY ═══ */}
-        <section className="py-20 bg-gray-900 text-white" id="produk">
-          <div className="max-w-7xl mx-auto px-4 md:px-16">
-            <div className="flex flex-col md:flex-row justify-between items-end mb-14 gap-6">
-              <div>
-                <h2 className="font-display text-headline-lg text-[#F59E0B] mb-2">Portofolio Rombong Kontainer &amp; Kanopi Surabaya</h2>
-                <p className="text-gray-400">Hasil pengerjaan nyata — bukan render 3D. Lihat kualitas kami sebelum order.</p>
-              </div>
-              <a href="https://www.instagram.com/jayamaswood" target="_blank" rel="noopener"
-                className="flex items-center gap-2 px-6 py-2 border border-[#F59E0B] text-[#F59E0B] hover:bg-[#F59E0B] hover:text-black transition-colors text-sm font-bold rounded whitespace-nowrap">
-                📷 Follow Instagram Kami
-              </a>
-            </div>
-
-            {/* Grid: 1 wide + 3 normal + 1 Instagram CTA */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
-              {/* Wide card */}
-              <div className="reveal md:col-span-2 group relative overflow-hidden rounded-xl h-[350px]">
-                <Image src={GALLERY[0].src} alt={GALLERY[0].alt} fill className="object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy" />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
-                <div className="absolute bottom-0 left-0 p-8">
-                  <span className="text-[#F59E0B] font-bold text-sm">{GALLERY[0].tag}</span>
-                  <h4 className="text-white font-display text-headline-sm mt-1">{GALLERY[0].title}</h4>
-                  <p className="text-gray-300 text-xs mt-1">Custom size & warna sesuai permintaan</p>
-                </div>
-              </div>
-
-              {/* Pagar */}
-              <div className="reveal group relative overflow-hidden rounded-xl h-[350px]" style={{ transitionDelay: '100ms' }}>
-                <Image src={GALLERY[1].src} alt={GALLERY[1].alt} fill className="object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy" />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
-                <div className="absolute bottom-0 left-0 p-6 opacity-0 group-hover:opacity-100 transition-opacity">
-                  <span className="text-[#F59E0B] font-bold text-sm">{GALLERY[1].tag}</span>
-                  <h4 className="text-white font-display text-xl mt-1">{GALLERY[1].title}</h4>
-                </div>
-              </div>
-
-              {/* Kanopi */}
-              <div className="reveal group relative overflow-hidden rounded-xl h-[300px]" style={{ transitionDelay: '150ms' }}>
-                <Image src={GALLERY[2].src} alt={GALLERY[2].alt} fill className="object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy" />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
-                <div className="absolute bottom-0 left-0 p-6 opacity-0 group-hover:opacity-100 transition-opacity">
-                  <span className="text-[#F59E0B] font-bold text-sm">{GALLERY[2].tag}</span>
-                  <h4 className="text-white font-display text-xl mt-1">{GALLERY[2].title}</h4>
-                </div>
-              </div>
-
-              {/* Workshop */}
-              <div className="reveal group relative overflow-hidden rounded-xl h-[300px]" style={{ transitionDelay: '200ms' }}>
-                <Image src={GALLERY[3].src} alt={GALLERY[3].alt} fill className="object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy" />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
-                <div className="absolute bottom-0 left-0 p-6 opacity-0 group-hover:opacity-100 transition-opacity">
-                  <span className="text-[#F59E0B] font-bold text-sm">{GALLERY[3].tag}</span>
-                  <h4 className="text-white font-display text-xl mt-1">{GALLERY[3].title}</h4>
-                </div>
-              </div>
-
-              {/* Instagram CTA Card */}
-              <div className="reveal flex flex-col items-center justify-center rounded-xl h-[300px] border-2 border-dashed border-gray-600 hover:border-[#F59E0B] transition-colors p-8 text-center" style={{ transitionDelay: '250ms' }}>
-                <div className="text-5xl mb-4">📸</div>
-                <p className="text-gray-300 font-semibold mb-2">Lihat 50+ foto portofolio</p>
-                <p className="text-gray-500 text-sm mb-5">Rombong kontainer, kanopi, & pagar minimalis di Instagram kami</p>
-                <a href="https://www.instagram.com/jayamaswood" target="_blank" rel="noopener"
-                  className="px-6 py-2 bg-gradient-to-r from-purple-500 to-pink-500 text-white font-bold rounded-full text-sm hover:scale-105 transition-transform">
-                  @jayamaswood →
-                </a>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* ═══ TESTIMONIAL ═══ */}
-        <section className="py-20 bg-[#f8f9fb]">
-          <div className="max-w-7xl mx-auto px-4 md:px-16">
-            <div className="text-center mb-12">
-              <h2 className="font-display text-headline-lg text-black mb-3">Kata Pelanggan Kami</h2>
-              <div className="w-20 h-1.5 bg-[#F59E0B] mx-auto" />
-            </div>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              {TESTIMONIALS.map((t, i) => (
-                <div key={i} className="reveal bg-white rounded-xl p-8 border border-gray-200 industrial-shadow" style={{ transitionDelay: `${i * 100}ms` }}>
-                  <div className="text-[#F59E0B] text-2xl mb-4">★★★★★</div>
-                  <p className="text-gray-600 italic mb-6 leading-relaxed">&ldquo;{t.text}&rdquo;</p>
-                  <div className="border-t border-gray-100 pt-4">
-                    <div className="font-bold text-black">{t.name}</div>
-                    <div className="text-sm text-gray-400">{t.business}</div>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* ═══ TENTANG ═══ */}
-        <section className="py-20 bg-white blueprint-grid" id="tentang">
-          <div className="max-w-7xl mx-auto px-4 md:px-16">
-            <div className="flex flex-col lg:flex-row items-center gap-20">
-              <div className="w-full lg:w-1/2 reveal">
-                <div className="relative">
-                  <Image src="/images/professional_welding_workshop_interior_skilled_craftsmen_working_on_custom.png"
-                    alt="Bengkel Las Profesional JM Workshop Surabaya"
-                    width={700} height={500} className="rounded-2xl shadow-2xl relative z-10 w-full h-auto" loading="lazy" />
-                  <div className="absolute -bottom-6 -right-6 w-48 h-48 bg-[#F59E0B] -z-0 rounded-2xl hidden md:block" />
-                </div>
-              </div>
-              <div className="w-full lg:w-1/2 reveal">
-                <span className="text-[#F59E0B] font-bold tracking-widest uppercase text-sm mb-4 block">Perjalanan Kami</span>
-                <h2 className="font-display text-headline-lg text-black mb-6 leading-tight">Bengkel Las Profesional Surabaya Sejak 2017</h2>
-                <div className="space-y-4 text-gray-600 text-body-lg">
-                  <p>Berawal dari workshop kecil di Surabaya pada 2017, JM Workshop lahir dengan visi menghadirkan <strong>rombong kontainer</strong>, <strong>kanopi alderon</strong>, dan <strong>pagar minimalis</strong> berkualitas tinggi dengan harga yang jujur.</p>
-                  <p>Kami percaya bahwa setiap las dan sambungan adalah fondasi kepercayaan pelanggan. Itulah mengapa kami tidak pernah berkompromi pada kualitas material maupun keahlian pengerjaan.</p>
-                </div>
-                <div className="mt-10 flex items-center gap-8">
-                  {[['500+','Proyek Selesai'],['7+','Tahun Pengalaman'],['5','Kota Layanan']].map(([n, l], i, arr) => (
-                    <div key={l} className="flex items-center gap-8">
-                      <div className="text-center">
-                        <div className="text-4xl font-extrabold text-black">{n}</div>
-                        <div className="text-xs font-semibold text-gray-500 mt-1">{l}</div>
-                      </div>
-                      {i < arr.length - 1 && <div className="w-px h-10 bg-gray-200" />}
-                    </div>
-                  ))}
-                </div>
-                <a href="https://wa.me/628155401679" target="_blank" rel="noopener"
-                  className="mt-8 inline-block px-8 py-3 bg-black text-white font-bold rounded-lg hover:-translate-y-1 transition-all">
-                  Hubungi Kami Sekarang →
-                </a>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* ═══ AREA LAYANAN ═══ */}
-        <section className="py-10 bg-gray-50 border-y border-gray-200">
-          <div className="max-w-7xl mx-auto px-4 md:px-16 text-center">
-            <h3 className="font-display text-headline-sm mb-5 text-black">Wilayah Layanan Rombong Kontainer &amp; Kanopi:</h3>
-            <div className="flex flex-wrap justify-center gap-3">
-              {['Surabaya','Sidoarjo','Gresik','Mojokerto','Lamongan'].map(kota => (
-                <span key={kota} className="px-5 py-2 bg-white border border-gray-200 rounded-full text-sm font-semibold text-black hover:border-[#F59E0B] transition-colors cursor-default">{kota}</span>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* ═══ CTA FINAL ═══ */}
-        <section className="py-20 bg-[#F59E0B]">
-          <div className="max-w-3xl mx-auto px-4 text-center">
-            <h2 className="font-display text-headline-lg text-black mb-4">Siap Order Rombong Kontainer atau Kanopi?</h2>
-            <p className="text-black/70 text-body-lg mb-8">Hubungi kami sekarang. Survei gratis, penawaran transparan, garansi pengerjaan. Respon cepat via WhatsApp.</p>
-            <a href="https://wa.me/628155401679?text=Halo%20JM%20Workshop%2C%20saya%20ingin%20order%20dan%20minta%20penawaran"
-              target="_blank" rel="noopener"
-              className="inline-block px-12 py-5 bg-black text-white font-bold text-xl rounded-xl hover:-translate-y-1 hover:shadow-2xl transition-all">
-              💬 Chat WhatsApp Sekarang
-            </a>
           </div>
         </section>
 
       </main>
+
       <Footer />
       <FloatingWA />
       <TrackingEvents />
-    </>
+    </div>
   )
 }
