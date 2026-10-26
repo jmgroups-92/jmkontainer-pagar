@@ -223,6 +223,7 @@ export default function Home() {
                           alt={slide.title} 
                           fill 
                           priority={index === 0}
+                          loading={index === 0 ? undefined : 'lazy'}
                           className="object-cover" 
                         />
 
@@ -474,7 +475,7 @@ export default function Home() {
                 </div>
                 <div>
                   <div className="relative h-44 rounded-2xl overflow-hidden mb-4 border border-stone-200">
-                    <Image src="/images/portfolio/rombong-kontainer-1.webp" alt="Rombong Kontainer UMKM" fill className="object-cover" />
+                    <Image src="/images/portfolio/rombong-kontainer-1.webp" alt="Rombong Kontainer UMKM" fill loading="lazy" className="object-cover" />
                   </div>
                   <a href="https://wa.me/6281554016679?text=Halo%20JM%20Kontainer%2C%20mau%20tanya%20harga%20Rombong%20Kontainer" 
                      target="_blank" rel="noopener"
@@ -498,7 +499,7 @@ export default function Home() {
                 </div>
                 <div>
                   <div className="relative h-44 rounded-2xl overflow-hidden mb-4 border border-stone-200">
-                    <Image src="/images/portfolio/kanopi-alderon-1.webp" alt="Kanopi Alderon UPVC" fill className="object-cover" />
+                    <Image src="/images/portfolio/kanopi-alderon-1.webp" alt="Kanopi Alderon UPVC" fill loading="lazy" className="object-cover" />
                   </div>
                   <a href="https://wa.me/6281554016679?text=Halo%20JM%20Kontainer%2C%20mau%20tanya%20pasang%20Kanopi%20Alderon" 
                      target="_blank" rel="noopener"
@@ -522,7 +523,7 @@ export default function Home() {
                 </div>
                 <div>
                   <div className="relative h-44 rounded-2xl overflow-hidden mb-4 border border-stone-200">
-                    <Image src="/images/portfolio/pagar-minimalis-1.webp" alt="Pagar Besi Minimalis" fill className="object-cover" />
+                    <Image src="/images/portfolio/pagar-minimalis-1.webp" alt="Pagar Besi Minimalis" fill loading="lazy" className="object-cover" />
                   </div>
                   <a href="https://wa.me/6281554016679?text=Halo%20JM%20Kontainer%2C%20mau%20tanya%20desain%20Pagar%20Besi" 
                      target="_blank" rel="noopener"
