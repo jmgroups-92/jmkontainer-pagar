@@ -125,10 +125,10 @@ async function processItem(item) {
         filter="url(#shadow)"
         font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif"
         font-size="${fontSize}px"
-        font-weight="600"
-        letter-spacing="0.06em"
+        font-weight="500"
+        letter-spacing="0.05em"
         text-anchor="end"
-        fill="rgba(255, 255, 255, 0.25)"
+        fill="rgba(255, 255, 255, 0.19)"
       >JM Kontainer</text>
     </svg>
   `);
