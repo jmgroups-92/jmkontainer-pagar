@@ -356,32 +356,50 @@ export default function Home() {
 
               {/* Visual Showcase Narrative */}
               <div className="lg:col-span-6">
-                <div className="grid grid-cols-2 gap-4">
-                  <div className="relative aspect-[3/4] rounded-[14px] overflow-hidden bg-[#1F2327] border border-white/10">
+                <div className="grid grid-cols-2 gap-4 sm:gap-6">
+                  
+                  {/* Left Card: Clean Precision Assembly Scene */}
+                  <div className="group relative aspect-[3/4] rounded-[18px] overflow-hidden bg-[#1F2327] border border-white/10 shadow-dark-elevated">
                     <Image
                       src="/images/portfolio/workshop-las-1.webp"
-                      alt="Workshop Pengelasan JayaMulya"
+                      alt="Perakitan Rangka Presisi di Workshop JayaMulya"
                       fill
-                      sizes="(max-width: 768px) 50vw, 320px"
-                      className="object-cover hover:scale-105 transition-transform duration-500"
+                      sizes="(max-width: 768px) 50vw, 340px"
+                      className="object-cover object-center group-hover:scale-105 transition-transform duration-700 ease-out"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex items-end p-4">
-                      <span className="text-xs font-mono text-white/90">Perakitan Rangka Presisi</span>
+                    {/* Subtle Corner Badge */}
+                    <span className="absolute top-3.5 left-3.5 px-2.5 py-1 rounded-[6px] bg-black/60 backdrop-blur-md text-[10px] font-mono font-medium text-white/80 uppercase tracking-widest border border-white/10">
+                      JM KONTAINER
+                    </span>
+                    {/* High-Readability Dark Gradient Overlay */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/25 to-transparent flex items-end p-5">
+                      <span className="text-xs font-mono font-semibold text-white tracking-wide">
+                        Perakitan Rangka Presisi
+                      </span>
                     </div>
                   </div>
 
-                  <div className="relative aspect-[3/4] rounded-[14px] overflow-hidden bg-[#1F2327] border border-white/10 translate-y-6">
+                  {/* Right Card: Precision Quality Control Gate Scene */}
+                  <div className="group relative aspect-[3/4] rounded-[18px] overflow-hidden bg-[#1F2327] border border-white/10 shadow-dark-elevated translate-y-6">
                     <Image
                       src="/images/slider/slide-5.webp"
-                      alt="Pengelasan CO2 MIG di Workshop JayaMulya"
+                      alt="Quality Control Sambungan Pagar Minimalis Modern"
                       fill
-                      sizes="(max-width: 768px) 50vw, 320px"
-                      className="object-cover hover:scale-105 transition-transform duration-500"
+                      sizes="(max-width: 768px) 50vw, 340px"
+                      className="object-cover object-center group-hover:scale-105 transition-transform duration-700 ease-out"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex items-end p-4">
-                      <span className="text-xs font-mono text-white/90">Quality Control Sambungan</span>
+                    {/* Subtle Corner Badge */}
+                    <span className="absolute top-3.5 left-3.5 px-2.5 py-1 rounded-[6px] bg-black/60 backdrop-blur-md text-[10px] font-mono font-medium text-white/80 uppercase tracking-widest border border-white/10">
+                      QC FINAL
+                    </span>
+                    {/* High-Readability Dark Gradient Overlay */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/25 to-transparent flex items-end p-5">
+                      <span className="text-xs font-mono font-semibold text-white tracking-wide">
+                        Quality Control Sambungan
+                      </span>
                     </div>
                   </div>
+
                 </div>
               </div>
 
