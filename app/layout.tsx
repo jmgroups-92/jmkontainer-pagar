@@ -1,31 +1,52 @@
 import type { Metadata } from 'next'
-import { Hanken_Grotesk, Inter } from 'next/font/google'
 import Script from 'next/script'
 import './globals.css'
-
-const hanken = Hanken_Grotesk({ subsets: ['latin'], variable: '--font-hanken', display: 'swap', weight: ['400','600','700','800'] })
-const inter = Inter({ subsets: ['latin'], variable: '--font-inter', display: 'swap', weight: ['400','500','600'] })
 
 const GA_ID = 'G-QMY2G5J3EJ'
 
 export const metadata: Metadata = {
-  title: 'JM Kontainer Surabaya | Pabrikasi Booth Container UMKM, Kanopi & Pagar Besi',
-  description: 'Bengkel las spesialis Booth Container Custom, Rombong UMKM, Kanopi Alderon UPVC & Pagar Minimalis. Melayani Surabaya, Sidoarjo, Gresik, Bangkalan, Lamongan, Pasuruan & Malang. Free survei lokasi!',
-  keywords: 'booth container surabaya, rombong kontainer surabaya, booth container sidoarjo, booth container gresik, booth container bangkalan, booth container lamongan, booth container pasuruan, booth container malang, kanopi alderon surabaya, pagar minimalis surabaya, bengkel las surabaya, kontainer umkm',
+  title: 'JayaMulya — Industrial Fabrication Studio | Custom Container Booth, Kanopi & Pagar Surabaya',
+  description: 'Studio fabrikasi custom industri dan solusi arsitektural di Surabaya sejak 2017. Spesialis Custom Container Booth, Architectural Canopy, Minimalist Steel Gate, dan konstruksi baja presisi berstandar SNI.',
+  keywords: 'jayamulya, custom container booth surabaya, architectural canopy surabaya, pagar minimalis surabaya, jasa fabrikasi besi surabaya, container booth cafe, booth franchise surabaya, bengkel las custom surabaya',
   metadataBase: new URL('https://rombongkontainersurabaya.web.id'),
-  authors: [{ name: 'JM Kontainer Surabaya' }],
-  robots: { index: true, follow: true, googleBot: { index: true, follow: true, 'max-image-preview': 'large' } },
-  alternates: { canonical: 'https://rombongkontainersurabaya.web.id/', languages: { 'id': 'https://rombongkontainersurabaya.web.id/' } },
+  authors: [{ name: 'JayaMulya Industrial Fabrication Studio' }],
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-image-preview': 'large',
+    },
+  },
+  alternates: {
+    canonical: 'https://rombongkontainersurabaya.web.id/',
+    languages: {
+      id: 'https://rombongkontainersurabaya.web.id/',
+    },
+  },
   openGraph: {
     type: 'website',
     url: 'https://rombongkontainersurabaya.web.id/',
-    title: 'JM Kontainer Surabaya | Spesialis Rombong Kontainer, Kanopi & Pagar',
-    description: 'Bengkel las spesialis booth container & fabrikasi presisi di Jawa Timur sejak 2017. Material BSI Spindo SNI, survei lokasi gratis!',
-    siteName: 'JM Kontainer Surabaya',
+    title: 'JayaMulya — Industrial Fabrication Studio',
+    description: 'Custom Engineering. Precision Fabrication. Architectural Solutions. Solusi fabrikasi custom untuk kebutuhan komersial dan arsitektural.',
+    siteName: 'JayaMulya Studio',
     locale: 'id_ID',
-    images: [{ url: '/images/slider/slide-1.jpg', width: 1200, height: 630, alt: 'Booth Kontainer Premium JM Kontainer Surabaya' }],
+    images: [
+      {
+        url: '/images/slider/slide-1.webp',
+        width: 1200,
+        height: 630,
+        alt: 'JayaMulya Industrial Fabrication Studio Surabaya',
+      },
+    ],
   },
-  twitter: { card: 'summary_large_image', title: 'JM Kontainer Surabaya | Rombong Kontainer & Kanopi', description: 'Bengkel las spesialis Jawa Timur sejak 2017.' },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'JayaMulya — Industrial Fabrication Studio',
+    description: 'Custom Engineering. Precision Fabrication. Architectural Solutions.',
+    images: ['/images/slider/slide-1.webp'],
+  },
   other: {
     'geo.region': 'ID-JI',
     'geo.placename': 'Surabaya, Jawa Timur',
@@ -36,16 +57,17 @@ export const metadata: Metadata = {
 
 const jsonLd = {
   '@context': 'https://schema.org',
-  '@type': 'LocalBusiness',
+  '@type': 'HomeAndConstructionBusiness',
   '@id': 'https://rombongkontainersurabaya.web.id/#business',
-  name: 'JM Kontainer Surabaya',
-  description: 'Bengkel las fabrikasi spesialis Rombong Kontainer, Booth UMKM Custom, Kanopi Alderon UPVC, dan Pagar Minimalis Modern di Jawa Timur sejak 2017.',
+  name: 'JayaMulya — Industrial Fabrication Studio',
+  alternateName: 'JayaMulya Bengkel & Studio Fabrikasi Presisi',
+  description: 'Studio fabrikasi custom industri dan arsitektural di Surabaya. Spesialis Custom Container Booth, Architectural Canopy, Minimalist Steel Gate, dan rekayasa baja presisi.',
   url: 'https://rombongkontainersurabaya.web.id',
   telephone: '+6281554016679',
   email: 'admin@rombongkontainersurabaya.web.id',
   foundingDate: '2017',
   priceRange: '$$',
-  image: 'https://rombongkontainersurabaya.web.id/images/slider/slide-1.jpg',
+  image: 'https://rombongkontainersurabaya.web.id/images/slider/slide-1.webp',
   address: {
     '@type': 'PostalAddress',
     streetAddress: 'Jl. Rejosari Gg. Musholla Baru, RT. 01 Benowo, Pakal',
@@ -78,32 +100,71 @@ const jsonLd = {
   ],
   hasOfferCatalog: {
     '@type': 'OfferCatalog',
-    name: 'Layanan JM Kontainer',
+    name: 'Layanan Fabrikasi JayaMulya',
     itemListElement: [
-      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Pembuatan Booth Container / Rombong UMKM' } },
-      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Pemasangan Kanopi Alderon UPVC Double Layer' } },
-      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Fabrikasi Pagar Minimalis BSI Spindo SNI' } },
+      {
+        '@type': 'Offer',
+        itemOffered: {
+          '@type': 'Service',
+          name: 'Custom Container Booth & Commercial Kiosks',
+          description: 'Perancangan dan fabrikasi booth komersial, container kiosk F&B, dan modular space.',
+        },
+      },
+      {
+        '@type': 'Offer',
+        itemOffered: {
+          '@type': 'Service',
+          name: 'Architectural Canopy & Steel Structures',
+          description: 'Solusi kanopi baja WF dan Alderon UPVC berdaya redam panas dan akustik tinggi.',
+        },
+      },
+      {
+        '@type': 'Offer',
+        itemOffered: {
+          '@type': 'Service',
+          name: 'Minimalist Steel Gate & Perimeter Fencing',
+          description: 'Pagar dan gerbang minimalis modern presisi dengan finishing tahan cuaca.',
+        },
+      },
+      {
+        '@type': 'Offer',
+        itemOffered: {
+          '@type': 'Service',
+          name: 'Custom Industrial Metal Fabrication',
+          description: 'Pengerjaan rekayasa baja, mezzanine struktural, tangga putar, dan fabrikasi B2B.',
+        },
+      },
     ],
   },
-  aggregateRating: { '@type': 'AggregateRating', ratingValue: '4.9', reviewCount: '124' },
+  aggregateRating: {
+    '@type': 'AggregateRating',
+    ratingValue: '4.9',
+    reviewCount: '142',
+  },
   sameAs: ['https://www.instagram.com/jayamaswood'],
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="id" className={`${hanken.variable} ${inter.variable}`}>
+    <html lang="id">
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link
+          href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Manrope:wght@400;500;600;700;800&display=swap"
           rel="stylesheet"
-          href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=swap"
         />
-        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
       </head>
-      <body className="bg-[#FAF8F5] text-[#1C1917] antialiased selection:bg-gold-500 selection:text-white">
+      <body className="bg-[#F7F6F2] text-[#202326] antialiased selection:bg-[#B66A37] selection:text-white">
         {children}
-        <Script src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`} strategy="afterInteractive" />
+        <Script
+          src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}
+          strategy="afterInteractive"
+        />
         <Script id="ga4-init" strategy="afterInteractive">{`
           window.dataLayer = window.dataLayer || [];
           function gtag(){dataLayer.push(arguments);}
